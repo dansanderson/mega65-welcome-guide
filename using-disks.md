@@ -143,7 +143,7 @@ xcode-select --install
 
 To build the `cbmconvert` tool:
 
-1. [Download cbmconvert-2.1.2.tar.gz](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/cbmconvert-2.1.2.tar.gz).
+1. [Download cbmconvert-2.1.2.tar.gz](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/cbmconvert-2.1.2.tar.gz). (See [the download site](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/) for links to other versions.)
 2. Expand the archive: `tar xvfz cbmconvert-2.1.2.tar.gz`
 3. Change to the expanded directory: `cd cbmconvert-2.1.2`
 4. Build the tool: `make -f Makefile.unix`

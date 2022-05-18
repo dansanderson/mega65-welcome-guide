@@ -1,8 +1,0 @@
-div.sphinxsidebar .toctree-l1:not(.current) {
-  padding-left: 1em;
-  text-indent: -1em;
-}
-
-div.sphinxsidebar li.toctree-l1.current > a {
-  font-weight: bold;
-}

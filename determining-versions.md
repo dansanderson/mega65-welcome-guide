@@ -14,7 +14,7 @@ The MEGA65 factory core shipped with batch #1 in 2022 has this version number:
 GIT commit: master,20220109.11,1586ad4
 ```
 
-(Or just `1586ad4`.) At the time I wrote this, the latest available version of the MEGA65 core is:
+(Or just `1586ad4`.) As of this writing, the latest available version of the MEGA65 core is:
 
 ```
 GIT commit: development,20220506.10,bdeeb15
@@ -38,10 +38,10 @@ The MEGA65 ROM that shipped with batch #1 in 2022 has this version number:
 920287
 ```
 
-At the time I wrote this, the latest available version of the MEGA65 ROM is:
+As of this writing, the latest available version of the MEGA65 ROM is:
 
 ```
-920349
+920350
 ```
 
 ## Hypervisor and Freeze versions

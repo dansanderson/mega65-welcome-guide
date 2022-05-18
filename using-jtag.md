@@ -16,7 +16,7 @@ For another version of these instructions with more photos, see [JTAG adapter, h
 
 ## Acquiring a JTAG adapter
 
-The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) (Trenz Electronic) is compatible with the MEGA65. You might also be able to [order the TE0790-03 from DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026). As of this writing, this item is difficult to get to supply chain issues.
+The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) (Trenz Electronic) is compatible with the MEGA65. You might also be able to [order the TE0790-03 from DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026). As of this writing, this item is difficult to get due to supply chain issues.
 
 ![XMOD FTDI JTAG Adapter TE0790-03 in its box](photos/jtag_box.jpeg)
 ![XMOD FTDI JTAG Adapter TE0790-03 out of its box](photos/jtag_unit.jpeg)
@@ -38,3 +38,5 @@ Connect a mini-USB cable to the JTAG connector, and run the cable out the back o
 On your PC, download the M65Connect app for Windows, Mac, or Linux, available from the Filehost. You can also use the `m65` and `m65_ftp` command line tools, available from [the mega65-tools Github repository](https://github.com/MEGA65/mega65-tools/releases/tag/CI-latest). If you're interested in the debugging feature, download the M65 Debugger app from Filehost.
 
 See [the M65Connect README](https://github.com/MEGA65/m65connect) and [the m65dbg README](https://github.com/MEGA65/m65dbg) for more information on how to use these tools.
+
+% TODO: test these tools and provide more screenshots and instructions

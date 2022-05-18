@@ -66,6 +66,6 @@ One advantage to having two simultaneous video outputs is you can send one to a 
 
 I was not able to capture screenshots of the C64 core this way. This is likely because the C64 core currently only supports PAL displays.
 
-```{tip}
+---
+
 If you have specific results for a popular flat screen display that you believe are worth sharing, [let me know!](mailto:contact@dansanderson.com)
-```
