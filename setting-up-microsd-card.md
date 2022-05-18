@@ -34,15 +34,15 @@ Visit [the Filehost website](https://files.mega65.org/html/main.php) and make su
 There is also a "MEGA65 SD card essentials - No ROM" file. This is the same archive, but with the licensed ROM files removed.
 ```
 
-This file is in the [RAR archive format](<https://en.wikipedia.org/wiki/RAR_(file_format)>). You will need software to unpack this archive. I recommend [The Unarchiver](https://theunarchiver.com/), which has a graphical app for macOS and a command-line tool for Mac, Windows, and Linux. Windows users might prefer [7-Zip](https://www.7-zip.org/). Unpack the RAR archive to a folder of files.
+This file is in the [RAR archive format](<https://en.wikipedia.org/wiki/RAR_(file_format)>). You will need software on your PC to unpack this archive. I recommend [The Unarchiver](https://theunarchiver.com/), which has a graphical app for macOS and a command-line tool for Mac, Windows, and Linux. Windows users might prefer [7-Zip](https://www.7-zip.org/). Unpack the RAR archive to a folder of files.
 
-Remove the microSD card from MEGA65, then insert it in your PC's card reader. Copy the unpacked files to the top-level folder of the microSD card, replacing all files with the same names.
+Remove the microSD card from MEGA65, then insert it in your PC's card reader. Copy the unpacked files to the microSD card (in the root level, not in a sub-folder), replacing all files that have the same names.
 
 ## Updating the ROM
 
 The SD card essentials archive includes MEGA65 ROM files, but these might be out of date. Just to be sure, let's grab the absolute latest ROM from Filehost.
 
-Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920349.BIN`. The number in the filename is the ROM version number for this ROM. (Yours will be newer than the example in this guide! It gets updated frequently.)
+Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920350.BIN`. The number in the filename is the ROM version number for this ROM. (Yours may be newer than the example in this guide. It gets updated frequently.)
 
 Rename the ROM file to `MEGA65.ROM`. Copy it to the microSD card, replacing the file that is already there.
 
@@ -54,4 +54,4 @@ If you're using a Mac, the Finder can sometimes be defensive about changing the 
 
 The SD card formatting process does not fully recreate the SD card that was bundled with the computer. You can re-add the bundled software from the backup you made in the previous section, if desired.
 
-See {ref}`time-to-play:other bundled software` for a list of bundled D81 disk images that you might want to install. The new card is also missing `HEAVY.MOD`, one of the two bundled MOD music files that work with the MOD player on the demo disk. (`POPCORN.MOD` does get installed on a fresh card. Nice!)
+See {ref}`try-this-first:other bundled software` for a list of bundled D81 disk images that you might want to install. The new card is also missing `HEAVY.MOD`, one of the two bundled MOD music files that work with the MOD player on the demo disk. (`POPCORN.MOD` does get installed automatically on a fresh card. Nice!)

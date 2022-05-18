@@ -25,4 +25,8 @@ The best way to get the latest information is from the official MEGA65 website, 
 
 Thank you for reading this Welcome Guide! If you have feedback on how I can make this Guide better, or just want to say hi, please [report an issue](https://github.com/dansanderson/mega65-welcome-guide/issues), [email me](mailto:contact@dansanderson.com) (I'm Dan), or DM dddaaannn#7325 in [the MEGA65 Discord](https://discord.gg/5DNvESf).
 
-Welcome to the world of personal computing. Enjoy our MEGA65!
+Welcome to the world of personal computing. Enjoy your MEGA65!
+
+```
+GO 65
+```

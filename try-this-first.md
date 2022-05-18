@@ -1,6 +1,6 @@
 # Try this first!
 
-You don't want to read stuff, you want to play with your new MEGA65! Well good news, there's _tons_ to play with, without ever having to download a file or crack open the case!
+You don't want to read stuff, you want to play with your new MEGA65! Well good news, there's _tons_ to play with, without ever having to download a file or crack open the case.
 
 The fun is in the digging, so if you're ready to go, stop reading now and dive in. Come back to this section for some things to try before going further. Have fun!
 
@@ -22,11 +22,11 @@ For more information on the peripheral ports, see the User's Guide, page 3.
 
 ## On-boarding
 
-When you turn your MEGA65 on for the first time, it prompts you for some initial settings. The most important setting is the video mode. Use the tab key to cycle between digital video without sound over HDMI vs. with sound over HDMI ("enhanced"), and PAL 50Hz vs. NTSC 60Hz display modes. Press Space to test a video setting to make sure it works with your monitor.
+When you turn your MEGA65 on for the first time, it prompts you for some initial settings. The most important setting is the video mode. Use the Tab key to cycle between digital video without sound over HDMI vs. with sound over HDMI ("enhanced"), and PAL 50Hz vs. NTSC 60Hz display modes. Press Space to test a video setting to make sure it works with your monitor.
 
 Take this opportunity to test your audio set-up. Press the `A` key to play a musical tone. If you are using audio over HDMI, make sure the video mode is set to "Enhanced (with sound)."
 
-The "CRT emulation" option is a fun choice when using a modern flat panel display. Try it to see if you like it: press the `C` key to toggle it on and off.
+The "CRT emulation" option is a fun choice when using a modern flat panel display: it adds vertical gaps between pixels to simulate the CRT raster line. Try it to see if you like it: press the `C` key to toggle it on and off.
 
 You can ignore the "Time" setting for now. We will discuss the Real-Time Clock later in this guide. All of these settings can be adjusted later.
 
@@ -40,7 +40,7 @@ As you try out the software that comes bundled with your MEGA65, you will want t
 
 ## Demonstration menu
 
-Your MEGA65 comes configured to run a demonstration program when you turn on the machine. You can use this menu to launch games, utilities, and demos that show off the capabilities of the MEGA65. Try them out! Remember you can use the reset button to start over.
+Your MEGA65 comes configured to run a demonstration program when you turn on the machine. You can use this menu to launch games, utilities, and demos that show off the capabilities of the MEGA65. Try them out! Remember that you can use the reset button to start over.
 
 ![MEGA65 demonstration disk title screen](screenshots/demo_title.jpg)
 ![MEGA65 demonstration disk menu screen](screenshots/demo_menu.jpg)
@@ -54,6 +54,14 @@ The User's Guide does an excellent job describing the BASIC environment. See cha
 ```
 
 The demonstration menu is itself a BASIC program! When you exit from the menu to BASIC, this program will still be in memory. You can use the `LIST` command to see its source code. If you want to clear memory to write a new program, use the `NEW` command before entering statements.
+
+```
+NEW
+10 FOR X=1 TO 100
+20 PRINT "MEGA65! ";
+30 NEXT X
+RUN
+```
 
 Once you have tried all of the demo programs, you will probably no longer want your MEGA65 to start the demonstration mode every time it turns on. Select the "Disable auto-boot" menu option to disable it. You can get back to this menu later by loading and running the program with these commands:
 
@@ -77,24 +85,26 @@ To open the Freeze menu, hold the Restore key for a second or more, then release
 ![Freeze menu (fixed version)](screenshots/freeze_working.jpg)
 
 ```{note}
-Your Freeze menu may appear too low on the screen! This is a bug in the version of the software that shipped with the first batch of MEGA65 computers. It is fixed in a newer version of the software. You will upgrade the software later in this Guide. If you are experiencing this issue, you can complete this section of the Guide with the broken display, or you can skip this and return after you have installed the update in a later section.
+Does your Freeze menu appear too low on the screen? This is a bug in the version of the software that shipped with the first batch of MEGA65 computers. It is fixed in a newer version of the software. You will upgrade the software later in this Guide.
+
+If you are experiencing this issue, you can complete this section of the Guide with the broken display, or you can skip this and return after you have installed the update in a later section.
 
 ![Freeze menu (broken version)](screenshots/freeze_broken.jpg)
 ```
 
-There are many useful features in this menu. Try them out!
+There are many useful features in the Freeze menu. Try them out!
 
-A useful feature to remember when playing games is the "(J)OY SWAP." This mode causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press `J` to swap the port numbers, then resume your game.
+One feature to remember when playing games is the "(J)OY SWAP." This causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press `J` to swap the port numbers, then resume your game.
+
+```{note}
+As of this writing, it is possible—and usually undesireable—to freeze the Freeze menu by pressing Restore again while the Freeze menu is open. If you do this accidentally, reset and try again.
+```
 
 ## Disk images
 
-One of the MEGA65's most useful features is its virtual disk drive. Of course, you can use actual 3-1/2" floppy disks with the MEGA65's built-in physical drive. More often, you will use files that represent disks ("disk images") that reside on a modern SD memory card. You can use the Freeze menu to tell MEGA65 whether to use the physical drive or a disk image file as a disk drive.
+One of the MEGA65's most useful features is its virtual disk drive. Of course, you can use vintage 3-1/2" floppy disks with the MEGA65's built-in physical drive. More often, you will use files that represent disks ("disk images") that reside on a modern SD memory card. You can use the Freeze menu to tell MEGA65 whether to use the physical drive or a disk image file as a disk drive.
 
 MEGA65 comes bundled with several disk images, including one named `MEGA65.D81` that contains the demonstration menu and all of the demo programs. You can make your own D81 disk images, and can download MEGA65 software as D81 disk image files over the Internet using your PC.
-
-```{tip}
-The User's Guide describes disk images and the Freezer menu in chapter 7, starting page 59.
-```
 
 Try browsing one of the disk images included with your MEGA65:
 
@@ -108,7 +118,13 @@ Try browsing one of the disk images included with your MEGA65:
 ![Freeze menu with DEMOCOMP.D81 disk selected](screenshots/freeze_democomp.jpg)
 
 ```{tip}
-If you are mounting a disk to start a new program, use the `F5` key to exit the Freeze menu with a reset. Your disk will continue to be mounted after the reset. While it is tempting to use the `F3` key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
+If you are mounting a disk to start a new program, use the `F5` key to exit the Freeze menu with a reset. Your disk will continue to be mounted after the reset.
+
+While it is tempting to use the `F3` key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
+```
+
+```{tip}
+The User's Guide describes disk images and the Freezer menu in chapter 7, starting page 59.
 ```
 
 ## Loading and running a program from disk
@@ -140,7 +156,9 @@ RUN
 ![The directory of the DEMOCOMP disk](screenshots/democomp_run.jpg)
 
 ```{tip}
-A common trick you may remember from your Commodore 64 is, instead of typing the full filename of something you wish to `LOAD`, you can list the directory of the disk, then move the cursor up to the line with the name of the program and type `LOAD` at the beginning of the line to form the command. This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forward slash) at the beginning of the line, then press Return. Unlike with `LOAD`, you do not need to clear away the extra characters on the line for the `/` to work.
+A common trick you may remember from your Commodore 64 is, instead of typing the full filename of something you wish to `LOAD`, you can list the directory of the disk, then move the cursor up to the line with the name of the program and type `LOAD` at the beginning of the line to form the command.
+
+This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forward slash) at the beginning of the line, then press Return. Unlike with `LOAD`, you do not need to clear away the extra characters on the line for the `/` to work.
 
 ![Loading a file using the slash shortcut](screenshots/dirslash_trick.jpg)
 ![Loading a file using the slash shortcut](screenshots/dirslash_loaded.jpg)
@@ -159,9 +177,9 @@ GO 64
 ![GO 64 command to enter C64 mode](screenshots/go64_command.jpg)
 ![C64 mode](screenshots/go64_bluescreen.jpg)
 
-The Freeze menu is accessible when in C64 mode, and can be used to mount disk images (or the physical disk drive) with disks containing C64 software.
+The Freeze menu is accessible when in C64 mode, and can be used to mount D81 disk images (or the physical disk drive) with disks containing C64 software.
 
-A D81 disk image can contain Commodore 64 software. MEGA65 includes a disk image with C64 games and demos, named `C64.D81`. Use the Freeze menu to mount it to the first drive, then resume C64 mode. Use C64 commands to access the disk in unit 8.
+MEGA65 includes a D81 disk image with C64 games and demos, named `C64.D81`. Use the Freeze menu to mount it to the first drive, then resume C64 mode. Use C64 commands to access the disk in unit 8.
 
 ```
 LOAD "$",8
@@ -209,7 +227,7 @@ You can use the cursor keys or a mouse to navigate the configuration options. Th
 - Video: All of the video options from the on-boarding screen.
 
 ```{note}
-The clock setting in the configuration utility uses the following time and date format: `HH:MM:SS YY/MM/DD` It doesn't prevent you from entering invalid numbers. Take care to use the correct date format.
+The clock setting in the configuration utility uses the following time and date format: `HH:MM:SS YY/MM/DD` (That's hours, minutes, seconds, the year, the month, and the day of the month.) It doesn't prevent you from entering invalid numbers. Take care to use the correct date format.
 
 ![Configuration utility, Chipset screen](screenshots/config_chipset.jpg)
 ```

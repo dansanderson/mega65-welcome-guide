@@ -1,6 +1,6 @@
 # Using disks
 
-We discussed using D81 disk images back in {ref}`time-to-play:disk images`, including:
+We discussed using D81 disk images back in {ref}`try-this-first:disk images`, including:
 
 - How to browse D81 disk images using the Freeze menu
 - How to mount a D81 disk image on drive 0 device 8 using the Freeze menu
@@ -8,7 +8,7 @@ We discussed using D81 disk images back in {ref}`time-to-play:disk images`, incl
 - How to load and run a program on the disk using the `LOAD` and `RUN` commands
 - How to use the `/` shortcut to load a file within a directory listing
 
-Disk-related improvements have been advancing quickly, and the latest ROM includes some useful features not mentioned in the printed manual.
+Disk-related improvements have been advancing quickly, and the latest ROM includes bug fixes and useful features not mentioned in the printed manual.
 
 ```{tip}
 Be sure that you have the latest ROM version before trying some of these features.
@@ -32,14 +32,14 @@ DIR W
 For more on the `DIR` command, see the User's Guide, page 106.
 ```
 
-One disadvantage of the `W` flag is that you cannot use the `/` shortcut to load a program into memory. There is another way to view the complete directory listing and still use this shortcut: load the listing into BASIC memory. Commodore 64 users are familiar with `LOAD "$",8` followed by `LIST`. To do this in a nicer way with MEGA65:
+One disadvantage of the `W` flag is that you cannot use the `/` shortcut to load a program into memory. There is another way to view the complete directory listing and still use this shortcut: load the listing into BASIC memory. Commodore 64 users are familiar with `LOAD "$",8` followed by `LIST`. To do this with the MEGA65:
 
 ```
 DLOAD "$$"
 LIST
 ```
 
-This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer to scroll up to previous lines. Use the F9 and F11 keys to traverse the listing, then cursor up to a program you want to load and use the `/` shortcut.
+This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer features to scroll up to previous lines. Use the F9 and F11 keys to traverse the listing, then cursor up to a program you want to load and use the `/` shortcut.
 
 ```{caution}
 Loading the directory listing with `DLOAD` overwrites any BASIC program that resides in memory. The `DIR` command does not overwrite BASIC memory.
@@ -47,7 +47,7 @@ Loading the directory listing with `DLOAD` overwrites any BASIC program that res
 
 ## Using the SD card from BASIC
 
-Recent improvements added the ability to manipulate disk images on the SD card without using the Freeze menu. In general, device `U12` is considered the SD card.
+Recent improvements added the ability to manipulate disk images on the SD card without using the Freeze menu. In general, device `U12` is considered the SD card. Only some disk commands work with the `U12` device.
 
 To list all of the files on the SD card:
 
@@ -57,7 +57,7 @@ DIR U12
 
 This does not yet support other features of the `DIR` command, such as filters or paging.
 
-To mount a D81 disk image from the SD card directly from BASIC:
+To mount a D81 disk image from the SD card directly from BASIC, use the `MOUNT` command:
 
 ```
 MOUNT "DISKNAME.D81"
@@ -75,7 +75,7 @@ You can load a program file (`.PRG`) directly from the SD card, without having t
 DLOAD "FILENAME.PRG",U12
 ```
 
-(Loading a PRG file does not work with the `LOAD` command.)
+(Loading a PRG file directly from the SD card does not work with the `LOAD` command.)
 
 ## Using 3-1/2" floppy disks
 
@@ -87,7 +87,11 @@ The MEGA65 floppy drive supports both double density (DD) and high density (HD) 
 
 ![An HD disk with masking tape over the HD indicator hole](photos/hdfloppy.jpeg)
 
-Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold Restore, then release), then select a drive number (`0`). In the list of options that includes the D81 disk images, select `- INTERNAL 3.5" -`. Exit the Freeze menu (resume or reset).
+```{tip}
+Until this is fixed in a future software update, an HD disk with the hole exposed will not work with the MEGA65. If your disk isn't working, double-check that the hole is covered.
+```
+
+Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold Restore, then release), then select drive number `0`. (The internal drive can only be mounted to drive 0.) In the list of options that includes the D81 disk images, select `- INTERNAL 3.5" -`. Exit the Freeze menu (resume or reset).
 
 Insert a floppy disk in the drive. If you have not used this disk with the MEGA65 before, it needs to be formatted. This erases all data on the disk! Use the `HEADER` command, providing a disk name in quotes, and a two digit disk ID number preceded by the letter `I`:
 
@@ -96,8 +100,6 @@ HEADER "WORK FILES",I01
 ```
 
 Enter `YES` at the prompt to confirm. Formatting a disk for the first time takes a minute or so.
-
-This command defaults to drive 0, unit 8. If you wish to format the disk mounted as drive 1, provide additional arguments to ensure it formats the correct disk.
 
 ```{tip}
 See the `HEADER` command in the User's Guide, page 135.
@@ -121,17 +123,17 @@ RUN
 
 ## Using an external disk drive
 
-Your MEGA65 has a 6-pin IEC serial port for connecting vintage Commodore disk drives.
+Your MEGA65 has a 6-pin IEC serial port for connecting vintage Commodore disk drives. With a drive connected, you can use the Freeze menu to assign it to drive `1`.
 
-Commodore disk drives use a serial protocol that allows multiple devices to be connected in a chain. Each device must have a unique device ID, such as 8 or 9. These old devices did not have a way to assign device IDs when connected in a chain. Instead, you use switches on the device itself to tell the drive its device ID.
+Commodore disk drives use a serial protocol that allows multiple devices to be connected in a chain. Each device must have a unique device ID. For disks, the available device IDs are 8, 9, 10, or 11. These old devices do not have a way to figure out their device IDs automatically. Instead, you use switches on the device itself to tell the drive its device ID. Each device ID must be assigned to a unique drive.
 
-By default, the MEGA65's virtual drives use device IDs 8 and 9. You can use the Freeze menu to change these device IDs, such that you can use an external drive that is configured for those IDs. Open the Freeze menu, then press `8` to toggle the device ID for drive 0, or `9` to toggle the device ID for drive 1.
+The MEGA65 can assign either device ID 8 or 10 to the drive connected as drive 0 (a disk image or the internal floppy drive), and can assign either device ID 9 or 11 to the drive connected as drive 1 (another disk image or the external serial port). You can toggle the device IDs for drive 0 or 1 in the Freeze menu by pressing `8` or `9`, respectively. Make sure your external drive is configured to use the device ID you have assigned to drive 1 in the MEGA65 Freeze menu (either 9 or 11).
 
 Any device that supports the disk serial protocol is expected to work, including new disk devices such as the [Pi1541](https://cbm-pi1541.firebaseapp.com/). Notice that some such devices like the SD2IEC need the C64 tape port to supply power to the device, and the MEGA65 has no such port.
 
 ## Converting a D64 to a D81
 
-You can find almost every game and application written for the Commodore 64 online in the form of disk images. However, these disk images are typically in the D64 format, which represents a 5-1/4" floppy disk. If you want to try running a C64 application on your Mega65 in its C64 mode, you must first convert the D64 image to a D81 image.
+You can find almost every game and application written for the Commodore 64 online in the form of disk images. However, these disk images are typically in the D64 format, which represents a 5-1/4" floppy disk. If you want to try running a C64 application on your Mega65 in its C64 mode, you must first convert the D64 image to a D81 image. (The D81 image represents a 3-1/2" floppy disk.)
 
 One way to do this is with the `cbmconvert` command line tool. This requires your PC (Windows, Mac, or Linux) and familiarity with the command line (Terminal).
 
@@ -168,5 +170,5 @@ C64 mode is known to not be compatible with all C64 software. If you are experie
 ```
 
 ```{tip}
-Remember that the C64 core supports D64 disk images directly without needing to convert them to D81 images. See {ref}`upgrading-core:the c64 core`.
+Remember that the C64 core (not C64 mode) supports D64 disk images directly without needing to convert them to D81 images. See {ref}`updating-core:the c64 core`.
 ```

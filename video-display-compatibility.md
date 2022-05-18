@@ -1,6 +1,6 @@
 # Video display compatibility
 
-The MEGA65 has two video outputs: one HDMI and one VGA.
+The MEGA65 has two video outputs: one HDMI and one VGA. They mostly work as you would expect, though it may take some fiddling to display the MEGA65's 4:3 aspect ratio image correctly. Some vintage 4:3 displays have caveats.
 
 ## HDMI (DVI)
 
@@ -38,16 +38,16 @@ Be sure to _disable_ CRT emulation in the MEGA65 configuration when using an act
 
 ## 4:3 flat panel displays
 
-If you're looking for the 4:3 aspect ratio of a vintage monitor that won't distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with tradeoffs that depend on the model of monitor you find. Flat panel displays of the early 2000's ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.
+If you're looking for the 4:3 aspect ratio of a vintage monitor that won't distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with caveats that depend on the model of monitor you find. Flat panel displays of the early 2000's ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.
 
-I can't possibly list every tradeoff for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input. I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
+I can't possibly list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input. I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
 
 ![MEGA65 connected to a Dell 2001FP 4:3 monitor](photos/display_2001fp_m65.jpeg)
 
-Why use both HDMI and VGA with the same display? In the case of the 2001FP, I need both to work around issues with each mode:
+Why use both HDMI and VGA with the same display? In the case of the 2001FP, I need both to work around caveats with each mode:
 
-- HDMI provides the highest quality display for regular use. With the current (as of this writing) MEGA65 core, some of the utility menus (configuration, core selection) fail to display through the 2001FP DVI input, but work just fine over VGA. This is not a problem for all HDMI output, it only affects the Dell 2001FP DVI input.
-- To display VGA, the 2001FP must guess at the signal timing to convert it to the flat panel display. This results in periodic drops of pixel columns. I can adjust the display settings to shift which columns are dropped, but I can't get it to show all columns, even with its automatic adjustment feature. It's fine for the config menus, but a poor experience for regular use, especially the 80-column modes.
+- HDMI provides the highest quality display for regular use. With the current (as of this writing) MEGA65 core, some of the utility menus (configuration, core selection) fail to display through the 2001FP DVI input, but work just fine over VGA. This is not a problem for all HDMI monitors: it only affects the Dell 2001FP DVI input, and possibly other vintage monitors.
+- To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. I can adjust the display settings to shift which columns are dropped, but I can't get it to show all columns, even with its automatic adjustment feature. It's fine for the configuration menus, but it's a poor experience for regular use, especially the 80-column modes.
 
 ![The Dell 2001FP shows a quality image over DVI](photos/display_2001fp_hd_noartifact.jpeg)
 ![The Dell 2001FP drops pixel columns from the VGA signal](photos/display_2001fp_vga_artifact.jpeg)

@@ -22,7 +22,7 @@ GIT commit: development,20220506.10,bdeeb15
 
 (Or just `bdeeb15`.)
 
-Alternatively, you can see the version of the MEGA65 core while the computer is running. At any time with the MEGA65 core running, hold the Mega key (the fancy M in the lower left of your keyboard) and press Tab. Welcome to "Matrix mode!" This is a special mode that lets you tweak the memory of the computer while it is running, among other things. It also displays the version of the running MEGA65 core. Press Mega+Tab again to exit.
+Alternatively, you can see the version of the MEGA65 core while the computer is running without turning it off. At any time with the MEGA65 core running, hold the Mega key (the fancy M in the lower left of your keyboard) and press Tab. Welcome to "Matrix mode!" This is a special mode used by the MEGA65 development team to tweak the memory of the computer while it is running, among other things. It also displays the version of the running MEGA65 core. Press Mega+Tab again to exit.
 
 ## The MEGA65 ROM version
 
@@ -30,7 +30,7 @@ You can determine the version of the MEGA65 ROM that is running from the BASIC t
 
 ![ROM version from the BASIC screen, 920287](screenshots/basic_920287_number.jpg)
 
-The original Commodore 65 ROM data used a number resembling a date to represent the software version, such as `910828` or `911001`. The MEGA65 enhanced versions of the original ROMs continues the numbering from `92xxxx`.
+The original Commodore 65 ROM data used a number resembling a date to represent the software version, such as `910828` or `911001`. The MEGA65 enhanced versions of the original ROMs continues the numbering sequentially from `92xxxx`.
 
 The MEGA65 ROM that shipped with batch #1 in 2022 has this version number:
 
