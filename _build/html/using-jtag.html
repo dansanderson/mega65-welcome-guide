@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using the JTAG connection &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Joining the community" href="joining-community.html" />
+    <link rel="prev" title="Using disks" href="using-disks.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="using-the-jtag-connection">
+<h1>Using the JTAG connection<a class="headerlink" href="#using-the-jtag-connection" title="Permalink to this headline">¶</a></h1>
+<p>The MEGA65 main board has a 12-pin <a class="reference external" href="https://en.wikipedia.org/wiki/JTAG">JTAG</a> connection, a standard for connecting test equipment to devices. It is not intended for regular users of a device—but we MEGA65 owners are not regular users, are we?</p>
+<p>With a JTAG USB adapter and software available on Filehost, you can connect your PC directly to the main board to:</p>
+<ul class="simple">
+<li><p>Transfer files directly from your PC to MEGA65 without removing the SD card</p></li>
+<li><p>Perform remote debugging on programs and even the built-in MEGA65 utilities</p></li>
+<li><p>Upload cores for testing</p></li>
+</ul>
+<p>The MEGA65 does not have a user-accessible port for the JTAG connection. You will have to acquire a JTAG USB adapter and a mini-USB cable, install it, and run the cable out the back of the MEGA65 case.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For another version of these instructions with more photos, see <a class="reference external" href="https://files.mega65.org?ar=3c388c8c-bc3f-461b-84bb-e12dfd479ae2">JTAG adapter, how to plug and DIP switch settings</a>.</p>
+</div>
+<section id="acquiring-a-jtag-adapter">
+<h2>Acquiring a JTAG adapter<a class="headerlink" href="#acquiring-a-jtag-adapter" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible">XMOD FTDI JTAG Adapter TE0790-03</a> (Trenz Electronic) is compatible with the MEGA65. You might also be able to <a class="reference external" href="https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026">order the TE0790-03 from DigiKey</a>. As of this writing, this item is difficult to get to supply chain issues.</p>
+<p><img alt="XMOD FTDI JTAG Adapter TE0790-03 in its box" src="_images/jtag_box.jpeg" />
+<img alt="XMOD FTDI JTAG Adapter TE0790-03 out of its box" src="_images/jtag_unit.jpeg" /></p>
+</section>
+<section id="installing-the-jtag-adapter">
+<h2>Installing the JTAG adapter<a class="headerlink" href="#installing-the-jtag-adapter" title="Permalink to this headline">¶</a></h2>
+<p>You will have to open the MEGA65 case to connect the adapter to the 12-pin JTAG connector on the main board, in the back right corner. (See <a class="reference internal" href="opening-the-case.html#opening-the-mega65-case"><span class="std std-ref">Opening the MEGA65 case</span></a> for an annotated photo of the main board.) The adapter connects with the mini-USB connector facing to the right.</p>
+<p><img alt="Installing the JTAG adapter" src="_images/jtag_installing.jpeg" /></p>
+<p>Use a pin to set the DIP switches on the connector to left, right, right, left. This configures the adapter to draw power from the USB connection instead of the MEGA65.</p>
+<p><img alt="Setting the JTAG adapter DIP switches" src="_images/jtag_switches.jpeg" /></p>
+<p>Connect a mini-USB cable to the JTAG connector, and run the cable out the back of the MEGA65 case. You can feed it out the cartridge port, or punch out one of the unused ports in the back case. Connect the other end to your PC.</p>
+</section>
+<section id="getting-the-software-tools">
+<h2>Getting the software tools<a class="headerlink" href="#getting-the-software-tools" title="Permalink to this headline">¶</a></h2>
+<p>On your PC, download the M65Connect app for Windows, Mac, or Linux, available from the Filehost. You can also use the <code class="docutils literal notranslate"><span class="pre">m65</span></code> and <code class="docutils literal notranslate"><span class="pre">m65_ftp</span></code> command line tools, available from <a class="reference external" href="https://github.com/MEGA65/mega65-tools/releases/tag/CI-latest">the mega65-tools Github repository</a>. If you’re interested in the debugging feature, download the M65 Debugger app from Filehost.</p>
+<p>See <a class="reference external" href="https://github.com/MEGA65/m65connect">the M65Connect README</a> and <a class="reference external" href="https://github.com/MEGA65/m65dbg">the m65dbg README</a> for more information on how to use these tools.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="using-disks.html" title="Previous document">Using disks</a>
+        </li>
+        <li>
+          <a href="joining-community.html" title="Next document">Joining the community</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the JTAG connection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#acquiring-a-jtag-adapter">Acquiring a JTAG adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-jtag-adapter">Installing the JTAG adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-software-tools">Getting the software tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="using-disks.html" title="previous chapter">Using disks</a></li>
+      <li>Next: <a href="joining-community.html" title="next chapter">Joining the community</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

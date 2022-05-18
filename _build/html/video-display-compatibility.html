@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Video display compatibility &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Known hardware issues" href="hardware-issues.html" />
+    <link rel="prev" title="Joining the community" href="joining-community.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="video-display-compatibility">
+<h1>Video display compatibility<a class="headerlink" href="#video-display-compatibility" title="Permalink to this headline">¶</a></h1>
+<p>The MEGA65 has two video outputs: one HDMI and one VGA.</p>
+<section id="hdmi-dvi">
+<h2>HDMI (DVI)<a class="headerlink" href="#hdmi-dvi" title="Permalink to this headline">¶</a></h2>
+<p>If you connect the HDMI output to a modern HDMI-capable monitor, you will have a good time. The MEGA65 expects a narrow aspect ratio, but you can usually adjust the aspect ratio on widescreen displays.</p>
+<p>These photos show the MEGA65 connected to a Dell UltraSharp 27 widescreen monitor configured to use a 4:3 aspect ratio in the display settings. (Use the buttons on the bottom of the monitor to navigate to the display settings menu.)</p>
+<p><img alt="MEGA65 connected to a Dell UltraSharp 27 set to 4:3 aspect ratio, showing BASIC" src="_images/display_hd_m65_43.jpeg" />
+<img alt="MEGA65 connected to a Dell UltraSharp 27 set to 4:3 aspect ratio, showing C64 mode" src="_images/display_hd_c64_43.jpeg" /></p>
+<p>Without setting the aspect ratio, most widescreen monitors will stretch the image horizontally to fit. This is undesirable in most cases, but I actually quite like how 80-column BASIC looks when stretched.</p>
+<p><img alt="MEGA65 connected to a Dell UltraSharp 27 set to wide aspect ratio, showing BASIC" src="_images/display_hd_m65_stretched.jpeg" />
+<img alt="MEGA65 connected to a Dell UltraSharp 27 set to wide aspect ratio, showing C64 mode" src="_images/display_hd_c64_stretched.jpeg" /></p>
+<p>Just for fun, here is what 80-column BASIC looks like stretched on a Dell 34” curved ultra-wide display:</p>
+<p><img alt="MEGA65 connected to a Dell UltraSharp 27 set to wide aspect ratio, showing BASIC" src="_images/display_34in_m65_stretched.jpeg" /></p>
+<p>If your HDMI display supports audio, enable “enhanced (with audio)” mode in the MEGA65 configuration. Otherwise set it to “DVI only (no audio).”</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Be sure to try “CRT emulation” mode in the MEGA65 configuration with a flat panel display to see if you like it.</p>
+</div>
+</section>
+<section id="vga">
+<h2>VGA<a class="headerlink" href="#vga" title="Permalink to this headline">¶</a></h2>
+<p>If you connect the VGA output to a vintage VGA CRT monitor, you will have a good time. The VGA signal and the expected aspect ratio go well together.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Be sure to <em>disable</em> CRT emulation in the MEGA65 configuration when using an actual CRT.</p>
+</div>
+</section>
+<section id="flat-panel-displays">
+<h2>4:3 flat panel displays<a class="headerlink" href="#flat-panel-displays" title="Permalink to this headline">¶</a></h2>
+<p>If you’re looking for the 4:3 aspect ratio of a vintage monitor that won’t distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with tradeoffs that depend on the model of monitor you find. Flat panel displays of the early 2000’s ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.</p>
+<p>I can’t possibly list every tradeoff for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20” flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65’s HDMI output to the DVI input. I also use a VGA cable to connect the MEGA65’s VGA output to the VGA input.</p>
+<p><img alt="MEGA65 connected to a Dell 2001FP 4:3 monitor" src="_images/display_2001fp_m65.jpeg" /></p>
+<p>Why use both HDMI and VGA with the same display? In the case of the 2001FP, I need both to work around issues with each mode:</p>
+<ul class="simple">
+<li><p>HDMI provides the highest quality display for regular use. With the current (as of this writing) MEGA65 core, some of the utility menus (configuration, core selection) fail to display through the 2001FP DVI input, but work just fine over VGA. This is not a problem for all HDMI output, it only affects the Dell 2001FP DVI input.</p></li>
+<li><p>To display VGA, the 2001FP must guess at the signal timing to convert it to the flat panel display. This results in periodic drops of pixel columns. I can adjust the display settings to shift which columns are dropped, but I can’t get it to show all columns, even with its automatic adjustment feature. It’s fine for the config menus, but a poor experience for regular use, especially the 80-column modes.</p></li>
+</ul>
+<p><img alt="The Dell 2001FP shows a quality image over DVI" src="_images/display_2001fp_hd_noartifact.jpeg" />
+<img alt="The Dell 2001FP drops pixel columns from the VGA signal" src="_images/display_2001fp_vga_artifact.jpeg" /></p>
+<p>With both video outputs connected, I can switch the monitor input as needed without too much hassle.</p>
+<p>The HDMI-to-DVI cable does not carry the HDMI audio signal, and the Dell 2001FP doesn’t have built-in speakers anyway. I use a Dell soundbar and a separate speaker connection to the MEGA65 audio jack.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want a flexible vintage display that works well with vintage computers that use analog RGB signals such as the Amiga, check out <a class="reference external" href="http://15khz.wikidot.com/">15khz.wikidot.com</a> for recommendations. The Dell 2001FP almost makes the cut: older versions support a 15 kHz signal, newer ones (like mine, alas) do not. I use the 2001FP with my Commodore 64C and an S-Video cable with great success.</p>
+</div>
+</section>
+<section id="video-capture-cards">
+<h2>Video capture cards<a class="headerlink" href="#video-capture-cards" title="Permalink to this headline">¶</a></h2>
+<p>One advantage to having two simultaneous video outputs is you can send one to a monitor and another to a device such as a video capture card. I used VGA to the Dell and HDMI to an <a class="reference external" href="https://www.elgato.com/en/cam-link-4k">Elgato Camlink</a> to take the screenshots in this Guide.</p>
+<p>I was not able to capture screenshots of the C64 core this way. This is likely because the C64 core currently only supports PAL displays.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have specific results for a popular flat screen display that you believe are worth sharing, <a class="reference external" href="mailto:contact&#37;&#52;&#48;dansanderson&#46;com">let me know!</a></p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="joining-community.html" title="Previous document">Joining the community</a>
+        </li>
+        <li>
+          <a href="hardware-issues.html" title="Next document">Known hardware issues</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Video display compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hdmi-dvi">HDMI (DVI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vga">VGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flat-panel-displays">4:3 flat panel displays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-capture-cards">Video capture cards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="joining-community.html" title="previous chapter">Joining the community</a></li>
+      <li>Next: <a href="hardware-issues.html" title="next chapter">Known hardware issues</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

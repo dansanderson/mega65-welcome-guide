@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>MEGA65 Welcome Guide 2022 &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Welcome!" href="intro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mega65-welcome-guide-2022">
+<h1>MEGA65 Welcome Guide 2022<a class="headerlink" href="#mega65-welcome-guide-2022" title="Permalink to this headline">¶</a></h1>
+<p>Hello! You’ve reached the MEGA65 Welcome Guide 2022. This Guide is intended for new owners of the <a class="reference external" href="https://mega65.org/">MEGA65 personal computer</a>, specifically those that received their MEGA65 in the year 2022. It contains answers to common questions from early adopters not (yet) answered in the official documentation about the first production batch of hardware and factory-installed software, and recommends best practices for continued enjoyment of your new computer. It was written as an unofficial supplement to the MEGA65 User’s Guide included with the computer.</p>
+<p>This is meant to be a <em>short-lived</em> living document. Eventually, official documentation updates and future manufacturing runs will make this Guide obsolete. If you’re one of the first 1,400 people to purchase a MEGA65, this Guide will help you get up and running.</p>
+<p>Oh hi, I’m <a class="reference external" href="https://www.dansanderson.com/">Dan</a>, known as dddaaannn#7325 in <a class="reference external" href="https://discord.gg/5DNvESf">the MEGA65 Discord</a>. If you notice anything in this guide that needs updating, or if you discover a topic not covered by the official manual that you feel new owners should know about, please <a class="reference external" href="https://github.com/dansanderson/mega65-welcome-guide/issues">report an issue</a>. Thank you!</p>
+<img alt="_images/mega65_top.jpeg" src="_images/mega65_top.jpeg" />
+<p>The contents of this Welcome Guide:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#why-a-welcome-guide">Why a Welcome Guide?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#connecting-peripherals">Connecting peripherals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#on-boarding">On-boarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#the-reset-button">The reset button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#demonstration-menu">Demonstration menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#the-freeze-menu">The Freeze menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#disk-images">Disk images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#loading-and-running-a-program-from-disk">Loading and running a program from disk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#commodore-64-mode">Commodore 64 mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#other-bundled-software">Other bundled software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time-to-play.html#configuring-your-mega65">Configuring your MEGA65</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#sd-memory-cards">SD memory cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#cores">Cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#roms">ROMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="concepts.html#the-hypervisor">The Hypervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="determining-versions.html#the-mega65-core-version">The MEGA65 core version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="determining-versions.html#the-mega65-rom-version">The MEGA65 ROM version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="determining-versions.html#hypervisor-and-freeze-versions">Hypervisor and Freeze versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-microsd-card.html#preparing-the-microsd-memory-card">Preparing the microSD memory card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-microsd-card.html#updating-the-sd-card-essentials">Updating the SD card essentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-microsd-card.html#updating-the-rom">Updating the ROM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setting-up-microsd-card.html#optional-reinstalling-bundled-software">Optional: reinstalling bundled software</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upgrading-core.html#symptoms-that-you-re-using-the-wrong-mega65-core">Symptoms that you’re using the wrong MEGA65 core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading-core.html#the-c64-core">The C64 core</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using-disks.html#listing-a-disk-directory">Listing a disk directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-disks.html#using-the-sd-card-from-basic">Using the SD card from BASIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-disks.html#using-3-1-2-floppy-disks">Using 3-1/2” floppy disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-disks.html#using-an-external-disk-drive">Using an external disk drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-disks.html#converting-a-d64-to-a-d81">Converting a D64 to a D81</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using-jtag.html#acquiring-a-jtag-adapter">Acquiring a JTAG adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-jtag.html#installing-the-jtag-adapter">Installing the JTAG adapter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-jtag.html#getting-the-software-tools">Getting the software tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="video-display-compatibility.html#hdmi-dvi">HDMI (DVI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video-display-compatibility.html#vga">VGA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video-display-compatibility.html#flat-panel-displays">4:3 flat panel displays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video-display-compatibility.html#video-capture-cards">Video capture cards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#the-real-time-clock-doesn-t-advance-the-time">The Real-Time Clock doesn’t advance the time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#case-fit-issues">Case fit issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#keyboard-slouching-and-sticking-help-key">Keyboard slouching and sticking Help key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#jammed-floppy-disk-pathway">Jammed floppy disk pathway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#c64-cartridge-and-peripheral-compatibility">C64 cartridge and peripheral compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hardware-issues.html#boot-failures-with-blinking-blue-led-lights">Boot failures with blinking blue LED lights</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="questions-and-answers.html#does-the-cartridge-port-work">Does the cartridge port work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions-and-answers.html#does-the-ethernet-port-do-anything">Does the ethernet port do anything?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+</div>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          <a href="intro.html" title="Next document">Welcome!</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="intro.html" title="next chapter">Welcome!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

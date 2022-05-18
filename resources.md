@@ -1,0 +1,28 @@
+# Resources
+
+There are substantial documentation, software, and community resources for the MEGA65, in various states of completion and freshness.
+
+While browsing available resources, keep in mind that there have been multiple iterations of the MEGA65 project leading up to the 2022 launch of the batch #1 hardware:
+
+- Some resources may refer to [the DevKit model](https://c65gs.blogspot.com/2020/06/pre-ordering-for-mega65-developers-kits.html), a pre-production version of the MEGA65 that sold 1,000 units (no longer available).
+- Others may refer to [the Nexys A7 FPGA board](https://www.stevencombs.com/mega65-nexys4-livestream), an alternate way to run the MEGA65 core and ROM.
+- Still others may refer to the [Xemu](https://github.lgb.hu/xemu/) emulator platform, which can [emulate a MEGA65](https://github.com/lgblgblgb/xemu/wiki/MEGA65-help) on a PC.
+
+The best way to get the latest information is from the official MEGA65 website, its documentation links, and the Filehost website. When browsing Filehost, use the ability to sort by date to find the newest files and articles, or sort by rating to find the most useful items.
+
+- [The Official MEGA65 website](https://mega65.org/)
+- [The MEGA65 Filehost](https://files.mega65.org/html/main.php)
+  - [Filehost Articles](https://files.mega65.org/html/main.php?ar=3c388c8c-bc3f-461b-84bb-e12dfd479ae2)
+- [The MEGA65 Forum](https://www.forum64.de/)
+- [The MEGA65 Discord](https://discord.gg/5DNvESf)
+- [Questions and answers for MEGA65 starters](https://files.mega65.org?ar=1a47ec2c-1b56-4bd9-8d89-5b12ab8b72ae)
+- [AmigaLove: Mega65 Quick Start Guide](https://www.amigalove.com/viewtopic.php?f=13&p=14805)
+- [retroCombs website](https://www.stevencombs.com/) and [YouTube channel](https://www.youtube.com/playlist?list=PLRVBh2hjFTomsrJnQdqFmoZUdT6qHocpo)
+- [Shallan YouTube channel](https://www.youtube.com/c/Shallan64?app=desktop)
+- [MEGA65 Github repositories](https://github.com/mega65)
+
+---
+
+Thank you for reading this Welcome Guide! If you have feedback on how I can make this Guide better, or just want to say hi, please [report an issue](https://github.com/dansanderson/mega65-welcome-guide/issues), [email me](mailto:contact@dansanderson.com) (I'm Dan), or DM dddaaannn#7325 in [the MEGA65 Discord](https://discord.gg/5DNvESf).
+
+Welcome to the world of personal computing. Enjoy our MEGA65!

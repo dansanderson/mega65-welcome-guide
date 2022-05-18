@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Determining the versions of things &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Opening the MEGA65 case" href="opening-the-case.html" />
+    <link rel="prev" title="Important concepts" href="concepts.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="determining-the-versions-of-things">
+<h1>Determining the versions of things<a class="headerlink" href="#determining-the-versions-of-things" title="Permalink to this headline">¶</a></h1>
+<p>The MEGA65 core (which includes the Hypervisor), ROM, and Freeze menu are all upgradable components. It is often useful to know which versions of these components are currently operating your machine.</p>
+<section id="the-mega65-core-version">
+<h2>The MEGA65 core version<a class="headerlink" href="#the-mega65-core-version" title="Permalink to this headline">¶</a></h2>
+<p>One way to determine which version of the MEGA65 core is installed is to turn off the computer, then hold the Ctrl key while turning on the computer to pause the Hypervisor screen.</p>
+<p><img alt="Hypervisor startup paused with Ctrl key" src="_images/hypervisor_paused.jpg" /></p>
+<p>The MEGA65 factory core shipped with batch #1 in 2022 has this version number:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT</span> <span class="n">commit</span><span class="p">:</span> <span class="n">master</span><span class="p">,</span><span class="mf">20220109.11</span><span class="p">,</span><span class="mi">1586</span><span class="n">ad4</span>
+</pre></div>
+</div>
+<p>(Or just <code class="docutils literal notranslate"><span class="pre">1586ad4</span></code>.) At the time I wrote this, the latest available version of the MEGA65 core is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GIT</span> <span class="n">commit</span><span class="p">:</span> <span class="n">development</span><span class="p">,</span><span class="mf">20220506.10</span><span class="p">,</span><span class="n">bdeeb15</span>
+</pre></div>
+</div>
+<p>(Or just <code class="docutils literal notranslate"><span class="pre">bdeeb15</span></code>.)</p>
+<p>Alternatively, you can see the version of the MEGA65 core while the computer is running. At any time with the MEGA65 core running, hold the Mega key (the fancy M in the lower left of your keyboard) and press Tab. Welcome to “Matrix mode!” This is a special mode that lets you tweak the memory of the computer while it is running, among other things. It also displays the version of the running MEGA65 core. Press Mega+Tab again to exit.</p>
+</section>
+<section id="the-mega65-rom-version">
+<h2>The MEGA65 ROM version<a class="headerlink" href="#the-mega65-rom-version" title="Permalink to this headline">¶</a></h2>
+<p>You can determine the version of the MEGA65 ROM that is running from the BASIC title screen.</p>
+<p><img alt="ROM version from the BASIC screen, 920287" src="_images/basic_920287_number.jpg" /></p>
+<p>The original Commodore 65 ROM data used a number resembling a date to represent the software version, such as <code class="docutils literal notranslate"><span class="pre">910828</span></code> or <code class="docutils literal notranslate"><span class="pre">911001</span></code>. The MEGA65 enhanced versions of the original ROMs continues the numbering from <code class="docutils literal notranslate"><span class="pre">92xxxx</span></code>.</p>
+<p>The MEGA65 ROM that shipped with batch #1 in 2022 has this version number:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">920287</span>
+</pre></div>
+</div>
+<p>At the time I wrote this, the latest available version of the MEGA65 ROM is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">920349</span>
+</pre></div>
+</div>
+</section>
+<section id="hypervisor-and-freeze-versions">
+<h2>Hypervisor and Freeze versions<a class="headerlink" href="#hypervisor-and-freeze-versions" title="Permalink to this headline">¶</a></h2>
+<p>The Hypervisor and Freeze functions have their own version numbers. They are displayed on their respective screens.</p>
+<p>To see the Hypervisor screen, hold Ctrl while turning on the computer. As of core <code class="docutils literal notranslate"><span class="pre">bdeeb15</span></code>, the Hypervisor version is v00.16. The Hypervisor is built into the core.</p>
+<p>To see the Freeze screen, simply open the menu: hole Restore for a second, then release. As of core <code class="docutils literal notranslate"><span class="pre">bdeeb15</span></code>, the Freeze menu version is v0.1.4. It is possible to upgrade the Freeze menu separately from the core with a file on the SD card.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A fix to the issue with the Freeze menu appearing too low on the screen was released in a newer version, but the Freeze menu version number was not incremented. When we upgrade later in this Guide, the Freeze menu version number will not change.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="concepts.html" title="Previous document">Important concepts</a>
+        </li>
+        <li>
+          <a href="opening-the-case.html" title="Next document">Opening the MEGA65 case</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Determining the versions of things</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-mega65-core-version">The MEGA65 core version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-mega65-rom-version">The MEGA65 ROM version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hypervisor-and-freeze-versions">Hypervisor and Freeze versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="concepts.html" title="previous chapter">Important concepts</a></li>
+      <li>Next: <a href="opening-the-case.html" title="next chapter">Opening the MEGA65 case</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

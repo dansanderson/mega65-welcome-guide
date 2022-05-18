@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Using disks &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using the JTAG connection" href="using-jtag.html" />
+    <link rel="prev" title="Updating the core firmware" href="upgrading-core.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="using-disks">
+<h1>Using disks<a class="headerlink" href="#using-disks" title="Permalink to this headline">¶</a></h1>
+<p>We discussed using D81 disk images back in <a class="reference internal" href="time-to-play.html#disk-images"><span class="std std-ref">Disk images</span></a>, including:</p>
+<ul class="simple">
+<li><p>How to browse D81 disk images using the Freeze menu</p></li>
+<li><p>How to mount a D81 disk image on drive 0 device 8 using the Freeze menu</p></li>
+<li><p>How to get a directory listing with the <code class="docutils literal notranslate"><span class="pre">DIR</span></code> command</p></li>
+<li><p>How to load and run a program on the disk using the <code class="docutils literal notranslate"><span class="pre">LOAD</span></code> and <code class="docutils literal notranslate"><span class="pre">RUN</span></code> commands</p></li>
+<li><p>How to use the <code class="docutils literal notranslate"><span class="pre">/</span></code> shortcut to load a file within a directory listing</p></li>
+</ul>
+<p>Disk-related improvements have been advancing quickly, and the latest ROM includes some useful features not mentioned in the printed manual.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Be sure that you have the latest ROM version before trying some of these features.</p>
+</div>
+<section id="listing-a-disk-directory">
+<h2>Listing a disk directory<a class="headerlink" href="#listing-a-disk-directory" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">DIR</span></code> command lists all of the files on a given disk. Without arguments, it lists the files on the disk in device 8:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DIR</span>
+</pre></div>
+</div>
+<p>If there are too many files than fit on a single screen, the list will scroll off and you will only see the bottom of the list. You can use the <code class="docutils literal notranslate"><span class="pre">W</span></code> argument to tell <code class="docutils literal notranslate"><span class="pre">DIR</span></code> to show the listing in multiple columns, and to wait for a keypress to show more pages. (Try this with the <code class="docutils literal notranslate"><span class="pre">MEGA65.D81</span></code> disk.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DIR</span> <span class="n">W</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For more on the <code class="docutils literal notranslate"><span class="pre">DIR</span></code> command, see the User’s Guide, page 106.</p>
+</div>
+<p>One disadvantage of the <code class="docutils literal notranslate"><span class="pre">W</span></code> flag is that you cannot use the <code class="docutils literal notranslate"><span class="pre">/</span></code> shortcut to load a program into memory. There is another way to view the complete directory listing and still use this shortcut: load the listing into BASIC memory. Commodore 64 users are familiar with <code class="docutils literal notranslate"><span class="pre">LOAD</span> <span class="pre">&quot;$&quot;,8</span></code> followed by <code class="docutils literal notranslate"><span class="pre">LIST</span></code>. To do this in a nicer way with MEGA65:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DLOAD</span> <span class="s2">&quot;$$&quot;</span>
+<span class="n">LIST</span>
+</pre></div>
+</div>
+<p>This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC’s listing viewer to scroll up to previous lines. Use the F9 and F11 keys to traverse the listing, then cursor up to a program you want to load and use the <code class="docutils literal notranslate"><span class="pre">/</span></code> shortcut.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Loading the directory listing with <code class="docutils literal notranslate"><span class="pre">DLOAD</span></code> overwrites any BASIC program that resides in memory. The <code class="docutils literal notranslate"><span class="pre">DIR</span></code> command does not overwrite BASIC memory.</p>
+</div>
+</section>
+<section id="using-the-sd-card-from-basic">
+<h2>Using the SD card from BASIC<a class="headerlink" href="#using-the-sd-card-from-basic" title="Permalink to this headline">¶</a></h2>
+<p>Recent improvements added the ability to manipulate disk images on the SD card without using the Freeze menu. In general, device <code class="docutils literal notranslate"><span class="pre">U12</span></code> is considered the SD card.</p>
+<p>To list all of the files on the SD card:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DIR</span> <span class="n">U12</span>
+</pre></div>
+</div>
+<p>This does not yet support other features of the <code class="docutils literal notranslate"><span class="pre">DIR</span></code> command, such as filters or paging.</p>
+<p>To mount a D81 disk image from the SD card directly from BASIC:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MOUNT</span> <span class="s2">&quot;DISKNAME.D81&quot;</span>
+</pre></div>
+</div>
+<p>By default, this mounts the disk image to device 8 (<code class="docutils literal notranslate"><span class="pre">U8</span></code>). To mount to device 9, add an argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MOUNT</span> <span class="s2">&quot;DISKNAME.D81&quot;</span><span class="p">,</span><span class="n">U9</span>
+</pre></div>
+</div>
+<p>You can load a program file (<code class="docutils literal notranslate"><span class="pre">.PRG</span></code>) directly from the SD card, without having to create a D81 disk image. To do this, use the <code class="docutils literal notranslate"><span class="pre">DLOAD</span></code> command with unit <code class="docutils literal notranslate"><span class="pre">U12</span></code>, and be sure to include the <code class="docutils literal notranslate"><span class="pre">.PRG</span></code> filename extension:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DLOAD</span> <span class="s2">&quot;FILENAME.PRG&quot;</span><span class="p">,</span><span class="n">U12</span>
+</pre></div>
+</div>
+<p>(Loading a PRG file does not work with the <code class="docutils literal notranslate"><span class="pre">LOAD</span></code> command.)</p>
+</section>
+<section id="using-3-1-2-floppy-disks">
+<h2>Using 3-1/2” floppy disks<a class="headerlink" href="#using-3-1-2-floppy-disks" title="Permalink to this headline">¶</a></h2>
+<p>Your MEGA65 includes a built-in 3-1/2” floppy disk drive for a complete retro experience.</p>
+<p>If you don’t have 3-1/2” floppy disks lying around, you can still buy them new-old-stock at a reasonable price. I buy mine from <a class="reference external" href="https://www.floppydisk.com/">FloppyDisk.com</a>. You can also find refurbished floppy disks on <a class="reference external" href="https://www.ebay.com/">eBay</a>.</p>
+<p>The MEGA65 floppy drive supports both double density (DD) and high density (HD) disks. <em>However,</em> as of this writing, the ability to use the larger capacity of HD disks is still in development. To use an HD disk with the MEGA65, you must apply non-transparent tape over the hole in the upper left (as shown). This convinces the floppy drive to treat the HD disk as if it were DD.</p>
+<p><img alt="An HD disk with masking tape over the HD indicator hole" src="_images/hdfloppy.jpeg" /></p>
+<p>Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold Restore, then release), then select a drive number (<code class="docutils literal notranslate"><span class="pre">0</span></code>). In the list of options that includes the D81 disk images, select <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">INTERNAL</span> <span class="pre">3.5&quot;</span> <span class="pre">-</span></code>. Exit the Freeze menu (resume or reset).</p>
+<p>Insert a floppy disk in the drive. If you have not used this disk with the MEGA65 before, it needs to be formatted. This erases all data on the disk! Use the <code class="docutils literal notranslate"><span class="pre">HEADER</span></code> command, providing a disk name in quotes, and a two digit disk ID number preceded by the letter <code class="docutils literal notranslate"><span class="pre">I</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HEADER</span> <span class="s2">&quot;WORK FILES&quot;</span><span class="p">,</span><span class="n">I01</span>
+</pre></div>
+</div>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">YES</span></code> at the prompt to confirm. Formatting a disk for the first time takes a minute or so.</p>
+<p>This command defaults to drive 0, unit 8. If you wish to format the disk mounted as drive 1, provide additional arguments to ensure it formats the correct disk.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the <code class="docutils literal notranslate"><span class="pre">HEADER</span></code> command in the User’s Guide, page 135.</p>
+</div>
+<p>You can now use the floppy disk like you would a D81 disk image. Some things to try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DIR</span>
+
+<span class="mi">10</span> <span class="n">PRINT</span> <span class="s2">&quot;HARD AT WORK&quot;</span>
+<span class="mi">20</span> <span class="n">GOTO</span> <span class="mi">10</span>
+<span class="n">SAVE</span> <span class="s2">&quot;HARDLYWORKING&quot;</span>
+
+<span class="n">NEW</span>
+<span class="n">DIR</span>
+<span class="n">LOAD</span> <span class="s2">&quot;HARDLYWORKING&quot;</span>
+<span class="n">LIST</span>
+<span class="n">RUN</span>
+</pre></div>
+</div>
+</section>
+<section id="using-an-external-disk-drive">
+<h2>Using an external disk drive<a class="headerlink" href="#using-an-external-disk-drive" title="Permalink to this headline">¶</a></h2>
+<p>Your MEGA65 has a 6-pin IEC serial port for connecting vintage Commodore disk drives.</p>
+<p>Commodore disk drives use a serial protocol that allows multiple devices to be connected in a chain. Each device must have a unique device ID, such as 8 or 9. These old devices did not have a way to assign device IDs when connected in a chain. Instead, you use switches on the device itself to tell the drive its device ID.</p>
+<p>By default, the MEGA65’s virtual drives use device IDs 8 and 9. You can use the Freeze menu to change these device IDs, such that you can use an external drive that is configured for those IDs. Open the Freeze menu, then press <code class="docutils literal notranslate"><span class="pre">8</span></code> to toggle the device ID for drive 0, or <code class="docutils literal notranslate"><span class="pre">9</span></code> to toggle the device ID for drive 1.</p>
+<p>Any device that supports the disk serial protocol is expected to work, including new disk devices such as the <a class="reference external" href="https://cbm-pi1541.firebaseapp.com/">Pi1541</a>. Notice that some such devices like the SD2IEC need the C64 tape port to supply power to the device, and the MEGA65 has no such port.</p>
+</section>
+<section id="converting-a-d64-to-a-d81">
+<h2>Converting a D64 to a D81<a class="headerlink" href="#converting-a-d64-to-a-d81" title="Permalink to this headline">¶</a></h2>
+<p>You can find almost every game and application written for the Commodore 64 online in the form of disk images. However, these disk images are typically in the D64 format, which represents a 5-1/4” floppy disk. If you want to try running a C64 application on your Mega65 in its C64 mode, you must first convert the D64 image to a D81 image.</p>
+<p>One way to do this is with the <code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> command line tool. This requires your PC (Windows, Mac, or Linux) and familiarity with the command line (Terminal).</p>
+<p><code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> is only available as source code, so you will need the ability to compile software on your PC. Linux users typically already have compilation tools installed. Mac users can install such tools with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>To build the <code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> tool:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/cbmconvert-2.1.2.tar.gz">Download cbmconvert-2.1.2.tar.gz</a>.</p></li>
+<li><p>Expand the archive: <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">xvfz</span> <span class="pre">cbmconvert-2.1.2.tar.gz</span></code></p></li>
+<li><p>Change to the expanded directory: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">cbmconvert-2.1.2</span></code></p></li>
+<li><p>Build the tool: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">Makefile.unix</span></code></p>
+<ol class="arabic simple">
+<li><p>Windows users with a POSIX-compliant build environment, use <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">-f</span> <span class="pre">Makefile.win32</span></code></p></li>
+</ol>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> tool is now present in the directory. You can put this directory on your command path, copy the <code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> file to somewhere on your path, or use the path to this directory when running the tool.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">cbmconvert</span></code> to convert a D64 file to a D81 file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cbmconvert</span> <span class="o">-</span><span class="n">v2</span> <span class="o">-</span><span class="n">d</span> <span class="n">filename</span><span class="o">.</span><span class="n">d64</span> <span class="o">-</span><span class="n">D8</span> <span class="n">filename</span><span class="o">.</span><span class="n">d81</span>
+</pre></div>
+</div>
+<p>Copy the new D81 file to your microSD card, then return the card to your MEGA65. Open the Freeze menu, then select the D81 image for drive 8. At the MEGA65 BASIC prompt, enter <code class="docutils literal notranslate"><span class="pre">GO</span> <span class="pre">64</span></code> and type <code class="docutils literal notranslate"><span class="pre">YES</span></code> to confirm. The disk is now available on drive 8 from C64 mode.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all D64 disks can be converted to D81, especially software with copy protection.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>C64 mode is known to not be compatible with all C64 software. If you are experiencing difficulty, try using the Freeze menu to switch from NTSC to PAL video mode or vice-versa (assuming you have a monitor that can show at least partial video with the other mode).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Remember that the C64 core supports D64 disk images directly without needing to convert them to D81 images. See <a class="reference internal" href="upgrading-core.html#the-c64-core"><span class="std std-ref">The C64 core</span></a>.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="upgrading-core.html" title="Previous document">Updating the core firmware</a>
+        </li>
+        <li>
+          <a href="using-jtag.html" title="Next document">Using the JTAG connection</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using disks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#listing-a-disk-directory">Listing a disk directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-sd-card-from-basic">Using the SD card from BASIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-3-1-2-floppy-disks">Using 3-1/2” floppy disks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-an-external-disk-drive">Using an external disk drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#converting-a-d64-to-a-d81">Converting a D64 to a D81</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="upgrading-core.html" title="previous chapter">Updating the core firmware</a></li>
+      <li>Next: <a href="using-jtag.html" title="next chapter">Using the JTAG connection</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Important concepts &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Determining the versions of things" href="determining-versions.html" />
+    <link rel="prev" title="Try this first!" href="time-to-play.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="important-concepts">
+<h1>Important concepts<a class="headerlink" href="#important-concepts" title="Permalink to this headline">¶</a></h1>
+<p>Now that you’ve had a taste of what the MEGA65 can do, it’s time to prepare your computer for long term use. But first, let’s discuss some important concepts of how the MEGA65 works.</p>
+<section id="sd-memory-cards">
+<h2>SD memory cards<a class="headerlink" href="#sd-memory-cards" title="Permalink to this headline">¶</a></h2>
+<p>The MEGA65 uses an SD memory card for its primary data storage. There are <em>two</em> SD card slots: a full-size SD card slot inside the machine, and a microSD card slot accessible on the back of the machine. The MEGA65 comes bundled with an SD card installed in the internal slot.</p>
+<p><img alt="A microSD card and a full-size SD card" src="_images/sdcards_1.jpeg" /></p>
+<p>MEGA65 only uses one SD memory card at a time. If there is a microSD card in the external slot, it ignores the full-size SD card in the internal slot. The SD card contains the operating system software (“ROM”), firmware upgrades (“cores”), and D81 disk images.</p>
+<p>This Welcome Guide recommends installing a microSD card in the external slot, and leaving the internal card with its factory-installed data intact. Following this Guide, you will set up a microSD card with all of the latest versions of the software. You will use this card to transfer software and data between MEGA65 and your PC.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The User Guide’s explanation of SD cards begins on page 23.</p>
+</div>
+</section>
+<section id="cores">
+<h2>Cores<a class="headerlink" href="#cores" title="Permalink to this headline">¶</a></h2>
+<p>The MEGA65 is powered by a Field Programmable Gate Array (FPGA). An FPGA is a special kind of chip that can be programmed to perform the functions of most any integrated circuit (IC). Like an IC, it is fast, and interacts electronically with the rest of the hardware. Unlike an IC, it can be reprogrammed with new logic at any time. MEGA65’s FPGA is programmed to behave like the complete collection of ICs you would find in a Commodore 65: the CPU, video and sound chips, and so on.</p>
+<p>The MEGA65 team continues to make improvements to this <em>firmware</em>, and you will want to upgrade your machine with new firmware on a regular basis. Other contributors are developing alternate FPGA programming to simulate other computers, such as a Commodore 64.</p>
+<p>To make managing multiple sets of firmware easy, MEGA65 describes each set as a <em>core</em>. You will download a core data file (described in the manual as a <em>bitstream</em>), copy the file to the microSD card, and follow a procedure to install the core in one of seven user-accessible slots. You can access a menu to tell MEGA65 which core to use.</p>
+<p>The MEGA65 always retains a copy of its original factory core (in “slot 0”). If something goes wrong while updating another core, you can always go back to the original version.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This Welcome Guide will describe how to upgrade the MEGA65 core to the latest version. For more general information about cores, see the User’s Guide, chapter 6, starting page 47.</p>
+</div>
+</section>
+<section id="roms">
+<h2>ROMs<a class="headerlink" href="#roms" title="Permalink to this headline">¶</a></h2>
+<p>While the core recreates the hardware of the Commodore 65, the <em>ROM</em> recreates the built-in software of the Commodore 65. This software interfaces with the hardware and provides built-in functionality like BASIC programming.</p>
+<p>The original Commodore 65 kept its software on a physical Read-Only Memory (ROM) chip. With MEGA65, this software lives in a file on the SD card named <code class="docutils literal notranslate"><span class="pre">MEGA65.ROM</span></code>. MEGA65 loads this into memory when you turn it on. This file contains the original software from the C65 ROM chip licensed from the copyright holder, with many fixes and improvements. You can upgrade the operating system by replacing this file on the SD card.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Newer versions of the MEGA65 ROM require a newer version of the MEGA65 core. Following this Guide, you will update both the ROM and the core together.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The User Guide describes ROM files starting on page 26.</p>
+</div>
+</section>
+<section id="the-hypervisor">
+<h2>The Hypervisor<a class="headerlink" href="#the-hypervisor" title="Permalink to this headline">¶</a></h2>
+<p>The MEGA65 has additional built-in functionality not present in the original Commodore 65, such as for managing the startup sequence, SD cards, cores, and configuration. This operating system is known as the Hypervisor.</p>
+<p>You see the Hypervisor in action every time you turn on your MEGA65. Normally this screen displays some messages then quickly disappears. If you want to pause the Hypervisor to read these messages, hold the Ctrl key during startup. Release Ctrl to continue.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="time-to-play.html" title="Previous document">Try this first!</a>
+        </li>
+        <li>
+          <a href="determining-versions.html" title="Next document">Determining the versions of things</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Important concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sd-memory-cards">SD memory cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cores">Cores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roms">ROMs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-hypervisor">The Hypervisor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hardware-issues.html">Known hardware issues</a></li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="time-to-play.html" title="previous chapter">Try this first!</a></li>
+      <li>Next: <a href="determining-versions.html" title="next chapter">Determining the versions of things</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

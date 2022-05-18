@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Known hardware issues &#8212; MEGA65 Welcome Guide  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Questions and answers" href="questions-and-answers.html" />
+    <link rel="prev" title="Video display compatibility" href="video-display-compatibility.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="known-hardware-issues">
+<h1>Known hardware issues<a class="headerlink" href="#known-hardware-issues" title="Permalink to this headline">¶</a></h1>
+<p>Batch #1 of the MEGA65 hardware shipped to owners in May of 2022. Thanks to the tireless efforts of the MEGA65 team over many years, the result was of satisfyingly high quality, a device that recalls the vintage 8-bit machines of the 1990’s while retaining modern advantages like quality key switches.</p>
+<p>Being the first batch, some minor fit and finish issues were inevitable. Here are a few issues that were commonly reported in the community Discord, and some suggested remedies.</p>
+<section id="the-real-time-clock-doesn-t-advance-the-time">
+<h2>The Real-Time Clock doesn’t advance the time<a class="headerlink" href="#the-real-time-clock-doesn-t-advance-the-time" title="Permalink to this headline">¶</a></h2>
+<p>A significant percentage—but not all—of MEGA65 owners reported that the Real-Time Clock (RTC) stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.</p>
+<p>You can test this on your device in several ways:</p>
+<ul class="simple">
+<li><p>In the configuration utility, set the RTC time, then navigate to another submenu, then navigate back. With a working clock, the time value should have advanced by the correct number of seconds.</p></li>
+<li><p>From the demo disk, find the Vector Clock utility and run it. Check that it advances the time correctly. With a working clock, it should stay up to the correct time indefinitely.</p></li>
+<li><p>From BASIC, use this command to print the contents of the clock: <code class="docutils literal notranslate"><span class="pre">?TI$</span></code> (That’s a question mark, a synonym for <code class="docutils literal notranslate"><span class="pre">PRINT</span></code>, followed by the <code class="docutils literal notranslate"><span class="pre">TI$</span></code> string variable.) Do this multiple times, or write a program to print it repeatedly. With a working clock, the value should advance correctly.</p></li>
+</ul>
+<p>The MEGA65 team is working on diagnosing and fixing this issue. Join the Discord and check the <code class="docutils literal notranslate"><span class="pre">#announcements-only</span></code> channel for instructions on how to participate in the investigation.</p>
+</section>
+<section id="case-fit-issues">
+<h2>Case fit issues<a class="headerlink" href="#case-fit-issues" title="Permalink to this headline">¶</a></h2>
+<p>In some cases, the top and bottom pieces of the plastic case appear to not fit snugly. A common symptom is a noticeable slip when applying downward pressure to the back of the top case. One possible explanation is a mild manufacturing error from when the limited run cases were commissioned years ago.</p>
+<p>The plastic is bendable and with gentle pressure can be coerced into a tighter fit. We also discussed the use of a hair dryer to soften the plastic for gentle reforming. Be careful not to apply too much heat! Do <em>not</em> use a “heat gun,” and be judicious when using a hair dryer.</p>
+<p>The issue was noticed and will be fixed for future batches. See <a class="reference external" href="https://files.mega65.org?ar=0c0091d3-9b57-4c20-9ed7-5248aa161011">Issue: The upper case does not properly align with the lower case on the rear side</a>.</p>
+</section>
+<section id="keyboard-slouching-and-sticking-help-key">
+<h2>Keyboard slouching and sticking Help key<a class="headerlink" href="#keyboard-slouching-and-sticking-help-key" title="Permalink to this headline">¶</a></h2>
+<p>My MEGA65 arrived with its keyboard appearing to slouch below the top case a bit on the right-hand side, and others reported something similar. The spacebar appeared not vertically straight with the top case, and some people reported that the Help and F13 keys get caught on the top case when pressed.</p>
+<p>I was able to repair mine quite easily. I opened the case and noticed that the screws holding the keyboard to the top piece could be driven further. Careful not to apply too much pressure, I tightened these screws to match the depth of the screws on the lefthand side. This repaired the issue for me.</p>
+</section>
+<section id="jammed-floppy-disk-pathway">
+<h2>Jammed floppy disk pathway<a class="headerlink" href="#jammed-floppy-disk-pathway" title="Permalink to this headline">¶</a></h2>
+<p>Some owners reported that a floppy disk inserted into the disk drive gets stuck when ejected with the eject button. I did not personally encounter this issue, but others reported success repairing this issue by tightening or loosening screws, similar to the other case fit fixes.</p>
+<p>See <a class="reference external" href="https://files.mega65.org?ar=760a45f3-6c72-46c1-8534-59baad2661a0">Issue: Floppy drive eject button and/or inserting floppy disk stuck</a> for more advice.</p>
+</section>
+<section id="c64-cartridge-and-peripheral-compatibility">
+<h2>C64 cartridge and peripheral compatibility<a class="headerlink" href="#c64-cartridge-and-peripheral-compatibility" title="Permalink to this headline">¶</a></h2>
+<p>It is a known issue that not all Commodore 64 cartridges and peripherals work with the current MEGA65 hardware and ROM. The development team is working continuously to improve compatibility over time, well beyond the known-limited C64 compatibility of the original C65 prototype.</p>
+<p>Join the <code class="docutils literal notranslate"><span class="pre">#compatibility</span></code> channel on the Discord to discuss any compatibility issues you have found!</p>
+</section>
+<section id="boot-failures-with-blinking-blue-led-lights">
+<h2>Boot failures with blinking blue LED lights<a class="headerlink" href="#boot-failures-with-blinking-blue-led-lights" title="Permalink to this headline">¶</a></h2>
+<p>If the MEGA65 fails to boot its operating system, it will blink the LED lights on the unit in a blue color. This may indicate a problem with the core being loaded. Turn off the power, the hold the No Scroll key and turn it on to access the core selection menu. Select a known-good core, such as the factory-installed core in slot 0.</p>
+<p>I mostly see this when trying to boot the C64 core. In most cases, I just need to try again and the C64 core will boot successfully.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="video-display-compatibility.html" title="Previous document">Video display compatibility</a>
+        </li>
+        <li>
+          <a href="questions-and-answers.html" title="Next document">Questions and answers</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+              </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">MEGA65 Welcome Guide</a></h1>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=dansanderson&repo=mega65-welcome-guide&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="things-youll-need.html">Things you’ll need</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time-to-play.html">Try this first!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concepts.html">Important concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="determining-versions.html">Determining the versions of things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opening-the-case.html">Opening the MEGA65 case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accessing-filehost.html">Accessing the MEGA65 Filehost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting-up-microsd-card.html">Setting up the microSD card</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-core.html">Updating the core firmware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-disks.html">Using disks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-jtag.html">Using the JTAG connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="joining-community.html">Joining the community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-display-compatibility.html">Video display compatibility</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Known hardware issues</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-real-time-clock-doesn-t-advance-the-time">The Real-Time Clock doesn’t advance the time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#case-fit-issues">Case fit issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#keyboard-slouching-and-sticking-help-key">Keyboard slouching and sticking Help key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#jammed-floppy-disk-pathway">Jammed floppy disk pathway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#c64-cartridge-and-peripheral-compatibility">C64 cartridge and peripheral compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#boot-failures-with-blinking-blue-led-lights">Boot failures with blinking blue LED lights</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="questions-and-answers.html">Questions and answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="video-display-compatibility.html" title="previous chapter">Video display compatibility</a></li>
+      <li>Next: <a href="questions-and-answers.html" title="next chapter">Questions and answers</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Dan Sanderson.
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
