@@ -1,2 +1,3 @@
 _build
 _deploy.sh
+.DS_Store

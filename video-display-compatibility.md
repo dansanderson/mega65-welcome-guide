@@ -30,7 +30,7 @@ Be sure to try "CRT emulation" mode in the MEGA65 configuration with a flat pane
 
 If you connect the VGA output to a vintage VGA CRT monitor, you will have a good time. The VGA signal and the expected aspect ratio go well together.
 
-% TODO: photo of VGA display
+![MEGA65 connected to an NEC VGA CRT monitor](photos/display_vga.png)
 
 ```{tip}
 Be sure to _disable_ CRT emulation in the MEGA65 configuration when using an actual CRT.
