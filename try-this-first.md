@@ -206,7 +206,7 @@ Don't miss the other D81 disk images included with the MEGA65:
 
 - `MEGA65.D81`: The original MEGA65 demo disk
 - `C64.D81`: A disk of C64 games and demos
-- `BASIC65.D81`: Example BASIC programs that demonstrate major BASIC commands
+- `BASIC65.D81`: Example BASIC programs that demonstrate major BASIC commands, from the User's Guide
 - `DEMOCOMP.D81`: Winners of the Shallan MEGA65 demo competition
 - `ELEVEN.D81`: The Eleven programming environment, a modern update to MEGA65 BASIC with a powerful development environment
 - `GEOS65.D81`: A version of the GEOS graphical operating system for the MEGA65; use this with a mouse

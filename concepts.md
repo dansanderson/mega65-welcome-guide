@@ -12,6 +12,16 @@ MEGA65 only uses one SD memory card at a time. If there is a microSD card in the
 
 I recommend installing a microSD card in the external slot, and leaving the internal card with its factory-installed data intact. Following this Guide, you will set up a microSD card with all of the latest versions of the software. You will use this card to transfer software and data between MEGA65 and your PC.
 
+```{caution}
+Many features of the MEGA65 expect short MS-DOS-style filenames for files on the SD card: a maximum of 8 characters, a dot, then a maximum of 3 characters (`myprogra.prg`).
+
+Some features will handle files with longer names, but just not display the full name in menus. The Freeze menu and core selection menu (discussed later) do this.
+
+Some features such as loading SD card files from BASIC (`DLOAD "MYPROGRA.PRG",U12`) will fail for files with longer names. The only solution is to rename the file to use a short name using your PC.
+
+(This does not apply to files on CBM disk images, which have their own unrelated limitations on names.)
+```
+
 ```{tip}
 The User Guide's explanation of SD cards begins on page 23.
 ```
