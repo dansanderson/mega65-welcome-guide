@@ -166,7 +166,7 @@ Not all D64 disks can be converted to D81, especially software with copy protect
 ```
 
 ```{note}
-C64 mode is known to not be compatible with all C64 software. If you are experiencing difficulty, try using the Freeze menu to switch from NTSC to PAL video mode or vice-versa (assuming you have a monitor that can show at least partial video with the other mode).
+C64 mode is known to not be compatible with all C64 software. If you are experiencing difficulty, try using the Freeze menu to switch from NTSC to PAL video mode or vice-versa (assuming you have a monitor that can show it).
 ```
 
 ```{tip}

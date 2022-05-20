@@ -62,9 +62,9 @@ If you want a flexible vintage display that works well with vintage computers th
 
 ## Video capture cards
 
-One advantage to having two simultaneous video outputs is you can send one to a monitor and another to a device such as a video capture card. I used VGA to the Dell and HDMI to an [Elgato Camlink](https://www.elgato.com/en/cam-link-4k) to take the screenshots in this Guide.
+One advantage to having two simultaneous video outputs is you can send one to a monitor and another to a device such as a video capture card. I used VGA to the Dell and HDMI to an [Elgato Camlink](https://www.elgato.com/en/cam-link-4k) to take the screenshots in this Guide. (You can also take screenshots with the M65Connect app and the JTAG connection. See {ref}`using-jtag:using the jtag connector`.)
 
-I was not able to capture screenshots of the C64 core this way. This is likely because the C64 core currently only supports PAL displays.
+I was not able to capture screenshots of the C64 core with the Camlink. The C64 core only knows how to simulate a PAL machine, and the Camlink apparently doesn't like whatever video signal it produces.
 
 ---
 

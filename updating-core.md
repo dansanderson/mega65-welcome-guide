@@ -6,7 +6,7 @@ A new version of the MEGA65 core has been released since the batch #1 MEGA65 was
 
 On the Filehost website in the Firmware category, locate and download "[mega65r3-dev.cor](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead)". Copy this file to the microSD card.
 
-Eject the microSD card from your PC and insert it into the MEGA65 external slot. Turn off the MEGA65 if necessary, then hold the No Scroll key (in the top row) and turn it on. This opens the core selection and installation menu.
+Eject the microSD card from your PC and insert it into the MEGA65 external slot. Make sure the MEGA65 is off, then hold the No Scroll key (in the top row) and turn it on. This opens the core selection and installation menu.
 
 ![The core menu, factory configuration](screenshots/cor_menu_empty.jpg)
 
@@ -44,7 +44,7 @@ The community has noticed a few common symptoms caused by older versions of the 
 
 ## The C64 core
 
-We mentioned that the MEGA65 can run other cores besides the one that causes your Mega to act like a Commodore 65. Today, there is one other core available that you can try: a Commodore 64.
+We mentioned that the MEGA65 can run other cores besides the one that causes your Mega to act like a Commodore 65. One such core is a Commodore 64.
 
 The C64 core is _not the same_ as the C65's Commodore 64 mode, the one you start by typing `GO 64` (see {ref}`try-this-first:commodore 64 mode`). The C64 core completely transforms your Mega into a Commodore 64, with no C65 or MEGA65 features.
 
@@ -63,3 +63,7 @@ To avoid cluttering your SD card with D64 images, you can use your PC to create 
 See the [Commodore 64 for MEGA65 manual](https://github.com/MJoergen/C64MEGA65/blob/V1/README.md) for more information.
 
 To return to the MEGA65 core in slot 1, turn off the machine, then turn it on again.
+
+```{tip}
+For information on other cores that work with the MEGA65, see [What are "alternative" MEGA65 cores?](https://sy2002.github.io/m65cores/). As of this writing, you can use alternate cores to convert your MEGA65 into a [ZX Spectrum](https://files.mega65.org?id=bdaeb7e0-9fc8-4185-99de-104d01229f27) or a [Game Boy Color](https://files.mega65.org/html/main.php?id=03b68172-d6ff-49f0-971e-15bea2c6ad9a)!
+```

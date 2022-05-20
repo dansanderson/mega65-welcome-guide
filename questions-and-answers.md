@@ -14,4 +14,6 @@ The C64 core does not yet support the cartridge port, as of this writing. Cartri
 
 ## Does the ethernet port do anything?
 
-Not yet, but there is software in active development to make good use of it. The MAC address setting in the configuration utility is for future use. Stay tuned!
+The ethernet port does not yet do things most people would want, such as connect to the Internet or download files. For now it is mostly used for low-level testing and troubleshooting. (See {ref}`using-jtag:the m65 command line tool`, if you dare.)
+
+There is software in active development to make good use of an ethernet connection. Stay tuned!

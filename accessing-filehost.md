@@ -8,7 +8,7 @@ Most files are publicly available, but a few important files require an account 
 
 To create and account and register your MEGA65:
 
-1. Visit the Filehost website: [https://files.mega65.org/]
+1. Visit the Filehost website: [files.mega65.org](https://files.mega65.org/)
 2. Click "Sign up" and complete the prompts. If you already have an account, click "Login."
 3. Once you are signed in, click the person icon in the upper right (where the sign up/login buttons were) to open the menu, then select Redeem Code.
 4. In the dialog that opens, enter the nine-character registration code that was included with your MEGA65 on a piece of paper. It looks something like `123-ABC-456`.

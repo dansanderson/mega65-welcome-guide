@@ -184,9 +184,11 @@ MEGA65 includes a D81 disk image with C64 games and demos, named `C64.D81`. Use 
 ```
 LOAD "$",8
 LIST
-LOAD "PROGRAM",8,1
+LOAD "DIGILOI",8
 RUN
 ```
+
+Some of the programs on the `C64.D81` disk only work with the PAL video setting. If your monitor supports it, change this setting in the Freeze menu.
 
 ```{note}
 MEGA65 currently only supports D81 disk images. Support for the more common `D64` format that represents a Commodore 64 5-1/4" floppy disk may be added in a future update.

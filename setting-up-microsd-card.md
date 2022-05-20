@@ -42,12 +42,16 @@ Remove the microSD card from MEGA65, then insert it in your PC's card reader. Co
 
 The SD card essentials archive includes MEGA65 ROM files, but these might be out of date. Just to be sure, let's grab the absolute latest ROM from Filehost.
 
-Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920350.BIN`. The number in the filename is the ROM version number for this ROM. (Yours may be newer than the example in this guide. It gets updated frequently.)
+Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920350.BIN`. The number in the filename is the version number for this ROM. (Yours may be newer than the example in this guide. It gets updated frequently.)
 
 Rename the ROM file to `MEGA65.ROM`. Copy it to the microSD card, replacing the file that is already there.
 
 ```{note}
 If you're using a Mac, the Finder can sometimes be defensive about changing the filename extension when renaming a file. Click on the desktop, then open the Finder menu, Preferences... Under the Advanced tab, make sure "Show all filename extensions" is checked. Without this, it is possible to accidentally rename `920349.BIN` to `MEGA65.ROM.BIN` and not notice. The correct name is `MEGA65.ROM`.
+```
+
+```{tip}
+You can keep multiple versions of the MEGA65 ROM on your SD card and switch between them. By default, MEGA65 will boot using `MEGA65.ROM`. If you have alternate ROMs on the SD card named `MEGA65<#>.ROM` where `<#>` is a single digit number (for example, `MEGA651.ROM`), you can hold down the corresponding number key (for example, `1`) during start-up to select the alternate ROM.
 ```
 
 ## Optional: reinstalling bundled software
