@@ -23,6 +23,10 @@ The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE079
 ![XMOD FTDI JTAG Adapter TE0790-03 in its box](photos/jtag_box.jpeg)
 ![XMOD FTDI JTAG Adapter TE0790-03 out of its box](photos/jtag_unit.jpeg)
 
+You can also use a more common USB UART adapter for most of the purposes described below (sending files and commands). The adapter _must_ output 3.3 volts, _not_ 5 volts. Test your adapter with a volt meter before using. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba) for instructions on how to wire a UART to the JTAG connector pins.
+
+Photos below show how to connect the TE0790-03 JTAG adapter.
+
 ## Installing the JTAG adapter
 
 You will have to open the MEGA65 case to connect the adapter to the 12-pin JTAG connector on the main board, in the back right corner. (See {ref}`opening-the-case:opening the mega65 case` for an annotated photo of the main board.) The adapter connects with the mini-USB connector facing to the right.

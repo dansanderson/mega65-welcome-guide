@@ -1,10 +1,10 @@
 # Video display compatibility
 
-The MEGA65 has two video outputs: one HDMI and one VGA. They mostly work as you would expect, though it may take some fiddling to display the MEGA65's 4:3 aspect ratio image correctly. Some vintage 4:3 displays have caveats.
+The MEGA65 has two video outputs: one HDMI and one VGA. They mostly work as you would expect, though it may take some fiddling to display the MEGA65 image in a proper aspect ratio. Some vintage displays have caveats.
 
 ## HDMI (DVI)
 
-If you connect the HDMI output to a modern HDMI-capable monitor, you will have a good time. The MEGA65 expects a narrow aspect ratio, but you can usually adjust the aspect ratio on widescreen displays.
+If you connect the HDMI output to a modern HDMI-capable monitor, you will have a good time. The MEGA65 assumes a narrow 4:3 aspect ratio, but you can usually adjust the aspect ratio on widescreen displays.
 
 These photos show the MEGA65 connected to a Dell UltraSharp 27 widescreen monitor configured to use a 4:3 aspect ratio in the display settings. (Use the buttons on the bottom of the monitor to navigate to the display settings menu.)
 
@@ -28,7 +28,7 @@ Be sure to try "CRT emulation" mode in the MEGA65 configuration with a flat pane
 
 ## VGA
 
-If you connect the VGA output to a vintage VGA CRT monitor, you will have a good time. The VGA signal and the expected aspect ratio go well together.
+If you connect the VGA output to a vintage VGA CRT monitor, you will have a good time. The VGA signal and the expected aspect ratio go well together. The MEGA65 outputs a VGA image with a 31 kHz horizontal scan rate.
 
 ![MEGA65 connected to an NEC VGA CRT monitor](photos/display_vga.png)
 
@@ -65,6 +65,18 @@ If you want a flexible vintage display that works well with vintage computers th
 One advantage to having two simultaneous video outputs is you can send one to a monitor and another to a device such as a video capture card. I used VGA to the Dell and HDMI to an [Elgato Camlink](https://www.elgato.com/en/cam-link-4k) to take the screenshots in this Guide. (You can also take screenshots with the M65Connect app and the JTAG connection. See {ref}`using-jtag:using the jtag connector`.)
 
 I was not able to capture screenshots of the C64 core with the Camlink. The C64 core only knows how to simulate a PAL machine, and the Camlink apparently doesn't like whatever video signal it produces.
+
+## Resolution and aspect ratio
+
+The MEGA65 core produces an image in a resolution and refresh rate that corresponds with the emulated vintage display format: PAL or NTSC.
+
+In PAL mode, MEGA65 produces an image with a resolution of 720 x 576, and a refresh rate of 50 Hz.
+
+In NTSC mode, MEGA65 produces an image with a resolution of 720 x 480, and a refresh rate of 60 Hz.
+
+The MEGA65 image is intended to be rendered in an aspect ratio of 4:3. If you do the math, you may notice that the output resolutions are not 4-to-3: 720:576 = 5:4, and 720:480 = 3:2. In the intended display, the pixels are not meant to be square. The monitor will reshape the pixels to the intended aspect ratio.
+
+This behavior is produced by the MEGA65 core. Other cores may generate images at other resolutions and refresh rates, and may have their own compatibility issues with some displays.
 
 ---
 
