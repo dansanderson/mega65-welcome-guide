@@ -40,7 +40,7 @@ Be sure to _disable_ CRT emulation in the MEGA65 configuration when using an act
 
 If you're looking for the 4:3 aspect ratio of a vintage monitor that won't distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with caveats that depend on the model of monitor you find. Flat panel displays of the early 2000's ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.
 
-I can't possibly list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input. I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
+I can't possibly list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input, with the MEGA65 video configuration set to "DVI only (no audio)." I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
 
 ![MEGA65 connected to a Dell 2001FP 4:3 monitor](photos/display_2001fp_m65.jpeg)
 
@@ -55,6 +55,10 @@ Why use both HDMI and VGA with the same display? In the case of the 2001FP, I ne
 With both video outputs connected, I can switch the monitor input as needed without too much hassle.
 
 The HDMI-to-DVI cable does not carry the HDMI audio signal, and the Dell 2001FP doesn't have built-in speakers anyway. I use a Dell soundbar and a separate speaker connection to the MEGA65 audio jack.
+
+```{tip}
+Is your HDMI output not working with a vintage DVI display in _any_ display mode? Double-check that you have "DVI only (no audio)" selected in the MEGA65 video configuration. (Use a modern HDMI display or a VGA monitor to see it.) "Enhanced (with audio)" mode will corrupt the DVI-only signal.
+```
 
 ```{tip}
 If you want a flexible vintage display that works well with vintage computers that use analog RGB signals such as the Amiga, check out [15khz.wikidot.com](http://15khz.wikidot.com/) for recommendations. The Dell 2001FP almost makes the cut: older versions support a 15 kHz signal, newer ones (like mine, alas) do not. I use the 2001FP with my Commodore 64C and an S-Video cable with great success.
