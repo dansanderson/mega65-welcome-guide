@@ -41,7 +41,7 @@ The MEGA65 ROM that shipped with batch #1 in 2022 has this version number:
 As of this writing, the latest available version of the MEGA65 ROM is:
 
 ```
-920350
+920356
 ```
 
 ## Hypervisor and Freeze versions

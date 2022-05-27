@@ -12,8 +12,10 @@ In my personal cartridge collection, I have also had difficulty with some cartri
 
 The C64 core does not yet support the cartridge port, as of this writing. Cartridge support is planned for the future.
 
-## Does the ethernet port do anything?
+## Does the Ethernet port do anything?
 
-The ethernet port does not yet do things most people would want, such as connect to the Internet or download files. For now it is mostly used for low-level testing and troubleshooting. (See {ref}`using-jtag:the m65 command line tool`, if you dare.)
+The Ethernet port does not yet do things most people would want, such as connect to the Internet or download files. For now it is mostly used for low-level testing and troubleshooting. (See {ref}`using-jtag:the m65 command line tool` for an example of that.)
 
-There is software in active development to make good use of an ethernet connection. Stay tuned!
+There have been experimental attempts to write networking software for the Ethernet connection. For example, see [PETterminal](https://files.mega65.org/html/main.php?id=bc0b666a-ba62-423f-b301-b2f39bb03ed9) by Paul (adtbm), or [Paul's experiments with a browser app](https://c65gs.blogspot.com/2021/07/debugging-tcpip-problems.html).
+
+As far as I know there is not yet a formal app for general use, and not yet any direct support for networking in the ROM. Stay tuned!

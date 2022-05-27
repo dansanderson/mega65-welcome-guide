@@ -44,10 +44,10 @@ I can't possibly list every caveat for every monitor, but I can describe my expe
 
 ![MEGA65 connected to a Dell 2001FP 4:3 monitor](photos/display_2001fp_m65.jpeg)
 
-Why use both HDMI and VGA with the same display? In the case of the 2001FP, I need both to work around caveats with each mode:
+Why use both HDMI and VGA connections with the same display? In the case of the 2001FP, I need both to work around caveats with each mode:
 
-- HDMI provides the highest quality display for regular use. With the current (as of this writing) MEGA65 core, some of the utility menus (configuration, core selection) fail to display through the 2001FP DVI input, but work just fine over VGA. This is not a problem for all HDMI monitors: it only affects the Dell 2001FP DVI input, and possibly other vintage monitors.
-- To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. I can adjust the display settings to shift which columns are dropped, but I can't get it to show all columns, even with its automatic adjustment feature. It's fine for the configuration menus, but it's a poor experience for regular use, especially the 80-column modes.
+- HDMI provides the highest quality display for regular use. Some of the utility menus (configuration, core selection) use the "Enhanced (with audio)" HDMI mode, which fails to display through the 2001FP DVI input. These menus work fine over VGA. This is not a problem for all HDMI monitors: it only affects DVI displays that do not support sound over HDMI.
+- To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. It's fine for the configuration menus, but it's a poor experience for regular use.
 
 ![The Dell 2001FP shows a quality image over DVI](photos/display_2001fp_hd_noartifact.jpeg)
 ![The Dell 2001FP drops pixel columns from the VGA signal](photos/display_2001fp_vga_artifact.jpeg)
@@ -57,7 +57,7 @@ With both video outputs connected, I can switch the monitor input as needed with
 The HDMI-to-DVI cable does not carry the HDMI audio signal, and the Dell 2001FP doesn't have built-in speakers anyway. I use a Dell soundbar and a separate speaker connection to the MEGA65 audio jack.
 
 ```{tip}
-Is your HDMI output not working with a vintage DVI display in _any_ display mode? Double-check that you have "DVI only (no audio)" selected in the MEGA65 video configuration. (Use a modern HDMI display or a VGA monitor to see it.) "Enhanced (with audio)" mode will corrupt the DVI-only signal.
+Is your HDMI output not working with a vintage DVI display? Double-check that you have "DVI only (no audio)" selected in the MEGA65 video configuration. (Use a modern HDMI display or a VGA connection to see the configuration screen.) "Enhanced (with audio)" mode will corrupt the DVI-only signal.
 ```
 
 ```{tip}
