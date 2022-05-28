@@ -99,9 +99,10 @@ CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
 
 - Given address `$03FFF` containing the bit pattern `00110111` (`$37`), to set bit 6 so it becomes `0110111` (`$77`): `SETBIT $03FFF, 6`
 
-`WPOKE` writes a 16-bit value to two consecutive locations in memory ("word poke"), least significant byte first.
+`WPOKE` and `WPEEK()` write and read, respectively, a 16-bit ("word") value at two consecutive locations in memory, least significant byte first.
 
 - To store the word `$FABC` across byte addresses `$0C000` (the least significant byte `$BC`) and `$0C001` (the most significant byte `$FA`): `BANK 0 : WPOKE $C000,$FABC`
+- To read the 16-bit value stored at `$0C000-$0C001`: `V = WPEEK($C000)`
 
 ### Other newer BASIC features
 
