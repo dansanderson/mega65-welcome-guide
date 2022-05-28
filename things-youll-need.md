@@ -30,13 +30,5 @@ And if you want to get really serious:
 2. Mini USB B to USB A cable, to connect between your PC and the JTAG adapter
 
 ```{tip}
-Before connecting a mouse, be sure to set the set the mouse mode in the configuration step, described later. If an Amiga mouse is connected while the port is in the wrong mode, it may interfere with the behavior of the keyboard.
-```
-
-```{tip}
 The compatible JTAG adapter is difficult to find right now. Alternatively, you can use a more common USB UART adapter, with important caveats. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba). A misconfigured or mis-wired UART adapter may damage the computer.
-```
-
-```{tip}
-Do not connect a Sega Genesis game controller directly to the MEGA65 or Commodore computers. Sega Genesis controllers are not compatible and may damage the computer, even though they have the same connector. If you wish to use the Genesis controller, you can use an adapter such as [the BackBit GenAssister](https://store.backbit.io/product/genassister/).
 ```

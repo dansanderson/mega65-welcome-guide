@@ -21,11 +21,11 @@ The contents of this Welcome Guide:
    accessing-filehost
    setting-up-microsd-card
    updating-core
-   recent-features
    using-disks
    using-jtag
    joining-community
    video-display-compatibility
+   recent-features
    hardware-issues
    questions-and-answers
    resources

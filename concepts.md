@@ -12,7 +12,7 @@ MEGA65 only uses one SD memory card at a time. If there is a microSD card in the
 
 I recommend installing a microSD card in the external slot, and leaving the internal card with its factory-installed data intact. Following this Guide, you will set up a microSD card with all of the latest versions of the software. You will use this card to transfer software and data between MEGA65 and your PC.
 
-```{caution}
+```{note}
 Many features of the MEGA65 expect short MS-DOS-style filenames for files on the SD card: a maximum of 8 characters, a dot, then a maximum of 3 characters (`myprogra.prg`).
 
 Some features will handle files with longer names, but just not display the full name in menus. The Freeze menu and core selection menu (discussed later) do this.
@@ -62,9 +62,14 @@ You see the Hypervisor in action every time you turn on your MEGA65. Normally th
 
 ## PAL and NTSC
 
-[PAL](https://en.wikipedia.org/wiki/PAL) and [NTSC](https://en.wikipedia.org/wiki/NTSC) were competing standards for analog video signals, used for both transmission and rendering on cathode ray tube (CRT) displays. They differed in the number of horizontal lines used to make the image, with PAL having a more vertically dense 625 interlaced lines compared to NTSC's 525 lines. They also differed in the number of times the screen would be drawn per second (aka the _refresh rate_), with PAL sweeping the screen top to bottom 50 times per second (50 Hz, or 25 interlaced frames per second) and NTSC at a faster 60 times per second (60 Hz, or 30 frames per second). Commodore made different versions of its computers for each standard, and sold them in the countries where those standards were used: NTSC in the United States and Japan, and PAL in Europe.
+Back in the day, [PAL](https://en.wikipedia.org/wiki/PAL) and [NTSC](https://en.wikipedia.org/wiki/NTSC) were competing standards for analog video signals, used for both transmission and rendering on cathode ray tube (CRT) displays. They differed in two major ways:
 
-Both the raster line count and the refresh rate affect the execution of computer programs written for vintage computers with analog video output. Software has to use precise timing to render graphics for each frame, and is written to expect a screen a given number of lines tall. Games use the refresh rate to control the timing of other events like playing music. Without extra work by a programmer to account for the differing standards, a program written to be compatible with one video standard might run too fast or too slow, have erratic graphical behavior, or just not work at all on a machine built for the other standard.
+- The number of horizontal lines used to make the image. PAL uses a vertically dense 625 interlaced lines, compared to NTSC which uses 525 lines.
+- The number of times the screen is drawn per second, aka the _refresh rate_. PAL sweeps the screen top to bottom 50 times per second (50 Hz, or 25 interlaced frames per second), while NTSC refreshes at a faster 60 times per second (60 Hz, or 30 frames per second).
+
+Commodore made different versions of its computers for each standard, and sold them in the countries where those standards were used: NTSC in the United States and Japan, and PAL in Europe.
+
+Both the raster line count and the refresh rate affect the execution of computer programs written for vintage computers with analog video output. Software has to use precise timing to render graphics for each frame, and is written to expect the screen to be a certain number of lines tall. Games use the refresh rate to control the timing of other events like playing music. Without extra work by a programmer to account for the differing standards, a program written to be compatible with one video standard might run too fast or too slow, have erratic graphical behavior, or just not work at all on a machine built for the other standard.
 
 The MEGA65 has an analog VGA video output and a digital HDMI video output. Both of these standards are newer than PAL and NTSC and can support multiple resolutions and refresh rates. The MEGA65 must still be set to either PAL mode or NTSC mode (in Configuration or the Freeze menu) to support the vintage software that might be expecting one or the other.
 
