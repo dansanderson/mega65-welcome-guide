@@ -10,7 +10,7 @@ MEGA65 documentation writers are keeping the [downloadable PDF version of the Us
 
 ## New features
 
-Some of the new features added since the factory-installed ROM was delivered in batch #1:
+Some of the new features that have been added since the factory-installed ROM was delivered in batch #1 include:
 
 - Holding RUN/STOP during boot immediately enters the machine language `MONITOR`.
 - Filename pattern matching supports `#` to match a single number character, and `$` to match a single letter character: `DIR "ME$$*"`
@@ -18,11 +18,11 @@ Some of the new features added since the factory-installed ROM was delivered in 
 - BASIC supports arithmetic shift operators: `<<` and `>>`. `PRINT 7<<3`
 - Single-letter BASIC variables are "fast" variables stored in fixed memory addresses `$FD00-$FEFF`.
 - The `PLAY` and `SOUND` commands have improved background playback and use of SID voices, so BASIC games can sensibly have both background music and sound effects.
-- Some disk commands can access the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. For example, `DIR U12` lists the files on the SD card.
+- Some disk commands can access files on the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. `DIR U12` lists the files on the SD card. `DLOAD "FILE.PRG",U12` loads a `PRG` file.
 
 ## New BASIC commands
 
-Many new BASIC commands have been added between ROM 920287 and ROM 920356, or have been added to the User's Guide since it was printed. See [the latest User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) for specifics. New commands include:
+Many new BASIC commands have been added to the factory-installed ROM, or have been added to the User's Guide since it was printed. See [the latest User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) for specifics. New commands include:
 
 ### Newer disk commands
 
@@ -75,13 +75,18 @@ Many new BASIC commands have been added between ROM 920287 and ROM 920356, or ha
 ```
 10 SCREEN 320,200,5
 20 DOT 100, 80, 7
-30 60 GETKEY A$
+30 GETKEY A$
 40 SCREEN CLOSE
 ```
 
 `CHARDEF` changes the image for a single character based on its arguments. This makes it easy to produce custom fonts or character graphics in a BASIC program.
 
-- To replace the letter A with a happy face: `CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C`
+- To replace the letter A with a happy face:
+
+```
+CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
+```
+
 - To restore the PETSCII font: `FONT C`
 
 ### Newer memory commands
@@ -92,9 +97,9 @@ Many new BASIC commands have been added between ROM 920287 and ROM 920356, or ha
 
 `SETBIT` and `CLRBIT` set and clear a given bit at a given byte memory location. Bit numbers are 0-7 from least significant to most significant.
 
-- Given address `$03FFF` contains the bit pattern `00110111` (`$37`), to set bit 6 so it becomes `0110111` (`$77`): `SETBIT $03FFF, 6`
+- Given address `$03FFF` containing the bit pattern `00110111` (`$37`), to set bit 6 so it becomes `0110111` (`$77`): `SETBIT $03FFF, 6`
 
-`WPOKE` writes a 16-bit value to two consecutive locations in memory ("word poke"), least significant byte first. (ROM 920356 also provides `PEEKW()`, though this is about to be renamed to `WPEEK()` for consistency with `WPOKE` in a future version.)
+`WPOKE` writes a 16-bit value to two consecutive locations in memory ("word poke"), least significant byte first.
 
 - To store the word `$FABC` across byte addresses `$0C000` (the least significant byte `$BC`) and `$0C001` (the most significant byte `$FA`): `BANK 0 : WPOKE $C000,$FABC`
 
@@ -102,9 +107,7 @@ Many new BASIC commands have been added between ROM 920287 and ROM 920356, or ha
 
 The `FREEZER` command opens the Freeze menu, as if you pressed Restore for a second.
 
-The `ER` variable is set by some operations to contain an error code when an error occurs.
-
-The `INFO` command prints useful information about the system and available memory for BASIC.
+The `INFO` command prints useful information about the system and available BASIC memory.
 
 ```{tip}
 For bleeding edge information about new BASIC features as they stabilize and get added to the documentation, see [the mega65-user-guide Github repo commit list](https://github.com/MEGA65/mega65-user-guide/commits/master). We also discuss new features in [the community Discord](https://discord.com/invite/5DNvESf).
