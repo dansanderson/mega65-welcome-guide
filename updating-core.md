@@ -33,7 +33,7 @@ For more on installing cores, see the User's Guide, chapter 6, starting page 47.
 
 If you've been following along with this Guide, you should now have a MEGA65 that uses the latest core and ROM when you turn it on. You can confirm the core and ROM versions as described in {ref}`determining-versions:determining the versions of things`.
 
-Some actions, such as accessing the Configuration or SD card utility from the Alt menu, cause the MEGA65 to boot into its factory core (slot 0) instead of the updated core in slot 1. This can cause bugs in the older core, or bad interactions between the factory core and the latest ROM, to reappear.
+Some actions, such as accessing the Configuration or SD card utility from the Alt menu, cause the MEGA65 to boot into its factory core (slot 0) instead of the updated core in slot 1. This can cause issues with the older core to reappear, or for the newer ROM to interact poorly with the older core.
 
 The community has noticed a few common symptoms caused by older versions of the ROM, the core, or a version mismatch:
 

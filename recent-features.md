@@ -1,27 +1,26 @@
 # Recently added features
 
-The MEGA65 batch #1 shipped from the factory with ROM version 920287, and a User's Guide printed in late 2021. The MEGA65 team has been enhancing the ROM with new features and improvements. As of batch #1, the ROM is still considered a work in progress, and MEGA65 owners are encouraged to update to the latest ROM.
+The MEGA65 batch #1 shipped from the factory with ROM version 920287, and a User's Guide printed in late 2021. The MEGA65 team has been enhancing the ROM with new features and improvements. As of 2022, the ROM is still considered a work in progress, and MEGA65 owners are encouraged to update to the latest ROM.
 
 Below is an _incomplete_ list of new features that have been added since the factory ROM, or may exist in the factory ROM but were not included in the User's Guide. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes that have also been included in new ROMs.
 
 ```{tip}
-MEGA65 documentation writers are keeping the [downloadable PDF version of the User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) up to date with new features. Be sure to download this periodically as well.
+MEGA65 documentation writers are keeping the [downloadable PDF version of the User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) up to date with new features. Be sure to download this periodically along with ROM updates.
 ```
 
-## Some new features
+## New features
 
-Some of the new features added between ROM 920287 and ROM 920356:
+Some of the new features added since the factory-installed ROM was delivered in batch #1:
 
 - Holding RUN/STOP during boot immediately enters the machine language `MONITOR`.
-- The `PLAY` and `SOUND` commands have improved background playback and use of SID voices, so BASIC games can sensibly have both background music and sound effects.
-- Filename pattern matching supports `#` to match a single digit character, and `$` to match a single letter character.
+- Filename pattern matching supports `#` to match a single number character, and `$` to match a single letter character: `DIR "ME$$*"`
 - To toggle between 40-column mode and 80-column mode, press ESC then press X. To go directly to 40-column mode, use ESC then 4. To go directly to 80-column mode, use ESC then 8.
+- BASIC supports arithmetic shift operators: `<<` and `>>`. `PRINT 7<<3`
 - Single-letter BASIC variables are "fast" variables stored in fixed memory addresses `$FD00-$FEFF`.
-- BASIC supports arithmetic shift operators: `<<` and `>>`
-- The BASIC variable `ER` is set by some commands to report an error condition.
+- The `PLAY` and `SOUND` commands have improved background playback and use of SID voices, so BASIC games can sensibly have both background music and sound effects.
 - Some disk commands can access the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. For example, `DIR U12` lists the files on the SD card.
 
-## Some new BASIC commands
+## New BASIC commands
 
 Many new BASIC commands have been added between ROM 920287 and ROM 920356, or have been added to the User's Guide since it was printed. See [the latest User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) for specifics. New commands include:
 
