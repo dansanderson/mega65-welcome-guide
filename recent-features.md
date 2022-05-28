@@ -19,6 +19,7 @@ Some of the new features that have been added since the factory-installed ROM wa
 - Single-letter BASIC variables are "fast" variables stored in fixed memory addresses `$FD00-$FEFF`.
 - The `PLAY` and `SOUND` commands have improved background playback and use of SID voices, so BASIC games can sensibly have both background music and sound effects.
 - Some disk commands can access files on the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. `DIR U12` lists the files on the SD card. `DLOAD "FILE.PRG",U12` loads a `PRG` file.
+- BASIC programs can access screen and color memory via special byte arrays `T@&(COLUMN, ROW)` and `C@&(COLUMN, ROW)`. Screen coordinates are intuitive in both 40-column and 80-column modes.
 
 ## New BASIC commands
 
