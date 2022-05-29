@@ -4,7 +4,9 @@ The MEGA65 has two video outputs: one HDMI and one VGA. They mostly work as you 
 
 ## HDMI (DVI)
 
-If you connect the HDMI output to a modern HDMI-capable monitor, you will have a good time. The MEGA65 assumes a narrow 4:3 aspect ratio, but you can usually adjust the aspect ratio on widescreen displays.
+If you connect the HDMI output to a modern HDMI-capable monitor, you will have a good time. The MEGA65 assumes a narrow 4:3 aspect ratio, but you can usually adjust the aspect ratio on widescreen displays. Most HDMI displays can handle the "Enhanced (with audio)" signal, even if the display doesn't have built-in speakers.
+
+Not all HDMI displays can handle both the 60 Hz NTSC refresh rate and the 50 Hz PAL refresh rate. If you are able to test before buying (or can buy one, try it, and return it if it doesn't work), be sure to test both PAL and NTSC modes, especially if you want to run vintage C64 software or the C64 core.
 
 These photos show the MEGA65 connected to a Dell UltraSharp 27 widescreen monitor configured to use a 4:3 aspect ratio in the display settings. (Use the buttons on the bottom of the monitor to navigate to the display settings menu.)
 
@@ -20,7 +22,11 @@ Just for fun, here is what 80-column BASIC looks like stretched on a Dell 34" cu
 
 ![MEGA65 connected to a Dell UltraSharp 27 set to wide aspect ratio, showing BASIC](photos/display_34in_m65_stretched.jpeg)
 
-If your HDMI display supports audio, enable "enhanced (with audio)" mode in the MEGA65 configuration. Otherwise set it to "DVI only (no audio)."
+If your HDMI display supports audio, enable "Enhanced (with audio)" mode in the MEGA65 configuration. Otherwise set it to "DVI only (no audio)."
+
+```{note}
+As of this writing, the Hypervisor utility menu, Configuration, SD card utility, and core selection screens use "Enhanced (with audio)" mode by default. This fails on older DVI displays that don't know how to handle this signal. You may need to use a modern HDMI display or a VGA display to access these screens. See [core issue 552](https://github.com/MEGA65/mega65-core/issues/552).
+```
 
 ```{tip}
 Be sure to try "CRT emulation" mode in the MEGA65 configuration with a flat panel display to see if you like it.
@@ -40,14 +46,14 @@ Be sure to _disable_ CRT emulation in the MEGA65 configuration when using an act
 
 If you're looking for the 4:3 aspect ratio of a vintage monitor that won't distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with caveats that depend on the model of monitor you find. Flat panel displays of the early 2000's ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.
 
-I can't possibly list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input, with the MEGA65 video configuration set to "DVI only (no audio)." I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
+I can't list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input, with the MEGA65 video configuration set to "DVI only (no audio)." I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
 
 ![MEGA65 connected to a Dell 2001FP 4:3 monitor](photos/display_2001fp_m65.jpeg)
 
 Why use both HDMI and VGA connections with the same display? In the case of the 2001FP, I need both to work around caveats with each mode:
 
-- HDMI provides the highest quality display for regular use. Some of the utility menus (configuration, core selection) use the "Enhanced (with audio)" HDMI mode, which fails to display through the 2001FP DVI input. These menus work fine over VGA. This is not a problem for all HDMI monitors: it only affects DVI displays that do not support sound over HDMI.
-- To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. It's fine for the configuration menus, but it's a poor experience for regular use.
+-   HDMI provides the highest quality display for regular use. Some of the utility menus (configuration, core selection) use the "Enhanced (with audio)" HDMI mode, which fails to display through the 2001FP DVI input. These menus work fine over VGA. This is not a problem for all HDMI monitors: it only affects DVI displays that do not support sound over HDMI.
+-   To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. It's fine for the configuration menus, but it's a poor experience for regular use.
 
 ![The Dell 2001FP shows a quality image over DVI](photos/display_2001fp_hd_noartifact.jpeg)
 ![The Dell 2001FP drops pixel columns from the VGA signal](photos/display_2001fp_vga_artifact.jpeg)
@@ -81,6 +87,21 @@ In NTSC mode, MEGA65 produces an image with a resolution of 720 x 480, and a ref
 The MEGA65 image is intended to be rendered in an aspect ratio of 4:3. If you do the math, you may notice that the output resolutions are not 4-to-3: 720:576 = 5:4, and 720:480 = 3:2. In the intended display, the pixels are not meant to be square. The monitor will reshape the pixels to the intended aspect ratio.
 
 This behavior is produced by the MEGA65 core. Other cores may generate images at other resolutions and refresh rates, and may have their own compatibility issues with some displays.
+
+## A List of Monitors
+
+The following are monitors that I or other members of the community have tested with the MEGA65:
+
+| Monitor                                                                  | VGA | DVI no sound | DVI "Enhanced" | PAL 50Hz | NTSC 60Hz | Notes                                  |
+| ------------------------------------------------------------------------ | --- | ------------ | -------------- | -------- | --------- | -------------------------------------- |
+| Dell Ultrasharp 27                                                       | no  | yes          | yes            | yes      | yes       |                                        |
+| Dell 2001FP                                                              | yes | yes          | no             | yes      | yes       | 4:3 display.                           |
+| ViewSonic VG1655                                                         | no  | yes          | yes            | yes      | yes       | Portable monitor, with speakers.       |
+| Dell P1917s                                                              | yes | yes          | yes            | yes      | yes       | No speakers. VGA shifted horizontally. |
+| Acer Nitro VG280K                                                        | no  | yes          | yes            | no       | yes       | Audio didn't work. PAL flickers.       |
+| Elgato Camlink                                                           | no  | yes          | yes            | yes      | yes       | Video capture device.                  |
+| [9.7" 2K Monitor](https://www.aliexpress.com/item/3256801503431249.html) | yes | yes          | yes            | yes      | no        | PAL w/ audio. No NTSC.                 |
+| Samsung QN85A TV                                                         | no  | yes          | yes            | yes      | yes       | C64 core not working.                  |
 
 ---
 

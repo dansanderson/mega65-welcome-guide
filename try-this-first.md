@@ -32,6 +32,10 @@ For more information on the peripheral ports, see the User's Guide, page 3.
 
 When you turn your MEGA65 on for the first time, it prompts you for some initial settings. The most important setting is the video mode. Use the Tab key to cycle between digital video without sound over HDMI vs. with sound over HDMI ("enhanced"), and PAL 50Hz vs. NTSC 60Hz display modes. Press Space to test a video setting to make sure it works with your monitor.
 
+```{note}
+If your display isn't working, you may need to adjust the video mode blindly until you find one that works. Older DVI monitors need the "without sound" mode, and monitors vary in their support for 50Hz and 60Hz refresh rates. Use the Tab and Space keys to try the different modes.
+```
+
 Take this opportunity to test your audio set-up. Press the `A` key to play a musical tone. If you are using audio over HDMI, make sure the video mode is set to "Enhanced (with sound)."
 
 The "CRT emulation" option is a fun choice when using a modern flat panel display: it adds vertical gaps between pixels to simulate the CRT raster line. Try it to see if you like it: press the `C` key to toggle it on and off.
@@ -212,13 +216,13 @@ For detailed information about C64 mode, see the User's Guide, chapter 5, starti
 
 Don't miss the other D81 disk images included with the MEGA65:
 
-- `MEGA65.D81`: The original MEGA65 demo disk
-- `C64.D81`: A disk of C64 games and demos
-- `BASIC65.D81`: Example BASIC programs that demonstrate major BASIC commands, from the User's Guide
-- `DEMOCOMP.D81`: Winners of the Shallan MEGA65 demo competition
-- `ELEVEN.D81`: The Eleven programming environment, a modern update to MEGA65 BASIC with a powerful development environment
-- `GEOS65.D81`: A version of the GEOS graphical operating system for the MEGA65; use this with a mouse
-- `SOLITAIR.D81`: A Solitaire card game for the MEGA65; use this with a mouse
+-   `MEGA65.D81`: The original MEGA65 demo disk
+-   `C64.D81`: A disk of C64 games and demos
+-   `BASIC65.D81`: Example BASIC programs that demonstrate major BASIC commands, from the User's Guide
+-   `DEMOCOMP.D81`: Winners of the Shallan MEGA65 demo competition
+-   `ELEVEN.D81`: The Eleven programming environment, a modern update to MEGA65 BASIC with a powerful development environment
+-   `GEOS65.D81`: A version of the GEOS graphical operating system for the MEGA65; use this with a mouse
+-   `SOLITAIR.D81`: A Solitaire card game for the MEGA65; use this with a mouse
 
 ## Configuring your MEGA65
 
@@ -231,10 +235,10 @@ To start the configuration utility, turn off your MEGA65, then hold the Alt key 
 
 You can use the cursor keys or a mouse to navigate the configuration options. This is also a good way to test whether your mouse is working. Useful options include:
 
-- Input: mouse configuration. You can enable the use of Amiga mice on either port.
-- Chipset: Real-Time Clock. This is how you set the date and time, which I told you to skip during on-boarding because we haven't installed the battery yet.
-- Chipset: Default Disk Image. Specify a D81 filename to load by default when you turn on the computer.
-- Video: All of the video options from the on-boarding screen.
+-   Input: mouse configuration. You can enable the use of Amiga mice on either port.
+-   Chipset: Real-Time Clock. This is how you set the date and time, which I told you to skip during on-boarding because we haven't installed the battery yet.
+-   Chipset: Default Disk Image. Specify a D81 filename to load by default when you turn on the computer.
+-   Video: All of the video options from the on-boarding screen.
 
 ```{note}
 The clock setting in the configuration utility uses the following time and date format: `HH:MM:SS YY/MM/DD` (That's hours, minutes, seconds, the year, the month, and the day of the month.) It doesn't prevent you from entering invalid numbers. Take care to use the correct date format.
