@@ -90,19 +90,4 @@ This behavior is produced by the MEGA65 core. Other cores may generate images at
 
 ## A List of Monitors
 
-The following are monitors that I or other members of the community have tested with the MEGA65:
-
-| Monitor                                                                  | VGA | DVI no sound | DVI "Enhanced" | PAL 50Hz | NTSC 60Hz | Notes                                  |
-| ------------------------------------------------------------------------ | --- | ------------ | -------------- | -------- | --------- | -------------------------------------- |
-| Dell Ultrasharp 27                                                       | no  | yes          | yes            | yes      | yes       |                                        |
-| Dell 2001FP                                                              | yes | yes          | no             | yes      | yes       | 4:3 display.                           |
-| ViewSonic VG1655                                                         | no  | yes          | yes            | yes      | yes       | Portable monitor, with speakers.       |
-| Dell P1917s                                                              | yes | yes          | yes            | yes      | yes       | No speakers. VGA shifted horizontally. |
-| Acer Nitro VG280K                                                        | no  | yes          | yes            | no       | yes       | Audio didn't work. PAL flickers.       |
-| Elgato Camlink                                                           | no  | yes          | yes            | yes      | yes       | Video capture device.                  |
-| [9.7" 2K Monitor](https://www.aliexpress.com/item/3256801503431249.html) | yes | yes          | yes            | yes      | no        | PAL w/ audio. No NTSC.                 |
-| Samsung QN85A TV                                                         | no  | yes          | yes            | yes      | yes       | C64 core not working.                  |
-
----
-
-If you have specific results for a popular flat screen display that you believe are worth sharing, [let me know!](mailto:contact@dansanderson.com)
+We're maintaining a list of tested monitors in [the MEGA65 Wiki](https://mega65.atlassian.net/wiki/spaces/MEGA65/pages/4292609/Monitors). Feel free to contribute your results!
