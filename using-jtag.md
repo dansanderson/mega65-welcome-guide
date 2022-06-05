@@ -4,13 +4,19 @@ The MEGA65 main board has a 12-pin [JTAG](https://en.wikipedia.org/wiki/JTAG) co
 
 With a JTAG USB adapter and software available on Filehost, you can connect your PC directly to the main board to:
 
-- Upload and execute programs being cross-developed on a PC
-- Transfer files between your PC and MEGA65 without removing the SD card
-- Perform remote debugging on programs and the built-in MEGA65 utilities
-- Upload ROMs and cores for testing
-- Use your MEGA65 as a SID music player (!)
+-   Upload and execute programs being cross-developed on a PC
+-   Transfer files between your PC and MEGA65 without removing the SD card
+-   Perform remote debugging on programs and the built-in MEGA65 utilities
+-   Upload ROMs and cores for testing
+-   Use your MEGA65 as a SID music player (!)
 
 The MEGA65 does not have a user-accessible port for the JTAG connection. You will have to acquire a JTAG USB adapter and a mini-USB cable, install it, and run the cable out the back of the MEGA65 case.
+
+```{tip}
+You can also use a more common USB UART adapter for most of the purposes described below (sending files and commands). The adapter _must_ output 3.3 volts, _not_ 5 volts. Test your adapter with a volt meter before using. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba) for instructions on how to wire a UART to the JTAG connector pins. See also [this article by RetroCombs](https://www.stevencombs.com/mega65-usb-ttl).
+
+Photos below show how to connect the TE0790-03 JTAG adapter.
+```
 
 ```{tip}
 For another version of these instructions with more photos, see [JTAG adapter, how to plug and DIP switch settings](https://files.mega65.org?ar=3c388c8c-bc3f-461b-84bb-e12dfd479ae2).
@@ -22,10 +28,6 @@ The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE079
 
 ![XMOD FTDI JTAG Adapter TE0790-03 in its box](photos/jtag_box.jpeg)
 ![XMOD FTDI JTAG Adapter TE0790-03 out of its box](photos/jtag_unit.jpeg)
-
-You can also use a more common USB UART adapter for most of the purposes described below (sending files and commands). The adapter _must_ output 3.3 volts, _not_ 5 volts. Test your adapter with a volt meter before using. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba) for instructions on how to wire a UART to the JTAG connector pins.
-
-Photos below show how to connect the TE0790-03 JTAG adapter.
 
 ## Installing the JTAG adapter
 
@@ -73,15 +75,15 @@ To set up M65Connect for the first time:
 
 The M65Connect manual has advice on troubleshooting connection issues: go to the Help menu, select Manual. I won't repeat all of it here, but advice that I personally found useful when doing this on my Mac (M65Connect 1.8, Intel MacBook Pro, macOS 12.3.1):
 
-- The Command menu, List FTDI Devices is a good start for making sure the JTAG is connected. Even with the MEGA65 turned off, it should list two devices when connected, one with flags "10" and one with flags "01". My JTAG device description is "Digilent USB Device A".
+-   The Command menu, List FTDI Devices is a good start for making sure the JTAG is connected. Even with the MEGA65 turned off, it should list two devices when connected, one with flags "10" and one with flags "01". My JTAG device description is "Digilent USB Device A".
 
 ![M65Connect List FTDI Devices output](screenshots/m65connect_listftdi.png)
 
-- The Settings menu, Connection lets you pick a serial port manually. On my Mac, I have four `/dev/cu.usbserial...` devices, some of which have numbers similar to (though not identical to) the device SerialNumber printed by List FTDI Devices.
+-   The Settings menu, Connection lets you pick a serial port manually. On my Mac, I have four `/dev/cu.usbserial...` devices, some of which have numbers similar to (though not identical to) the device SerialNumber printed by List FTDI Devices.
 
 ![M65Connect List FTDI Devices output](screenshots/m65connect_comport.png)
 
-- If it looks like it should be connected, use the buttons at the top of the M65Connect window to attempt remote actions. For example, `Screenshot` will ask the MEGA65 to take a screenshot and M65Connect will display it. If it fails, it should print error messages in the main M65Connect window.
+-   If it looks like it should be connected, use the buttons at the top of the M65Connect window to attempt remote actions. For example, `Screenshot` will ask the MEGA65 to take a screenshot and M65Connect will display it. If it fails, it should print error messages in the main M65Connect window.
 
 ![M65Connect List FTDI Devices output](screenshots/m65connect_screenshot.png)
 
@@ -95,36 +97,36 @@ The M65Connect app can send data directly to the MEGA65's memory. In most cases 
 
 `PRG`:
 
-- Sends a `.PRG` program file and runs it immediately.
-- M65Connect prompts you with options: whether to run in C64 mode, how it would be loaded from disk, and others.
+-   Sends a `.PRG` program file and runs it immediately.
+-   M65Connect prompts you with options: whether to run in C64 mode, how it would be loaded from disk, and others.
 
 `SID`:
 
-- Sends a `.SID` music file and plays it using a built-in SID player.
-- Press number keys to select tracks in multi-track SIDs.
-- It's ugly, but it works!
+-   Sends a `.SID` music file and plays it using a built-in SID player.
+-   Press number keys to select tracks in multi-track SIDs.
+-   It's ugly, but it works!
 
 ![MEGA65's built-in SID player, playing a track sent via M65Connect](screenshots/m65connect_sidplayer.png)
 
 `BIT`:
 
-- Sends a `.BIT` bitstream file, and resets using this file as the core.
-- Note that this takes the `.BIT` file, not the `.COR` file. Most cores provide files in both formats.
-- This does not install the core in a slot, it just runs the core for the current session.
+-   Sends a `.BIT` bitstream file, and resets using this file as the core.
+-   Note that this takes the `.BIT` file, not the `.COR` file. Most cores provide files in both formats.
+-   This does not install the core in a slot, it just runs the core for the current session.
 
 `HIC`:
 
-- Sends a "Hickup" file, what MEGA65 calls its startup routine.
-- Only useful for developers working on the system software.
+-   Sends a "Hickup" file, which temporarily updates the Hypervisor.
+-   Only useful for developers working on the system software.
 
 `ROM`:
 
-- Sends a MEGA65 ROM and resets with it in memory.
+-   Sends a MEGA65 ROM and resets with it in memory.
 
 `BAS`:
 
-- Sends a text file as if it is being typed into the MEGA65, such as a BASIC program listing.
-- This capability is limited to a subset of the PETSCII character set. It conflates ASCII letter casing and does not support special characters.
+-   Sends a text file as if it is being typed into the MEGA65, such as a BASIC program listing.
+-   This capability is limited to a subset of the PETSCII character set. It conflates ASCII letter casing and does not support special characters.
 
 ```{tip}
 If you're developing a BASIC program on your PC to send to the MEGA65 over the JTAG connection for testing, you might prefer converting it to a PRG and sending the PRG instead of trying to send the BASIC program listing. See "The m65 command line tool" below for an example workflow.
@@ -146,12 +148,12 @@ Do you see "ERROR: Could not open the file system" when trying to use this featu
 
 M65Connect can also do these cool things:
 
-- Reset the MEGA65 (`RESET`).
-- Reset in C64 mode (`Go64`).
-- Switch between NTSC and PAL video modes (`NTSC`, `PAL`). This does not reset the machine.
-- Take a screenshot of what is on the MEGA65 display (`Screenshot`).
-- Type into the MEGA65 from your PC keyboard. Click "Keyboard," then type normally, and access the non-standard keys by clicking on the virtual keyboard that appears.
-- Remote machine language monitoring and debugging. See the built-in manual (Help menu, Manual), Terminal tab.
+-   Reset the MEGA65 (`RESET`).
+-   Reset in C64 mode (`Go64`).
+-   Switch between NTSC and PAL video modes (`NTSC`, `PAL`). This does not reset the machine.
+-   Take a screenshot of what is on the MEGA65 display (`Screenshot`).
+-   Type into the MEGA65 from your PC keyboard. Click "Keyboard," then type normally, and access the non-standard keys by clicking on the virtual keyboard that appears.
+-   Remote machine language monitoring and debugging. See the built-in manual (Help menu, Manual), Terminal tab.
 
 ```{tip}
 For more information, see [the M65Connect README](https://github.com/MEGA65/m65connect).

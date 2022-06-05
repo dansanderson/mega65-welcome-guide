@@ -24,6 +24,10 @@ GIT commit: development,20220506.10,bdeeb15
 
 Alternatively, you can see the version of the MEGA65 core while the computer is running without turning it off. At any time with the MEGA65 core running, hold the Mega key (the fancy M in the lower left of your keyboard) and press Tab. Welcome to "Matrix mode!" This is a special mode used by the MEGA65 development team to tweak the memory of the computer while it is running, among other things. It also displays the version of the running MEGA65 core. Press Mega+Tab again to exit.
 
+```{tip}
+The file downloads for core updates on Filehost are labeled with both the GIT commit suffix (like `bdeeb15`) and a build version number (`build 180`, or `version 180`). You can find the full list of builds at [the Filehost page](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead): click the grey "All versions" box to access all previous builds.
+```
+
 ## The MEGA65 ROM version
 
 You can determine the version of the MEGA65 ROM that is running from the BASIC title screen.

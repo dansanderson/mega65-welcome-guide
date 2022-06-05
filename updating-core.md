@@ -2,9 +2,21 @@
 
 A new version of the MEGA65 core has been released since the batch #1 MEGA65 was produced, so you will want to update it. The newest ROM expects the new core.
 
+## Downloading the latest MEGA65 core
+
+You can download the latest MEGA65 core from Filehost. For the batch #1 MEGA65 hardware, you want the [MEGA65 R3 Core - COR file](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead).
+
+Other "core" related files on Filehost are used for different purposes. You probably don't need them. "MEGA65 R2" is a previous version of the mainboard. "Nexys 4" and "Nexys 4 DDR" are FPGA development boards that can be configured to run like a MEGA65. The "MCS" and "BIT" files are different ways to update the core; you use COR files with the recommended update procedure.
+
+```{caution}
+A new core version is uploaded to Filehost every time someone changes the source code. Occasionally, a change may introduce a bug. If you're having difficulty with the latest core, [go to the Filehost page](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead) and click "All versions" to access previous versions.
+
+As of this writing, build 182 (Filehost version 182, May 28, 2022, `98dd39d`) is known to be working and compatible with the latest ROM. Build 183 introduced a bug related to disk mounting that is still being investigated.
+```
+
 ## Installing the latest MEGA65 core
 
-On the Filehost website in the Firmware category, locate and download "[mega65r3-dev.cor](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead)". Copy this file to the microSD card.
+Download "[mega65r3-dev.cor](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead)" from Filehost. Copy this file to the microSD card.
 
 Eject the microSD card from your PC and insert it into the MEGA65 external slot. Make sure the MEGA65 is off, then hold the No Scroll key (in the top row) and turn it on. This opens the core selection and installation menu.
 
@@ -37,12 +49,12 @@ Some actions, such as accessing the Configuration or SD card utility from the Al
 
 The community has noticed a few common symptoms caused by older versions of the ROM, the core, or a version mismatch:
 
-- _The Freeze menu appears too low on the screen, obscuring the bottom._
-  - You have an older ROM, or an older version of `FREEZER.M65`.
-- _The Freeze menu does not display the name of the selected D81 file next to the drive, and the disk does not mount properly._
-  - You are using the newer ROM with the older core.
-- _Disk directory misbehavior, such as an extra file, or missing files._
-  - You are using the newer ROM with the older core.
+-   _The Freeze menu appears too low on the screen, obscuring the bottom._
+    -   You have an older ROM, or an older version of `FREEZER.M65`.
+-   _The Freeze menu does not display the name of the selected D81 file next to the drive, and the disk does not mount properly._
+    -   You are using the newer ROM with the older core.
+-   _Disk directory misbehavior, such as an extra file, or missing files._
+    -   You are using the newer ROM with the older core.
 
 Use "Matrix mode" (hold Mega, hit Tab) to double check that MEGA65 is using the latest core. If it is using the factory core (`1586ad4`) and you have the latest core installed in slot 1, turn off your MEGA65, then turn it back on.
 
