@@ -91,6 +91,12 @@ CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
 
 -   To restore the PETSCII font: `FONT C`
 
+`VSYNC <n>` waits until screen drawing reaches raster line `n`. This is useful for games and graphical demos that need code to run once per frame for smooth animation or effects. This was once only possible with machine language programs, but MEGA65 in 40 MHz mode runs BASIC quickly enough for high speed games.
+
+```
+10 BORDER 0: VSYNC 150: BORDER 1: VSYNC 180: GOTO 10
+```
+
 ### Newer memory commands
 
 `MEM` reserves 8K segments of memory in banks 4 and 5 for use by the program, such that the graphics library does not use them.
