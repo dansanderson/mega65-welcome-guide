@@ -26,7 +26,7 @@ Core 0 is always the factory-installed core and cannot be overwritten. This can 
 
 When you turn on your MEGA65 normally, it checks to see if slot 1 contains a core, and uses it if present. Otherwise it falls back to core 0. You will put the updated core in slot 1 for regular use.
 
-Hold the Ctrl key and press 1. Use the cursor keys to find the `mega65-1.cor` filename (a shortened version of the full filename). If there is a second one with a stripey thing next to it, select the one without the stripey thing. Press Return, then press any key when prompted to install the core.
+Hold the Ctrl key and press 1. Use the cursor keys to find the `mega65-1.cor` filename (a shortened version of the full filename). If there is a second one with a stripey thing next to it, select the one _without_ the stripey thing. Press Return, then press any key when prompted to install the core.
 
 ![The core file selection screen](screenshots/cor_selection.jpg)
 
@@ -36,6 +36,12 @@ The flashing process takes a minute or so. When it is complete, you'll see the m
 ![Loading a core](screenshots/cor_loading.jpg)
 ![Core loading finished](screenshots/cor_finished.jpg)
 ![The core menu after loading a new core](screenshots/cor_menu_onecore.jpg)
+
+```{note}
+If you use a Mac computer to copy a file to a MEGA65 SD card, it creates another file with a name like `._filename` to store the macOS resource fork. The appears in the core file selection screen as the original name with a stripey thing next to it. Be sure to select the original core file, and not the one with the stripey thing, when installing a core.
+
+If you select the wrong one, MEGA65 will warn that the incorrect file does not have a matching device ID (because it isn't a real core file). Press RUN/STOP to abort and try again with the correct file.
+```
 
 ```{tip}
 For more on installing cores, see the User's Guide, chapter 6, starting page 47.
