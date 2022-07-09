@@ -14,14 +14,14 @@ Some of the new features that have been added since the factory-installed ROM wa
 
 -   Holding RUN/STOP during boot immediately enters the machine language `MONITOR`.
 -   Filename pattern matching supports `#` to match a single number character, and `$` to match a single letter character: `DIR "ME$$*"`
--   To toggle between 40-column mode and 80-column mode, press ESC then press X. To go directly to 40-column mode, use ESC then 4. To go directly to 80-column mode, use ESC then 8.
+-   To toggle between 40-column mode and 80-column mode, press <kbd>ESC</kbd> then press <kbd>X</kbd>. To go directly to 40-column mode, use <kbd>ESC</kbd> then <kbd>4</kbd>. To go directly to 80-column mode, use <kbd>ESC</kbd> then <kbd>8</kbd>.
 -   BASIC supports arithmetic shift operators: `<<` and `>>`. `PRINT 7<<3`
 -   Single-letter BASIC variables are "fast" variables stored in fixed memory addresses `$FD00-$FEFF`.
 -   The `PLAY` and `SOUND` commands have improved background playback and use of SID voices, so BASIC games can sensibly have both background music and sound effects.
 -   Some disk commands can access files on the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. `DIR U12` lists the files on the SD card. `DLOAD "FILE.PRG",U12` loads a `PRG` file.
 -   BASIC programs can access screen and color memory via special byte arrays `T@&(COLUMN, ROW)` and `C@&(COLUMN, ROW)`. Screen coordinates are intuitive in both 40-column and 80-column modes.
--   If you accidentally hit the HOME key, you can press ESC then HOME to return the cursor to its original position.
--   You can load a program from disk by using `DIR` to view the directory listing, moving the cursor to the program name, pressing `/` (forward slash), then pressing Return. You can load and run a program in a single step using the up-arrow character (next to the Restore key) in the same way.
+-   If you accidentally hit the <kbd>HOME</kbd> key, you can press <kbd>ESC</kbd> then <kbd>HOME</kbd> to return the cursor to its original position.
+-   You can load a program from disk by using `DIR` to view the directory listing, moving the cursor to the program name, pressing `/` (forward slash), then pressing <kbd>Return</kbd>. You can load and run a program in a single step using the up-arrow character (next to the <kbd>Restore</kbd> key) in the same way.
 
 ## New BASIC commands
 

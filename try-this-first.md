@@ -92,7 +92,7 @@ RENAME "MENU" TO "AUTOBOOT.C65"
 
 The MEGA65 spends most of its time behaving as a Commodore 65 computer would, either running a program or awaiting instructions in the BASIC environment. Your MEGA65 has additional features that were not part of the original C65 design. You can access many of these features from the Freeze menu.
 
-To open the Freeze menu, hold the Restore key for a second or more, then release it. The MEGA65 will pause whatever it is doing, flicker the border color, then open the Freeze menu. Whatever program was running remains in memory and can be resumed by pressing the <kbd>F3</kbd> key from the Freeze menu. You can also abandon the running program and reset the MEGA65 by pressing <kbd>F5</kbd>.
+To open the Freeze menu, hold the <kbd>Restore</kbd> key for a second or more, then release it. The MEGA65 will pause whatever it is doing, flicker the border color, then open the Freeze menu. Whatever program was running remains in memory and can be resumed by pressing the <kbd>F3</kbd> key from the Freeze menu. You can also abandon the running program and reset the MEGA65 by pressing <kbd>F5</kbd>.
 
 ![Freeze menu (fixed version)](screenshots/freeze_working.jpg)
 
@@ -109,7 +109,7 @@ There are many useful features in the Freeze menu. Try them out!
 One feature to remember when playing games is the "(J)OY SWAP." This causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press <kbd>J</kbd> to swap the port numbers, then resume your game.
 
 ```{note}
-In the factory-installed version of the Freeze menu, it is possible—and undesireable—to freeze the Freeze menu by pressing Restore again while the Freeze menu is open. If you do this accidentally, reset and try again.
+In the factory-installed version of the Freeze menu, it is possible—and undesireable—to freeze the Freeze menu by pressing <kbd>Restore</kbd> again while the Freeze menu is open. If you do this accidentally, reset and try again.
 ```
 
 ## Disk images
@@ -121,7 +121,7 @@ MEGA65 comes bundled with several disk images, including one named `MEGA65.D81` 
 Try browsing one of the disk images included with your MEGA65:
 
 1. If the Freeze menu is not already open, hold the <kbd>Restore</kbd> key for a second then release it.
-2. Press <kbd>0</kbd> to see the options for setting up the first drive.
+2. Press <kbd>0</kbd> (zero) to see the options for setting up the first drive.
 3. Use the cursor keys to navigate to `DEMOCOMP.D81`. Press <kbd>Return</kbd> to select it.
 4. Notice that the disk image name appears under the "Internal drive" in the Freeze menu.
 5. Press <kbd>F5</kbd> to reset with this disk image in the virtual drive.
@@ -159,7 +159,7 @@ LOAD "NOVDEMO"
 
 If you've used a Commodore 64, you may remember having to type `,8` or `,8,1` after a `LOAD` command when loading from a disk drive. With MEGA65, unit 8 is the default, so this can be omitted.
 
-Move the cursor to a blank line (or press Shift + Clr Home to clear the screen), then type `RUN` to start the `NOVDEMO` program.
+Move the cursor to a blank line (or press <kbd>Shift</kbd> + <kbd>Clr Home</kbd> to clear the screen), then type `RUN` to start the `NOVDEMO` program.
 
 ```
 RUN
@@ -170,7 +170,7 @@ RUN
 ```{tip}
 A common trick you may remember from your Commodore 64 is, instead of typing the full filename of something you wish to `LOAD`, you can list the directory of the disk, then move the cursor up to the line with the name of the program and type `LOAD` at the beginning of the line to form the command.
 
-This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forward slash) at the beginning of the line, then press Return. Unlike with `LOAD`, you do not need to clear away the extra characters on the line for the `/` to work.
+This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forward slash) at the beginning of the line, then press <kbd>Return</kbd>. Unlike with `LOAD`, you do not need to clear away the extra characters on the line for the `/` to work.
 
 ![Loading a file using the slash shortcut](screenshots/dirslash_trick.jpg)
 ![Loading a file using the slash shortcut](screenshots/dirslash_loaded.jpg)

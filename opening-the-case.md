@@ -9,6 +9,7 @@ You may want to open the case for the following reasons:
 -   To install (or replace) the CR1220 battery for the Real-Time Clock
 -   To resolve issues with the case by adjusting its assembly (see {ref}`hardware-issues:known hardware issues`)
 -   To install a JTAG adapter (see {ref}`using-jtag:using the jtag connector`)
+-   To install a replacement Real-Time Clock if the one built into the MEGA65 isn't working (see {ref}`hardware-issues:the real-time clock doesn't advance the time`)
 
 To open the MEGA65 case, locate three screws along the bottom front of the case and remove them with a Phillips head screwdriver.
 

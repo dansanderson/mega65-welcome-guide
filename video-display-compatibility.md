@@ -52,7 +52,7 @@ I can't list every caveat for every monitor, but I can describe my experiences w
 
 Why use both HDMI and VGA connections with the same display? In the case of the 2001FP, I need both to work around caveats with each mode:
 
--   HDMI provides the highest quality display for regular use. Some of the utility menus (configuration, core selection) use the "Enhanced (with audio)" HDMI mode, which fails to display through the 2001FP DVI input. These menus work fine over VGA. This is not a problem for all HDMI monitors: it only affects DVI displays that do not support sound over HDMI.
+-   HDMI provides the highest quality display for regular use. With the factory-installed core, some of the utility menus (configuration, core selection) use the "Enhanced (with audio)" HDMI mode, which fails to display through the 2001FP DVI input. These menus work fine over VGA. This is not a problem for all HDMI monitors: it only affects DVI displays that do not support sound over HDMI. (Utility menus were fixed in later cores, but the factory core still gets used in some cases.)
 -   To display VGA, the 2001FP must adapt to the signal timing to present it on the flat panel display. This results in periodic drops of pixel columns. It's fine for the configuration menus, but it's a poor experience for regular use.
 
 ![The Dell 2001FP shows a quality image over DVI](photos/display_2001fp_hd_noartifact.jpeg)
@@ -67,7 +67,7 @@ Is your HDMI output not working with a vintage DVI display? Double-check that yo
 ```
 
 ```{tip}
-If you want a flexible vintage display that works well with vintage computers that use analog RGB signals such as the Amiga, check out [15khz.wikidot.com](http://15khz.wikidot.com/) for recommendations. The Dell 2001FP almost makes the cut: older versions support a 15 kHz signal, newer ones (like mine, alas) do not. I use the 2001FP with my Commodore 64C and an S-Video cable with great success.
+If you want a flexible vintage display that works well with vintage computers that use analog RGB signals such as the Amiga, check out [15khz.wikidot.com](http://15khz.wikidot.com/) for recommendations. The Dell 2001FP almost makes the cut: older versions support a 15 kHz signal, newer ones (like mine, alas) do not. I use the 2001FP with my Commodore 64C and an S-Video cable with great success. 15 kHz support is not required for the MEGA65, it's just nice to have for some old machines.
 ```
 
 ## Video capture cards

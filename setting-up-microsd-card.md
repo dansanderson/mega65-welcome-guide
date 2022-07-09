@@ -6,7 +6,7 @@ Your microSD card will be your MEGA65's primary storage, and the primary way to 
 
 To use an SD card with the MEGA65, it must be formatted (erased and prepared) using the MEGA65. The SD card works like a regular storage drive when connected to your PC, but it contains additional data not visible to the PC that is used by MEGA65.
 
-To prepare a new microSD card for use, insert it into your MEGA65's external microSD card slot. Turn off your MEGA65, then hold the <kbd>Alt</kbd> key (top row near the left) and turn it on. Select option 2: SDCard FDisk+Format Utility (press 2).
+To prepare a new microSD card for use, insert it into your MEGA65's external microSD card slot. Turn off your MEGA65, then hold the <kbd>Alt</kbd> key (top row near the left) and turn it on. Select option 2: SDCard FDisk+Format Utility (press <kbd>2</kbd>).
 
 ![Hypervisor utility menu, holding Alt during boot](screenshots/hypervisor_altmenu.jpg)
 
@@ -38,9 +38,9 @@ Remove the microSD card from MEGA65, then insert it in your PC's card reader. Co
 
 The SD card uses a modern file system that stores each file as one or more _blocks_ on the card. In some cases, a file's blocks may not be stored contiguously: pieces of a single file may be stored in different places on the card. The MEGA65 Hypervisor does not have complete support for files stored this way, and may fail to find a system file or D81 disk image if the file is stored discontinuously, or _fragmented_.
 
-One method to avoid fragmenting the system files when copying them to an SD card is to _not_ simply copy the new files over the existing files. Instead, rename each of the old files on the card (e.g. rename `FREEZER.M65` to `OLD_FREEZER.M65`), copy the new file (e.g. `FREEZER.M65` from the archive) onto the card, then delete the old file. This discourages your PC from attempting to reuse the space occupied by the old file for the new file, noticing that the new file is larger than the old file, and allocating discontinuous blocks for the additional data.
+One method to avoid fragmenting the system files when copying them to an SD card is to _not_ simply copy the new files over the existing files. Instead, rename each of the old files on the card (e.g. rename `FREEZER.M65` to `OLD_FREEZER.M65`), copy the new file (e.g. `FREEZER.M65` from the archive) onto the card, then delete the old file. This discourages your PC from attempting to reuse the space occupied by the old file for the new file, noticing that the new file is larger than the old file, and allocating discontinuous blocks for the additional data. If you notice problems after upgrading SD card system files, try reinstalling the files onto the card using this technique.
 
-I find this technique difficult to recommend as a best practice because it is a difficult chore to do this for every file in the "SD card essentials" archive. I mention it here because it is discussed often in the Discord and in some instructions. If you notice problems after upgrading SD card system files, try reinstalling the files onto the card using this technique.
+To make this easier, I wrote [a Python script](https://github.com/dansanderson/mega65-welcome-guide/blob/main/update-sd-card.py) that updates an SD card using this technique for all files to avoid fragmentation. Feel free to use it or adapt it for other purposes.
 
 [This article](https://files.mega65.org?ar=73fd7977-aad3-4e13-8b5a-e9f0548b6cb2) recommends using defragmentation tools on the SD card. I have not tested these.
 

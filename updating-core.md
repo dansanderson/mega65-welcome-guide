@@ -11,7 +11,7 @@ Other "core" related files on Filehost are used for different purposes. You prob
 ```{caution}
 A new core version is uploaded to Filehost every time someone changes the source code. Occasionally, a change may introduce a bug. If you're having difficulty with the latest core, [go to the Filehost page](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead) and click "All versions" to access previous versions.
 
-As of this writing, the recommended core is build 198 (f555316), which is _not_ the latest version.
+As of this writing, the recommended core is build 198 (f555316), which is _not_ the latest version. The recommended version is usually the one that you get by clicking the "Download" button.
 ```
 
 ## Installing the latest MEGA65 core

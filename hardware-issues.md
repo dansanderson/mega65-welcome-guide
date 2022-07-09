@@ -13,6 +13,7 @@ You can test this on your device in several ways:
 -   In the configuration utility, set the RTC time, then navigate to another submenu, then navigate back. With a working clock, the time value should have advanced by the correct number of seconds.
 -   From the demo disk, find the Vector Clock utility and run it. Check that it advances the time correctly. With a working clock, it should stay up to the correct time indefinitely.
 -   From BASIC, use this command to print the contents of the clock: `?TI$` (That's a question mark—a synonym for `PRINT`—followed by the `TI$` string variable.) Do this multiple times, or write a program to print it repeatedly. With a working clock, the value should advance correctly.
+-   After setting the time in the configuration utility, turn off the computer, wait a bit, then turn it back on. With a working clock, the time displayed on the BASIC home screen should be accurate.
 
 There is a solution for the RTC issue that involves installing a new part and a connector. If your MEGA65 is affected by this issue, you can purchase the [DS3231 Real-Time Clock](https://www.aliexpress.com/item/3256803522608024.html) and a [Grove 4-pin male jumper cable](https://core-electronics.com.au/grove-4-pin-male-jumper-to-grove-4-pin-conversion-cable-5-pcs-per-pack.html). The cable's four (4) loose pins connect to the RTC unit's five (5) connections as shown in the photo below. With the RTC on top and facing you, from left to right: red, white, yellow, no connection, then black. The Grove connector end only installs one way on the Grove connector on the main board.
 
@@ -22,7 +23,7 @@ There is a solution for the RTC issue that involves installing a new part and a 
 
 You must upgrade to a recent core (such as build 198, f555316) to use the replacement RTC. Remember that when you use the <kbd>Alt</kbd> menu to access the Configuration utility to set the time then save and exit, the MEGA65 will boot into the factory-installed core in slot 0. Turn the computer off then on again to boot into the core in slot 1 and see the replacement RTC working.
 
-If the replacement RTC does not remember the time that you set when powered off, its own battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a CR2032 battery holder and battery, as shown here.
+If the new replacement RTC does not remember the time that you set when powered off, its battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. The battery is the yellow disc with metal pads soldered to the board. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a CR2032 battery holder and battery, as shown here.
 
 ![The DS3231 RTC with the built-in battery removed and a CR2032 battery holder added](photos/rtc_new_battery.jpeg)
 ![The battery-upgraded DS3231 RTC installed](photos/rtc_new_battery_installed.jpeg)
