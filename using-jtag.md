@@ -24,7 +24,7 @@ For another version of these instructions with more photos, see [JTAG adapter, h
 
 ## Acquiring a JTAG adapter
 
-The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) (Trenz Electronic) is compatible with the MEGA65. You might also be able to [order the TE0790-03 from DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026). As of this writing, this item is difficult to get due to supply chain issues.
+The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) (Trenz Electronic) is compatible with the MEGA65. You might also be able to [order the TE0790-03 from DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026). As of this writing, this item is difficult to get due to supply chain issues. Trenz is accepting backorders (even though "in stock" says zero) and will be fulfilling them as parts become available.
 
 ![XMOD FTDI JTAG Adapter TE0790-03 in its box](photos/jtag_box.jpeg)
 ![XMOD FTDI JTAG Adapter TE0790-03 out of its box](photos/jtag_unit.jpeg)
@@ -138,11 +138,7 @@ Many of these upload actions reset the MEGA65 in the process, and will not warn 
 
 ### Transferring files to and from the SD card
 
-You can also upload files directly to the SD card. Click `SD CARD` to open the file transfer utility on both your PC and the MEGA65.
-
-```{note}
-Do you see "ERROR: Could not open the file system" when trying to use this feature? This feature may be broken in M65Connect v1.8. Behind the scenes, M65Connect invokes a command line tool called `mega65_ftp`. M65Connect may be bundled with an older version of this tool that no longer works. This should be fixed the next time this tool is updated.
-```
+You can upload files directly to the SD card. Click `SD CARD` to open the file transfer utility on both your PC and the MEGA65.
 
 ### Other cool things M65Connect can do
 

@@ -6,11 +6,11 @@ Your microSD card will be your MEGA65's primary storage, and the primary way to 
 
 To use an SD card with the MEGA65, it must be formatted (erased and prepared) using the MEGA65. The SD card works like a regular storage drive when connected to your PC, but it contains additional data not visible to the PC that is used by MEGA65.
 
-To prepare a new microSD card for use, insert it into your MEGA65's external microSD card slot. Turn off your MEGA65, then hold the Alt key (top row near the left) and turn it on. Select option 2: SDCard FDisk+Format Utility (press 2).
+To prepare a new microSD card for use, insert it into your MEGA65's external microSD card slot. Turn off your MEGA65, then hold the <kbd>Alt</kbd> key (top row near the left) and turn it on. Select option 2: SDCard FDisk+Format Utility (press 2).
 
 ![Hypervisor utility menu, holding Alt during boot](screenshots/hypervisor_altmenu.jpg)
 
-The SD card utility will look for cards in the available slots. Confirm that it has detected your microSD card correctly, then select option 1 for the external microSD slot (press 1). Follow the prompts.
+The SD card utility will look for cards in the available slots. Confirm that it has detected your microSD card correctly, then select option 1 for the external microSD slot (press <kbd>1</kbd>). Follow the prompts.
 
 ![SD card utility](screenshots/sdcard_util.jpg)
 
@@ -28,21 +28,27 @@ For more on preparing SD cards for use, see the User's Manual, starting page 23.
 
 MEGA65 prepares the SD card with files from the factory-installed core. You will want to update these files with newer versions.
 
-Visit [the Filehost website](https://files.mega65.org/html/main.php) and make sure you are signed in. Select "Files," then filter the Category column for the Firmware category. Locate the item named "[MEGA65 SD card essentials](https://files.mega65.org?id=a809e0ae-30ac-42f5-ab9c-766d72fd6331)," click it to open the item, then click Download.
-
-```{note}
-There is also a "MEGA65 SD card essentials - No ROM" file. This is the same archive, but with the licensed ROM files removed.
-```
+Visit [the Filehost website](https://files.mega65.org/html/main.php) and make sure you are signed in. Select "Files," then filter the Category column for the Firmware category. Locate the item named "[MEGA65 SD card essentials - No ROM](https://files.mega65.org?id=0fb941fe-5c5f-4608-b0f1-32849d4a8dff)," click it to open the item, then click Download.
 
 This file is in the [RAR archive format](<https://en.wikipedia.org/wiki/RAR_(file_format)>). You will need software on your PC to unpack this archive. I recommend [The Unarchiver](https://theunarchiver.com/), which has a graphical app for macOS and a command-line tool for Mac, Windows, and Linux. Windows users might prefer [7-Zip](https://www.7-zip.org/). Unpack the RAR archive to a folder of files.
 
 Remove the microSD card from MEGA65, then insert it in your PC's card reader. Copy the unpacked files to the microSD card (in the root level, not in a sub-folder), replacing all files that have the same names.
 
+### Preventing "fragmented" files
+
+The SD card uses a modern file system that stores each file as one or more _blocks_ on the card. In some cases, a file's blocks may not be stored contiguously: pieces of a single file may be stored in different places on the card. The MEGA65 Hypervisor does not have complete support for files stored this way, and may fail to find a system file or D81 disk image if the file is stored discontinuously, or _fragmented_.
+
+One method to avoid fragmenting the system files when copying them to an SD card is to _not_ simply copy the new files over the existing files. Instead, rename each of the old files on the card (e.g. rename `FREEZER.M65` to `OLD_FREEZER.M65`), copy the new file (e.g. `FREEZER.M65` from the archive) onto the card, then delete the old file. This discourages your PC from attempting to reuse the space occupied by the old file for the new file, noticing that the new file is larger than the old file, and allocating discontinuous blocks for the additional data.
+
+I find this technique difficult to recommend as a best practice because it is a difficult chore to do this for every file in the "SD card essentials" archive. I mention it here because it is discussed often in the Discord and in some instructions. If you notice problems after upgrading SD card system files, try reinstalling the files onto the card using this technique.
+
+[This article](https://files.mega65.org?ar=73fd7977-aad3-4e13-8b5a-e9f0548b6cb2) recommends using defragmentation tools on the SD card. I have not tested these.
+
 ## Updating the ROM
 
-The SD card essentials archive includes MEGA65 ROM files, but these might be out of date. Just to be sure, let's grab the absolute latest ROM from Filehost.
+As indicated by the phrase "No ROM" in the title, the SD card essentials "No ROM" archive does not include the MEGA65 ROM file. If you have registered your owner ID with your Filehost account, you can get the latest ROM as a separate download.
 
-Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920350.BIN`. The number in the filename is the version number for this ROM. (Yours may be newer than the example in this guide. It gets updated frequently.)
+Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920371.BIN`. The number in the filename is the version number for this ROM.
 
 Rename the ROM file to `MEGA65.ROM`. Copy it to the microSD card, replacing the file that is already there.
 
@@ -59,3 +65,7 @@ You can keep multiple versions of the MEGA65 ROM on your SD card and switch betw
 The SD card formatting process does not fully recreate the SD card that was bundled with the computer. You can re-add the bundled software from the backup you made in the previous section, if desired.
 
 See {ref}`try-this-first:other bundled software` for a list of bundled D81 disk images that you might want to install. The new card is also missing `HEAVY.MOD`, one of the two bundled MOD music files that work with the MOD player on the demo disk. (`POPCORN.MOD` does get installed automatically on a fresh card. Nice!)
+
+```{tip}
+If you erased your factory-installed SD card without backing up its contents, you can find the original [MEGA65 Release SD Card - Intro Disk #1](https://files.mega65.org?id=f588fd55-f2b8-4ca0-b5f4-9ae5b1c2e914) on Filehost. You must be a registered owner to see this file, because it contains licensed software including the ROM and GEOS. Note that the system files on this SD card image are the factory-installed versions, not the new ones we just upgraded.
+```

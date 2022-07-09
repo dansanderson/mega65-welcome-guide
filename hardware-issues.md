@@ -6,15 +6,32 @@ Being the first batch, some minor fit and finish issues were inevitable. Here ar
 
 ## The Real-Time Clock doesn't advance the time
 
-A significant percentage—but not all—of MEGA65 owners reported that the Real-Time Clock (RTC) stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
+A small but significant percentage of MEGA65 owners reported that the Real-Time Clock (RTC) stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
 
 You can test this on your device in several ways:
 
-- In the configuration utility, set the RTC time, then navigate to another submenu, then navigate back. With a working clock, the time value should have advanced by the correct number of seconds.
-- From the demo disk, find the Vector Clock utility and run it. Check that it advances the time correctly. With a working clock, it should stay up to the correct time indefinitely.
-- From BASIC, use this command to print the contents of the clock: `?TI$` (That's a question mark—a synonym for `PRINT`—followed by the `TI$` string variable.) Do this multiple times, or write a program to print it repeatedly. With a working clock, the value should advance correctly.
+-   In the configuration utility, set the RTC time, then navigate to another submenu, then navigate back. With a working clock, the time value should have advanced by the correct number of seconds.
+-   From the demo disk, find the Vector Clock utility and run it. Check that it advances the time correctly. With a working clock, it should stay up to the correct time indefinitely.
+-   From BASIC, use this command to print the contents of the clock: `?TI$` (That's a question mark—a synonym for `PRINT`—followed by the `TI$` string variable.) Do this multiple times, or write a program to print it repeatedly. With a working clock, the value should advance correctly.
 
-The MEGA65 team is working on diagnosing and fixing this issue. Join the Discord and search the `#announcements-only` channel for instructions on how to participate in the investigation.
+There is a solution for the RTC issue that involves installing a new part and a connector. If your MEGA65 is affected by this issue, you can purchase the [DS3231 Real-Time Clock](https://www.aliexpress.com/item/3256803522608024.html) and a [Grove 4-pin male jumper cable](https://core-electronics.com.au/grove-4-pin-male-jumper-to-grove-4-pin-conversion-cable-5-pcs-per-pack.html). The cable's four (4) loose pins connect to the RTC unit's five (5) connections as shown in the photo below. With the RTC on top and facing you, from left to right: red, white, yellow, no connection, then black. The Grove connector end only installs one way on the Grove connector on the main board.
+
+![The DS3231 RTC and recommended Grove connector cable](photos/rtc_parts.jpeg)
+![The wiring of the Grove cable to the external RTC](photos/rtc_wiring.jpeg)
+![The external RTC fully installed on the mainboard, affixed to the case with tape](photos/rtc_installed.jpeg)
+
+You must upgrade to a recent core (such as build 198, f555316) to use the replacement RTC. Remember that when you use the <kbd>Alt</kbd> menu to access the Configuration utility to set the time then save and exit, the MEGA65 will boot into the factory-installed core in slot 0. Turn the computer off then on again to boot into the core in slot 1 and see the replacement RTC working.
+
+If the replacement RTC does not remember the time that you set when powered off, its own battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a CR2032 battery holder and battery, as shown here.
+
+![The DS3231 RTC with the built-in battery removed and a CR2032 battery holder added](photos/rtc_new_battery.jpeg)
+![The battery-upgraded DS3231 RTC installed](photos/rtc_new_battery_installed.jpeg)
+
+The replacement RTC does not use the battery you installed on the main board. You can remove the main board battery when using the replacement RTC.
+
+```{note}
+As of this writing, we are investigating an issue where the MEGA65 sets the hour to "19" every time you turn it on with a replacement RTC connected. See [this Github issue](https://github.com/MEGA65/mega65-core/issues/591) for more information.
+```
 
 ## Case fit issues
 
@@ -45,5 +62,3 @@ Join the `#compatibility` channel on the Discord to discuss any compatibility is
 ## Boot failures with blinking blue LED lights
 
 If the MEGA65 fails to boot its operating system, it will blink the LED lights on the machine in a blue color. This may indicate a problem with the core being loaded. Turn off the power, then hold the No Scroll key and turn it on to access the core selection menu. Select a known-good core, such as the factory-installed core in slot 0.
-
-I mostly see this when trying to boot the C64 core. In most cases, I just need to try again and the C64 core will boot successfully.

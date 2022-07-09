@@ -8,7 +8,7 @@ The MEGA65 uses an SD memory card for its primary data storage. There are _two_ 
 
 ![A microSD card and a full-size SD card](photos/sdcards_1.jpeg)
 
-MEGA65 only uses one SD memory card at a time. If there is a microSD card in the external slot, it ignores the full-size SD card in the internal slot. The SD card contains the operating system software ("ROM"), firmware ("cores"), and D81 disk images.
+MEGA65 only uses one SD memory card at a time. If there is a microSD card in the external slot, it ignores the full-size SD card in the internal slot. The SD card contains the operating system software ("ROM"), firmware ("core"), the system utilities (such as the Freeze menu), and D81 disk images.
 
 I recommend installing a microSD card in the external slot, and leaving the internal card with its factory-installed data intact. Following this Guide, you will set up a microSD card with all of the latest versions of the software. You will use this card to transfer software and data between MEGA65 and your PC.
 
@@ -58,14 +58,14 @@ The User Guide describes ROM files starting on page 26.
 
 The MEGA65 has additional built-in functionality not present in the original Commodore 65, such as for managing the startup sequence, SD cards, cores, and configuration. This operating system is known as the Hypervisor.
 
-You see the Hypervisor in action every time you turn on your MEGA65. Normally this screen displays some messages then quickly disappears. If you want to pause the Hypervisor to read these messages, hold the Ctrl key during startup. Release Ctrl to continue.
+You see the Hypervisor in action every time you turn on your MEGA65. Normally this screen displays some messages then quickly disappears. If you want to pause the Hypervisor to read these messages, hold the <kbd>Ctrl</kbd> key during startup. Release <kbd>Ctrl</kbd> to continue.
 
 ## PAL and NTSC
 
 Back in the day, [PAL](https://en.wikipedia.org/wiki/PAL) and [NTSC](https://en.wikipedia.org/wiki/NTSC) were competing standards for analog video signals, used for both transmission and rendering on cathode ray tube (CRT) displays. They differed in two major ways:
 
-- The number of horizontal lines used to make the image. PAL uses a vertically dense 625 interlaced lines, compared to NTSC which uses 525 lines.
-- The number of times the screen is drawn per second, aka the _refresh rate_. PAL sweeps the screen top to bottom 50 times per second (50 Hz, or 25 interlaced frames per second), while NTSC refreshes at a faster 60 times per second (60 Hz, or 30 frames per second).
+-   The number of horizontal lines used to make the image. PAL uses a vertically dense 625 interlaced lines, compared to NTSC which uses 525 lines.
+-   The number of times the screen is drawn per second, aka the _refresh rate_. PAL sweeps the screen top to bottom 50 times per second (50 Hz, or 25 interlaced frames per second), while NTSC refreshes at a faster 60 times per second (60 Hz, or 30 frames per second).
 
 Commodore made different versions of its computers for each standard, and sold them in the countries where those standards were used: NTSC in the United States and Japan, and PAL in Europe.
 

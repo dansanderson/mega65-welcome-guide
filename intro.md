@@ -1,6 +1,6 @@
 # Welcome!
 
-Congratulations! You are the owner of [the MEGA65 personal computer](https://mega65.org/), a modern recreation of the [Commodore 65](https://en.wikipedia.org/wiki/Commodore_65), the unreleased successor to the highest selling computer of all time, the [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64).
+Congratulations! You are the owner of [the MEGA65 personal computer](https://mega65.org/), a modern recreation of the [Commodore 65](https://en.wikipedia.org/wiki/Commodore_65). The Commodore 65 was the unreleased successor to the highest selling computer of all time, the [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64).
 
 ```{tip}
 Don't own a MEGA65? You can [pre-order one](https://shop.trenz-electronic.de/en/Products/MEGA65/) from the next batch!
@@ -12,13 +12,13 @@ Your MEGA65 comes with an excellent [User's Guide](https://files.mega65.org/manu
 
 Specifically, this Welcome Guide will recommend first steps you can take to get the most out of your MEGA65 based on the hardware and software that was delivered in the year 2022. By following this guide, you will:
 
-- Explore your MEGA65 right out of the box!
-- Learn important concepts for maintaining your MEGA65
-- Prepare a microSD card for storage and software upgrades
-- Open your MEGA65 to install and upgrade components
-- Update your MEGA65 to the latest versions of the software
-- Learn about features still in development and known issues with the hardware
-- Find out how to learn more and connect with the MEGA65 community
+-   Explore your MEGA65 right out of the box!
+-   Learn important concepts for maintaining your MEGA65
+-   Prepare a microSD card for storage and software upgrades
+-   Open your MEGA65 to install and upgrade components
+-   Update your MEGA65 to the latest versions of the software
+-   Learn about features still in development and known issues with the hardware
+-   Find out how to learn more and connect with the MEGA65 community
 
 This Welcome Guide will refer to the official User's Guide, so keep it handy!
 

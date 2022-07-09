@@ -5,7 +5,7 @@ The following items are included in your MEGA65 box:
 1. Your MEGA65 personal computer
 2. Power supply
 3. The MEGA65 User's Guide
-4. Your personal registration code, on a piece of paper
+4. Your personal registration code, on a piece of paper (possibly tucked into the User's Guide)
 5. The internal SD memory card (installed inside the MEGA65)
 
 For this Guide, you will also need:
@@ -30,5 +30,11 @@ And if you want to get really serious:
 2. Mini USB B to USB A cable, to connect between your PC and the JTAG adapter
 
 ```{tip}
-The compatible JTAG adapter is difficult to find right now. Alternatively, you can use a more common USB UART adapter, with important caveats. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba). A misconfigured or mis-wired UART adapter may damage the computer.
+The compatible JTAG adapter is difficult to find right now. Trenz is fulfilling backorders as parts become available. You can [preorder the JTAG adapter](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) even though "in stock" says zero, and your order will be fulfilled eventually.
+
+Alternatively, you can use a more common USB UART adapter, with important caveats. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba). A misconfigured or mis-wired UART adapter may damage the computer.
+```
+
+```{tip}
+A small percentage of batch #1 machines have an issue with the built-in Real-Time Clock (RTC). There is an official solution to install a replacement. See {ref}`hardware-issues:the real-time clock doesn't advance the time` for how to get the appropriate parts.
 ```

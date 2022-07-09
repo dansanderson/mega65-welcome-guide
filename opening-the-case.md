@@ -4,11 +4,11 @@ Your MEGA65 consists of an injection molded plastic case, built-in keyboard and 
 
 You may want to open the case for the following reasons:
 
-- To access the internal SD card
-  - There is a small door in the bottom of the case that provides access to the internal SD card without opening the case, but I find it too difficult to access this way. You will only need the internal SD card during initial set-up (see below), and only if you want to copy the bundled disk images.
-- To install (or replace) the CR1220 battery for the Real-Time Clock
-- To resolve issues with the case by adjusting its assembly (see {ref}`hardware-issues:known hardware issues`)
-- To install a JTAG adapter (see {ref}`using-jtag:using the jtag connector`)
+-   To access the internal SD card
+    -   There is a small door in the bottom of the case that provides access to the internal SD card without opening the case, but I find it too difficult to access this way. You will only need the internal SD card during initial set-up (see below), and only if you want to copy the bundled disk images.
+-   To install (or replace) the CR1220 battery for the Real-Time Clock
+-   To resolve issues with the case by adjusting its assembly (see {ref}`hardware-issues:known hardware issues`)
+-   To install a JTAG adapter (see {ref}`using-jtag:using the jtag connector`)
 
 To open the MEGA65 case, locate three screws along the bottom front of the case and remove them with a Phillips head screwdriver.
 

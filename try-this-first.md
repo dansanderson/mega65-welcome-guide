@@ -14,7 +14,7 @@ See {ref}`video-display-compatibility:video display compatibility` later in this
 
 The MEGA65 has two methods of producing sound: over the HDMI connection, or through the dedicated audio jack. You can connect headphones or speakers to the audio jack.
 
-If you own a classic joystick, gamepad, or mouse with a [DE-9 nine-pin connector](http://wiki.icomp.de/wiki/DB9-Joystick), you can connect it to one of two nine-pin ports on the lefthand side of the machine. The MEGA65 supports both the [Commodore 1351](https://en.wikipedia.org/wiki/Commodore_1351) mouse and the Amiga mouse; the Amiga mouse requires setting a configuration option. Modern mouse replacements such as [the mouSTer adapter](https://retrohax.net/shop/amiga/mouster/) or the upcoming [wireless Amiga tank mouse](https://www.kickstarter.com/projects/lukas-remis/tank-mouse-your-new-amiga-mouse) are expected to work. Personally, I use a 1351 mouse in port 1 and a [modern Commodore-compatible gamepad](https://www.etsy.com/listing/681983120/commodore-64-atari-2600-controller) in port 2.
+If you own a classic joystick, gamepad, or mouse with a [DE-9 nine-pin connector](http://wiki.icomp.de/wiki/DB9-Joystick), you can connect it to one of two nine-pin ports on the lefthand side of the machine. The MEGA65 supports both the [Commodore 1351](https://en.wikipedia.org/wiki/Commodore_1351) mouse and the Amiga mouse. The Amiga mouse requires setting a configuration option. Modern mouse replacements such as [the mouSTer adapter](https://retrohax.net/shop/amiga/mouster/) or the upcoming [wireless Amiga tank mouse](https://www.kickstarter.com/projects/lukas-remis/tank-mouse-your-new-amiga-mouse) are expected to work. Personally, I use a 1351 mouse in port 1 and a [modern Commodore-compatible gamepad](https://www.etsy.com/listing/681983120/commodore-64-atari-2600-controller) in port 2.
 
 ```{note}
 Before connecting a mouse, be sure to set the mouse mode in the configuration step, described later. If an Amiga mouse is connected while the port is in the wrong mode, it may interfere with the behavior of the keyboard.
@@ -30,15 +30,15 @@ For more information on the peripheral ports, see the User's Guide, page 3.
 
 ## On-boarding
 
-When you turn your MEGA65 on for the first time, it prompts you for some initial settings. The most important setting is the video mode. Use the Tab key to cycle between digital video without sound over HDMI vs. with sound over HDMI ("enhanced"), and PAL 50Hz vs. NTSC 60Hz display modes. Press Space to test a video setting to make sure it works with your monitor.
+When you turn your MEGA65 on for the first time, it prompts you for some initial settings. The most important setting is the video mode. Use the <kbd>Tab</kbd> key to cycle between digital video without sound over HDMI vs. with sound over HDMI ("enhanced"), and PAL 50Hz vs. NTSC 60Hz display modes. Press <kbd>Space</kbd> to test a video setting to make sure it works with your monitor.
 
 ```{note}
-If your display isn't working, you may need to adjust the video mode blindly until you find one that works. Older DVI monitors need the "without sound" mode, and monitors vary in their support for 50Hz and 60Hz refresh rates. Use the Tab and Space keys to try the different modes.
+If your display isn't working, you may need to adjust the video mode blindly until you find one that works. Older DVI monitors need the "without sound" mode, and monitors vary in their support for 50Hz and 60Hz refresh rates. Use the <kbd>Tab</kbd> and <kbd>Space</kbd> keys to try the different modes.
 ```
 
-Take this opportunity to test your audio set-up. Press the `A` key to play a musical tone. If you are using audio over HDMI, make sure the video mode is set to "Enhanced (with sound)."
+Take this opportunity to test your audio set-up. Press the <kbd>A</kbd> key to play a musical tone. If you are using audio over HDMI, make sure the video mode is set to "Enhanced (with sound)."
 
-The "CRT emulation" option is a fun choice when using a modern flat panel display: it adds vertical gaps between pixels to simulate the CRT raster line. Try it to see if you like it: press the `C` key to toggle it on and off.
+The "CRT emulation" option is a fun choice when using a modern flat panel display: it adds vertical gaps between pixels to simulate the CRT raster line. Try it to see if you like it: press the <kbd>C</kbd> key to toggle it on and off.
 
 You can ignore the "Time" setting for now. We will discuss the Real-Time Clock later in this guide. All of these settings can be adjusted later.
 
@@ -52,7 +52,7 @@ As you try out the software that comes bundled with your MEGA65, you will want t
 
 ## Demonstration menu
 
-Your MEGA65 comes configured to run a demonstration program when you turn on the machine. You can use this menu to launch games, utilities, and demos that show off the capabilities of the MEGA65. Try them out! Remember that you can use the reset button to start over.
+Your MEGA65 is configured to run a demonstration program when you turn on the machine. You can use this menu to launch games, utilities, and demos that show off the capabilities of the MEGA65. Try them out! Remember that you can use the reset button to start over.
 
 ![MEGA65 demonstration disk title screen](screenshots/demo_title.jpg)
 ![MEGA65 demonstration disk menu screen](screenshots/demo_menu.jpg)
@@ -65,7 +65,7 @@ You can exit from the menu to MEGA65 BASIC, the built-in programming and operati
 The User's Guide does an excellent job describing the BASIC environment. See chapter 3, starting page 9.
 ```
 
-The demonstration menu is itself a BASIC program! When you exit from the menu to BASIC, this program will still be in memory. You can use the `LIST` command to see its source code. If you want to clear memory to write a new program, use the `NEW` command before entering statements.
+The demonstration menu is itself a BASIC program. When you exit from the menu to BASIC, this program will still be in memory. You can use the `LIST` command to see its source code. If you want to clear memory to write a new program, use the `NEW` command before entering statements.
 
 ```
 NEW
@@ -92,7 +92,7 @@ RENAME "MENU" TO "AUTOBOOT.C65"
 
 The MEGA65 spends most of its time behaving as a Commodore 65 computer would, either running a program or awaiting instructions in the BASIC environment. Your MEGA65 has additional features that were not part of the original C65 design. You can access many of these features from the Freeze menu.
 
-To open the Freeze menu, hold the Restore key for a second or more, then release it. The MEGA65 will pause whatever it is doing, flicker the border color, then open the Freeze menu. Whatever program was running remains in memory and can be resumed by pressing the `F3` key from the Freeze menu. You can also abandon the running program and reset the MEGA65 by pressing `F5`.
+To open the Freeze menu, hold the Restore key for a second or more, then release it. The MEGA65 will pause whatever it is doing, flicker the border color, then open the Freeze menu. Whatever program was running remains in memory and can be resumed by pressing the <kbd>F3</kbd> key from the Freeze menu. You can also abandon the running program and reset the MEGA65 by pressing <kbd>F5</kbd>.
 
 ![Freeze menu (fixed version)](screenshots/freeze_working.jpg)
 
@@ -106,10 +106,10 @@ If you are experiencing this issue, you can complete this section of the Guide w
 
 There are many useful features in the Freeze menu. Try them out!
 
-One feature to remember when playing games is the "(J)OY SWAP." This causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press `J` to swap the port numbers, then resume your game.
+One feature to remember when playing games is the "(J)OY SWAP." This causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press <kbd>J</kbd> to swap the port numbers, then resume your game.
 
 ```{note}
-As of this writing, it is possible—and usually undesireable—to freeze the Freeze menu by pressing Restore again while the Freeze menu is open. If you do this accidentally, reset and try again.
+In the factory-installed version of the Freeze menu, it is possible—and undesireable—to freeze the Freeze menu by pressing Restore again while the Freeze menu is open. If you do this accidentally, reset and try again.
 ```
 
 ## Disk images
@@ -120,23 +120,23 @@ MEGA65 comes bundled with several disk images, including one named `MEGA65.D81` 
 
 Try browsing one of the disk images included with your MEGA65:
 
-1. If the Freeze menu is not already open, hold the Restore key for a second then release it.
-2. Press `0` to see the options for setting up the first drive.
-3. Use the cursor keys to navigate to `DEMOCOMP.D81`. Press Return to select it.
+1. If the Freeze menu is not already open, hold the <kbd>Restore</kbd> key for a second then release it.
+2. Press <kbd>0</kbd> to see the options for setting up the first drive.
+3. Use the cursor keys to navigate to `DEMOCOMP.D81`. Press <kbd>Return</kbd> to select it.
 4. Notice that the disk image name appears under the "Internal drive" in the Freeze menu.
-5. Press `F5` to reset with this disk image in the virtual drive.
+5. Press <kbd>F5</kbd> to reset with this disk image in the virtual drive.
 
 ![Freeze menu disk selection](screenshots/freeze_selectingdisk.jpg)
 ![Freeze menu with DEMOCOMP.D81 disk selected](screenshots/freeze_democomp.jpg)
 
 ```{tip}
-If you are mounting a disk to start a new program, use the `F5` key to exit the Freeze menu with a reset. Your disk will continue to be mounted after the reset.
+If you are mounting a disk to start a new program, use the <kbd>F5</kbd> key to exit the Freeze menu with a reset. Your disk will continue to be mounted after the reset.
 
-While it is tempting to use the `F3` key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
+While it is tempting to use the <kbd>F3</kbd> key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
 ```
 
 ```{tip}
-The User's Guide describes disk images and the Freezer menu in chapter 7, starting page 59.
+The User's Guide describes disk images and the Freeze menu in chapter 7, starting page 59.
 ```
 
 ## Loading and running a program from disk
@@ -176,7 +176,7 @@ This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forwar
 ![Loading a file using the slash shortcut](screenshots/dirslash_loaded.jpg)
 ```
 
-When you're done enjoying the demo, you can press the reset button, or use the Freeze menu and press `F5` to reset.
+When you're done enjoying the demo, you can press the reset button, or use the Freeze menu and press <kbd>F5</kbd> to reset.
 
 ## Commodore 64 mode
 
@@ -228,7 +228,7 @@ Don't miss the other D81 disk images included with the MEGA65:
 
 I mentioned that the settings from the on-boarding process can be adjusted later. These settings and more are available in the built-in configuration utility.
 
-To start the configuration utility, turn off your MEGA65, then hold the Alt key (top row near the left) and turn it on. Select option 1: Configure MEGA65 (press 1).
+To start the configuration utility, turn off your MEGA65, then hold the <kbd>Alt</kbd> key (top row near the left) and turn it on. Select option 1: Configure MEGA65 (press <kbd>1</kbd>).
 
 ![Hypervisor utility menu; hold Alt key while turning the power on](screenshots/hypervisor_altmenu.jpg)
 ![Configuration utility, Input screen](screenshots/config_input.jpg)
@@ -236,7 +236,7 @@ To start the configuration utility, turn off your MEGA65, then hold the Alt key 
 You can use the cursor keys or a mouse to navigate the configuration options. This is also a good way to test whether your mouse is working. Useful options include:
 
 -   Input: mouse configuration. You can enable the use of Amiga mice on either port.
--   Chipset: Real-Time Clock. This is how you set the date and time, which I told you to skip during on-boarding because we haven't installed the battery yet.
+-   Chipset: Real-Time Clock. This is how you set the date and time, which I told you to skip during on-boarding because you haven't installed the battery yet.
 -   Chipset: Default Disk Image. Specify a D81 filename to load by default when you turn on the computer.
 -   Video: All of the video options from the on-boarding screen.
 

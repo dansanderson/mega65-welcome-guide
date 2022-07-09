@@ -21,5 +21,5 @@ To verify that you can see the licensed files, click "Files," click the search f
 ![Filehost website, Redeem Code menu option](screenshots/filehost_romsearch.png)
 
 ```{tip}
-Not seeing the licensed ROM after registering? Log out, then log back in again.
+Not seeing the licensed ROM after registering? Try logging out, then log back in again.
 ```

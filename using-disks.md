@@ -2,11 +2,11 @@
 
 We discussed using D81 disk images back in {ref}`try-this-first:disk images`, including:
 
-- How to browse D81 disk images using the Freeze menu
-- How to mount a D81 disk image on drive 0 device 8 using the Freeze menu
-- How to get a directory listing with the `DIR` command
-- How to load and run a program on the disk using the `LOAD` and `RUN` commands
-- How to use the `/` shortcut to load a file within a directory listing
+-   How to browse D81 disk images using the Freeze menu
+-   How to mount a D81 disk image on drive 0 device 8 using the Freeze menu
+-   How to get a directory listing with the `DIR` command
+-   How to load and run a program on the disk using the `LOAD` and `RUN` commands
+-   How to use the `/` shortcut to load a file within a directory listing
 
 Disk-related improvements have been advancing quickly, and the latest ROM includes bug fixes and useful features not mentioned in the printed manual.
 
@@ -39,11 +39,15 @@ DLOAD "$$"
 LIST
 ```
 
-This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer features to scroll up to previous lines. Use the F9 and F11 keys to traverse the listing, then cursor up to a program you want to load and use the `/` shortcut.
+This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer features to scroll up to previous lines. Use the <kbd>F9</kbd> and <kbd>F11</kbd> keys to traverse the listing, then cursor up to a program you want to load and use the `/` shortcut.
 
 ```{caution}
 Loading the directory listing with `DLOAD` overwrites any BASIC program that resides in memory. The `DIR` command does not overwrite BASIC memory.
 ```
+
+## Loading and running with a single shortcut
+
+It is handy to cursor up a directory listing and type `/` to load a program without fussing with the contents of the line. Now that you have a recent version of the ROM installed, you can use a newer feature that both loads and runs a program in a single step: instead of `/`, type the up-arrow key (the key to the right of the <kbd>Restore</kbd> key) as the first character on a line of a directory listing, then press <kbd>Return</kbd>.
 
 ## Using the SD card from BASIC
 
@@ -91,7 +95,7 @@ The MEGA65 floppy drive supports both double density (DD) and high density (HD) 
 Until this is fixed in a future software update, an HD disk with the hole exposed will not work with the MEGA65. If your disk isn't working, double-check that the hole is covered.
 ```
 
-Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold Restore, then release), then select drive number `0`. (The internal drive can only be mounted to drive 0.) In the list of options that includes the D81 disk images, select `- INTERNAL 3.5" -`. Exit the Freeze menu (resume or reset).
+Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold <kbd>Restore</kbd>, then release), then select drive number `0`. (The internal drive can only be mounted to drive 0.) In the list of options that includes the D81 disk images, select `- INTERNAL 3.5" -`. Exit the Freeze menu (resume or reset).
 
 Insert a floppy disk in the drive. If you have not used this disk with the MEGA65 before, it needs to be formatted. This erases all data on the disk! Use the `HEADER` command, providing a disk name in quotes, and a two digit disk ID number preceded by the letter `I`:
 
@@ -143,13 +147,18 @@ One way to do this is with the `cbmconvert` command line tool. This requires you
 xcode-select --install
 ```
 
+`cbmconvert` version 2.1.5 requires `cmake` to build. On a Mac, you can install this with the [Homebrew package manager](https://brew.sh/):
+
+```
+brew install cmake
+```
+
 To build the `cbmconvert` tool:
 
-1. [Download cbmconvert-2.1.2.tar.gz](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/cbmconvert-2.1.2.tar.gz). (See [the download site](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/) for links to other versions.)
-2. Expand the archive: `tar xvfz cbmconvert-2.1.2.tar.gz`
-3. Change to the expanded directory: `cd cbmconvert-2.1.2`
-4. Build the tool: `make -f Makefile.unix`
-   1. Windows users with a POSIX-compliant build environment, use `make -f Makefile.win32`
+1. [Download cbmconvert's source code](https://github.com/dr-m/cbmconvert/archive/refs/heads/main.zip). (See [this Github repo](https://github.com/dr-m/cbmconvert) for versions 2.1.5 and later, or [the download site](http://www.zimmers.net/anonftp/pub/cbm/crossplatform/converters/unix/) for links to other versions.)
+2. Expand the archive: `unzip cbmconvert-main.zip`
+3. Change to the expanded directory: `cd cbmconvert-main`
+4. Build the tool: `cmake .; cmake --build .`
 
 The `cbmconvert` tool is now present in the directory. You can put this directory on your command path, copy the `cbmconvert` file to somewhere on your path, or use the path to this directory when running the tool.
 
