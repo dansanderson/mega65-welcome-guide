@@ -1,24 +1,26 @@
 # Updating the core firmware
 
-A new version of the MEGA65 core has been released since the batch #1 MEGA65 was produced, so you will want to update it. The newest ROM expects the new core.
+In the previous step, {ref}`setting-up-microsd-card:updating the sd card files`, you chose between the stable release and the latest experimental release. If you opted to upgrade to the latest experimental release, you will need to update the MEGA65 firmware. When the batch #2 release candidate is declared stable, all batch #1 owners will be encouraged to update both the firmware and the system software.
 
-## Downloading the latest MEGA65 core
+## Locating the .COR file
 
-You can download the latest MEGA65 core from Filehost. For the batch #1 MEGA65 hardware, you want the [MEGA65 R3 Core - COR file](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead).
+The firmware data file is known as a "core." Its filename ends in `.cor`.
 
-Other "core" related files on Filehost are used for different purposes. You probably don't need them. "MEGA65 R2" is a previous version of the mainboard. "Nexys 4" and "Nexys 4 DDR" are FPGA development boards that can be configured to run like a MEGA65. The "MCS" and "BIT" files are different ways to update the core; you use COR files with the recommended update procedure.
+In the [stable release package](https://files.mega65.org?id=a0276005-e71c-4b2d-8d17-2aa92e492c50), the core file is in the `SD` folder with the rest of the system software, with a name such as `R3_R_0_9.COR`. You probably already copied it to the microSD card. Great!
 
-```{caution}
-A new core version is uploaded to Filehost every time someone changes the source code. Occasionally, a change may introduce a bug. If you're having difficulty with the latest core, [go to the Filehost page](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead) and click "All versions" to access previous versions.
+In the [experimental release package](https://files.mega65.org?id=f461df65-4957-4d5b-9f6e-890dc63ee501), the core file is in the main folder with a name like `mega65r3-20220717.12-develo-3253c5d.cor`. There are other files with similar names; be sure to locate the one that ends with `.cor`. Rename this file to something short like `v3253c5d.cor`, then copy it to the microSD card.
 
-As of this writing, the recommended core is build 198 (f555316), which is _not_ the latest version. The recommended version is usually the one that you get by clicking the "Download" button.
+```{tip}
+There are other firmware-related downloads on Filehost. You probably don't need them. "MEGA65 R2" is a previous version of the mainboard. "Nexys 4" and "Nexys 4 DDR" are FPGA development boards that can be configured to run like a MEGA65. The "MCS" and "BIT" files are different ways to update the core; you use COR files with the recommended update procedure.
+
+You can use the [MEGA65 R3 Core - COR file](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead) Filehost node to access previous versions of the "experimental" core. Click "All versions," and notice the sequential build versions (such as `198.0`) and Git commit IDs (`f555316`).
 ```
 
-## Installing the latest MEGA65 core
+## Installing the MEGA65 core
 
-Download "[mega65r3-dev.cor](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead)" from Filehost. Copy this file to the microSD card.
+Copy the `.cor` file to the microSD card. Eject the microSD card from your PC and insert it into the MEGA65 external slot.
 
-Eject the microSD card from your PC and insert it into the MEGA65 external slot. Make sure the MEGA65 is off, then hold the <kbd>No Scroll</kbd> key (in the top row) and turn it on. This opens the core selection and installation menu.
+Make sure the MEGA65 is off, then hold the <kbd>No Scroll</kbd> key (in the top row) and turn it on. This opens the core selection and installation menu.
 
 ![The core menu, factory configuration](screenshots/cor_menu_empty.jpg)
 
@@ -43,7 +45,7 @@ If you use a Mac computer to copy a file to a MEGA65 SD card, it creates another
 If you select the wrong one, MEGA65 will warn that the incorrect file does not have a matching device ID (because it isn't a real core file). Press <kbd>RUN/STOP</kbd> to abort and try again with the correct file.
 ```
 
-```{tip}
+```{hint}
 For more on installing cores, see the User's Guide, chapter 6, starting page 47.
 ```
 
@@ -62,7 +64,7 @@ I noticed a few common symptoms caused by older versions of the ROM, the core, o
 -   _Disk directory misbehavior, such as an extra file, or missing files._
     -   You are using the newer ROM with the older core.
 
-Use "Matrix mode" (hold <kbd>Mega</kbd>, hit <kbd>Tab</kbd>) to double check that MEGA65 is using the latest core. If it is using the factory core (`1586ad4`) and you have the latest core installed in slot 1, turn off your MEGA65, then turn it back on.
+Use "Matrix mode" (hold <kbd>Mega</kbd>, hit <kbd>Tab</kbd>) to double check that MEGA65 is using the latest core. If it is using the factory core (`1586ad4`) and you have a newer core installed in slot 1, turn off your MEGA65, then turn it back on.
 
 ## The C64 core
 

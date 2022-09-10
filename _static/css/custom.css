@@ -20,3 +20,56 @@ kbd {
     padding: 2px 4px;
     white-space: nowrap;
 }
+
+.admonition {
+    border: 1px solid #999;
+    padding: 1em 1em 0 1em;
+    margin-bottom: 1em;
+}
+.admonition::before {
+    font-family: $heading-font-stack;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+}
+div.admonition p.admonition-title {
+    margin-top: 4px;
+    font-size: 20px;
+    font-family: Roboto, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.admonition-title::after {
+    display: none;
+}
+.admonition.tip {
+    border-left: 4px solid #55c;
+    background: white;
+}
+.admonition.tip .admonition-title {
+    color: #55c;
+}
+.admonition.note {
+    border-left: 4px solid #445;
+    background: white;
+}
+.admonition.note .admonition-title {
+    color: #445;
+}
+.admonition.caution {
+    border-left: 4px solid #c02;
+    background: white;
+}
+.admonition.caution .admonition-title {
+    color: #c02;
+}
+.admonition.hint {
+    border-left: 4px solid #bbb;
+    background: white;
+    font-size: smaller;
+}
+.admonition.hint > p {
+    margin-top: 0;
+}
+.admonition.hint .admonition-title {
+    display: none;
+}

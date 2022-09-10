@@ -28,7 +28,7 @@ If there are too many files than fit on a single screen, the list will scroll of
 DIR W
 ```
 
-```{tip}
+```{hint}
 For more on the `DIR` command, see the User's Guide, page 106.
 ```
 
@@ -105,7 +105,7 @@ HEADER "WORK FILES",I01
 
 Enter `YES` at the prompt to confirm. Formatting a disk for the first time takes a minute or so.
 
-```{tip}
+```{hint}
 See the `HEADER` command in the User's Guide, page 135.
 ```
 

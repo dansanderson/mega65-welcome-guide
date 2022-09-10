@@ -24,7 +24,7 @@ Before connecting a mouse, be sure to set the mouse mode in the configuration st
 Do not connect a Sega Genesis game controller directly to the MEGA65 or Commodore computers. Sega Genesis controllers are not compatible and may damage the computer, even though they have the same connector. If you wish to use the Genesis controller, you can use an adapter such as [the BackBit GenAssister](https://store.backbit.io/product/genassister/).
 ```
 
-```{tip}
+```{hint}
 For more information on the peripheral ports, see the User's Guide, page 3.
 ```
 
@@ -42,7 +42,7 @@ The "CRT emulation" option is a fun choice when using a modern flat panel displa
 
 You can ignore the "Time" setting for now. We will discuss the Real-Time Clock later in this guide. All of these settings can be adjusted later.
 
-```{tip}
+```{hint}
 For a description of the on-boarding interface, see the User's Guide, page 28.
 ```
 
@@ -61,7 +61,7 @@ You can exit from the menu to MEGA65 BASIC, the built-in programming and operati
 
 ![BASIC title screen, factory-installed ROM version](screenshots/basic_920287.jpg)
 
-```{tip}
+```{hint}
 The User's Guide does an excellent job describing the BASIC environment. See chapter 3, starting page 9.
 ```
 
@@ -135,7 +135,7 @@ If you are mounting a disk to start a new program, use the <kbd>F5</kbd> key to 
 While it is tempting to use the <kbd>F3</kbd> key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
 ```
 
-```{tip}
+```{hint}
 The User's Guide describes disk images and the Freeze menu in chapter 7, starting page 59.
 ```
 
@@ -208,7 +208,7 @@ MEGA65 currently only supports D81 disk images. Support for the more common `D64
 C64 mode is not to be confused with the C64 _core_, an alternate way to run C64 software on the MEGA65 which we will discuss later in this guide. The C64 core supports D64 disk images, in a different way.
 ```
 
-```{tip}
+```{hint}
 For detailed information about C64 mode, see the User's Guide, chapter 5, starting page 39.
 ```
 

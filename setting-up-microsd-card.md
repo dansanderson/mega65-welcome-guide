@@ -20,19 +20,42 @@ The MEGA65 formats the SD card, erasing all of its data. It also writes the fact
 The SD card utility will erase the internal SD card if you ask it to. Be careful to select the correct card.
 ```
 
-```{tip}
+```{hint}
 For more on preparing SD cards for use, see the User's Manual, starting page 23.
 ```
 
-## Updating the SD card essentials
+## Updating the SD card files
 
 MEGA65 prepares the SD card with files from the factory-installed core. You will want to update these files with newer versions.
 
-Visit [the Filehost website](https://files.mega65.org/html/main.php) and make sure you are signed in. Select "Files," then filter the Category column for the Firmware category. Locate the item named "[MEGA65 SD card essentials - No ROM](https://files.mega65.org?id=0fb941fe-5c5f-4608-b0f1-32849d4a8dff)," click it to open the item, then click Download.
+Visit [the Filehost website](https://files.mega65.org/html/main.php) and make sure you are signed in and have registered your owner code with your account. Select "Files," then filter the Category column for the Firmware category.
 
-This file is in the [RAR archive format](<https://en.wikipedia.org/wiki/RAR_(file_format)>). You will need software on your PC to unpack this archive. I recommend [The Unarchiver](https://theunarchiver.com/), which has a graphical app for macOS and a command-line tool for Mac, Windows, and Linux. Windows users might prefer [7-Zip](https://www.7-zip.org/). Unpack the RAR archive to a folder of files.
+For the stable release:
 
-Remove the microSD card from MEGA65, then insert it in your PC's card reader. Copy the unpacked files to the microSD card (in the root level, not in a sub-folder), replacing all files that have the same names.
+-   Download: [MEGA65 R3 Release Package](https://files.mega65.org?id=a0276005-e71c-4b2d-8d17-2aa92e492c50). Only visible to registered owners.
+
+For the experimental release (recommended for batch #1 owners, see {ref}`determining-versions:which one should you choose?`):
+
+-   Download: [Experimental Release MEGA65 R3 (Unstable)](https://files.mega65.org?id=f461df65-4957-4d5b-9f6e-890dc63ee501). Does not contain the ROM.
+-   Download: [C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c). Only visible to registered owners.
+
+The release package files are in the [7z archive format](https://en.wikipedia.org/wiki/7z). I recommend [The Unarchiver](https://theunarchiver.com/), which has a graphical app for macOS and a command-line tool for Mac, Windows, and Linux. Windows users might prefer [7-Zip](https://www.7-zip.org/).
+
+Unpack the 7z archive to a folder of files. You should see an `SD` sub-folder (stable package) or an `sdcard-files` sub-folder (experimental package), with files whose names end in `.M65`, `.ROM` or `.COR`.
+
+![Unpacked files from the experimental release package](screenshots/sdcard_files.png)
+
+Remove the microSD card from MEGA65, then insert it in your PC's card reader. Copy the unpacked SD card files to the microSD card (in the root level, not in a sub-folder), replacing all files that have the same names.
+
+The stable release includes a `MEGA65.ROM` file. If you're upgrading to the [latest ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c), the downloaded file has a name like `920376.BIN`. Rename this file to `MEGA65.ROM`, and copy it to the microSD card.
+
+```{note}
+If you're using a Mac, the Finder can sometimes be defensive about changing the filename extension when renaming a file. Click on the desktop, then open the Finder menu, Preferences... Under the Advanced tab, make sure "Show all filename extensions" is checked. Without this, it is possible to accidentally rename `920349.BIN` to `MEGA65.ROM.BIN` and not notice. The correct name is `MEGA65.ROM`.
+```
+
+```{tip}
+You can keep multiple versions of the MEGA65 ROM on your SD card and switch between them. By default, MEGA65 will boot using `MEGA65.ROM`. If you have alternate ROMs on the SD card named `MEGA65<#>.ROM` where `<#>` is a single digit number (for example, `MEGA651.ROM`), you can hold down the corresponding number key (for example, `1`) during start-up to select the alternate ROM.
+```
 
 ### Preventing "fragmented" files
 
@@ -43,22 +66,6 @@ One method to avoid fragmenting the system files when copying them to an SD card
 To make this easier, I wrote [a Python script](https://github.com/dansanderson/mega65-welcome-guide/blob/main/update-sd-card.py) that updates an SD card using this technique for all files to avoid fragmentation. Feel free to use it or adapt it for other purposes.
 
 [This article](https://files.mega65.org?ar=73fd7977-aad3-4e13-8b5a-e9f0548b6cb2) recommends using defragmentation tools on the SD card. I have not tested these.
-
-## Updating the ROM
-
-As indicated by the phrase "No ROM" in the title, the SD card essentials "No ROM" archive does not include the MEGA65 ROM file. If you have registered your owner ID with your Filehost account, you can get the latest ROM as a separate download.
-
-Still in the Filehost Firmware category, locate and download "[C65/MEGA65 Kernal ROM](https://files.mega65.org?id=54e69439-f25e-4124-8c78-22ea7ddc0f1c)." Notice the funny filename, something like `920371.BIN`. The number in the filename is the version number for this ROM.
-
-Rename the ROM file to `MEGA65.ROM`. Copy it to the microSD card, replacing the file that is already there.
-
-```{note}
-If you're using a Mac, the Finder can sometimes be defensive about changing the filename extension when renaming a file. Click on the desktop, then open the Finder menu, Preferences... Under the Advanced tab, make sure "Show all filename extensions" is checked. Without this, it is possible to accidentally rename `920349.BIN` to `MEGA65.ROM.BIN` and not notice. The correct name is `MEGA65.ROM`.
-```
-
-```{tip}
-You can keep multiple versions of the MEGA65 ROM on your SD card and switch between them. By default, MEGA65 will boot using `MEGA65.ROM`. If you have alternate ROMs on the SD card named `MEGA65<#>.ROM` where `<#>` is a single digit number (for example, `MEGA651.ROM`), you can hold down the corresponding number key (for example, `1`) during start-up to select the alternate ROM.
-```
 
 ## Optional: reinstalling bundled software
 

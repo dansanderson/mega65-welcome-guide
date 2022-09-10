@@ -41,14 +41,16 @@ Use a pin or a small screwdriver to set the DIP switches on the connector to lef
 
 Connect a mini-USB cable to the JTAG connector, and run the cable out the back of the MEGA65 case. You can feed it out the cartridge port (potentially blocking access to the port), or punch out one of the unused port covers in the back case. Connect the other end to your PC.
 
-I used a [6-inch USB Mini B Male to USB Mini B Female cable](https://www.amazon.com/gp/product/B00B5HSA3Q/) to extend the mini-USB jack to the back of the case, then punched out one of the unused holes for it with a utility knife. I'm holding it in the hole with tape for now. (Maybe someone will design a 3D printed mount? And will send me one?) I then connect it to my PC with a standard USB Mini B Male to USB A Male cable.
+I used a [Mini USB panel mount cable](https://www.amazon.com/gp/product/B08RSBCN66/) (30 cm/12 in, right-angled) to extend the mini-USB jack to the back of the case, then punched out one of the unused holes for it with a utility knife. The mount cable includes a washer and nut to hold firmly to the 17 mm hole. I then connect it to my PC with a standard USB Mini B Male to USB A Male cable.
 
-![USB cables for the JTAG adapter: extension and cable](photos/jtag_cables.jpeg)
-![Extension: mini-USB female end](photos/jtag_short_mini_female.jpeg)
-![Extension: mini-USB male end](photos/jtag_short_mini_male.jpeg)
+![External mini-USB jack](photos/jtag_miniusb_mount.jpeg)
 ![Punching a hole in the case](photos/jtag_punching.jpeg)
-![External mini-USB jack, temporarily mounted](photos/jtag_mounted.jpeg)
-![External mini-USB jack, full wiring](photos/jtag_mounted_full.jpeg)
+![External mini-USB jack](photos/jtag_miniusb_mount_installed.jpeg)
+![External mini-USB jack](photos/jtag_miniusb_mount_back.jpeg)
+
+```{tip}
+[This Ribu mini USB panel socket](https://www.ribu.at/mini-usb-2-0-einbaubuchse-mit-verlaengerungskabel-m14) has a nice metal mount and is more flush with the case than the plastic mount I used. It needs an additional washer to avoid falling into the case.
+```
 
 ## Using M65Connect
 

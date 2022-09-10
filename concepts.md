@@ -22,7 +22,7 @@ Some features such as loading SD card files from BASIC (`DLOAD "MYPROGRA.PRG",U1
 (This does not apply to files on CBM disk images, which have their own unrelated limitations on names.)
 ```
 
-```{tip}
+```{hint}
 The User Guide's explanation of SD cards begins on page 23.
 ```
 
@@ -36,7 +36,7 @@ To make managing multiple sets of firmware easy, MEGA65 describes each set as a 
 
 The MEGA65 always retains a copy of its original factory core (in "slot 0"). If something goes wrong while updating another core, you can always go back to the original version.
 
-```{tip}
+```{hint}
 This Welcome Guide will describe how to upgrade the MEGA65 core to the latest version. For more general information about cores, see the User's Guide, chapter 6, starting page 47.
 ```
 
@@ -50,7 +50,7 @@ The original Commodore 65 kept its software on a physical Read-Only Memory (ROM)
 Newer versions of the MEGA65 ROM require a newer version of the MEGA65 core. Following this Guide, you will update both the ROM and the core together.
 ```
 
-```{tip}
+```{hint}
 The User Guide describes ROM files starting on page 26.
 ```
 

@@ -23,10 +23,13 @@ There is a solution for the RTC issue that involves installing a new part and a 
 
 You must upgrade to a recent core (such as build 198, f555316) to use the replacement RTC. Remember that when you use the <kbd>Alt</kbd> menu to access the Configuration utility to set the time then save and exit, the MEGA65 will boot into the factory-installed core in slot 0. Turn the computer off then on again to boot into the core in slot 1 and see the replacement RTC working.
 
-If the new replacement RTC does not remember the time that you set when powered off, its battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. The battery is the yellow disc with metal pads soldered to the board. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a CR2032 battery holder and battery, as shown here.
+If the new replacement RTC does not remember the time that you set when powered off, its battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. The battery is the yellow disc with metal pads soldered to the board. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a 3 volt battery source, as shown here.
+
+![The DS3231 RTC with the built-in battery removed and a AA battery holder added](photos/rtc_aa_batteries.jpeg)
+
+Two AA batteries provide 3 volts. It feels like overkill, but when I tried a CR2032 battery, it didn't provide the full 3 volts required by the RTC unit.
 
 ![The DS3231 RTC with the built-in battery removed and a CR2032 battery holder added](photos/rtc_new_battery.jpeg)
-![The battery-upgraded DS3231 RTC installed](photos/rtc_new_battery_installed.jpeg)
 
 The replacement RTC does not use the battery you installed on the main board. You can remove the main board battery when using the replacement RTC.
 
