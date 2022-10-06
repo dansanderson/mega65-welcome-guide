@@ -13,7 +13,8 @@
 #
 # Unpack the .zip file, then provide the path to the tool.
 #
-#  python3 update-sd-card.py --sdcardpath=/Volumes/MyCard f5553164001c3fa8ad1d4a73bb985965c01e4f17-198
+#  python3 update-sd-card.py --sdcardpath=/Volumes/MyCard \
+#      f5553164001c3fa8ad1d4a73bb985965c01e4f17-198
 #
 # Use the --dry-run option to print messages about what it will do
 # without actually doing it. Use the --verbose option to print those
@@ -21,10 +22,11 @@
 #
 # TODO:
 # * Support installing from SD Card Essentials archives from the Filehost.
-# * Support automatically unzipping the archive, if the archive file is provided.
+# * Support automatically unzipping the archive, if archive file is provided.
 
 import click
 import datetime
+import glob
 import os.path
 import shutil
 
@@ -49,7 +51,8 @@ def backup_sdcard(srcpath, backupdir, verbose, dry_run):
     if verbose or dry_run:
         print(f'Backing up SD card from {srcpath} to {backup_root}')
     if not dry_run:
-        shutil.copytree(srcpath, backup_root, ignore=shutil.ignore_patterns('.*'))
+        shutil.copytree(
+            srcpath, backup_root, ignore=shutil.ignore_patterns('.*'))
 
 
 def replace_file(srcpath, destpath, verbose, dry_run):
@@ -70,7 +73,10 @@ def replace_file(srcpath, destpath, verbose, dry_run):
 
 def replace_sd_card_files(srcdir, destdir, verbose, dry_run):
     for fname in os.listdir(srcdir):
-        replace_file(os.path.join(srcdir, fname), os.path.join(destdir, fname), verbose, dry_run)
+        replace_file(
+            os.path.join(srcdir, fname),
+            os.path.join(destdir, fname),
+            verbose, dry_run)
 
 
 def clean_dotfiles(destdir, verbose, dry_run):
@@ -85,38 +91,72 @@ def clean_dotfiles(destdir, verbose, dry_run):
                         os.remove(to_remove)
                     else:
                         shutil.rmtree(to_remove)
-            except PermissionError as e:
+            except PermissionError:
                 if verbose or dry_run:
                     print(f'Could not remove dotfile {to_remove}')
 
 
 @click.command()
-@click.option('--sdcardpath', default=DEFAULT_SD_CARD_PATH, help='Filesystem path to the mounted SD card root')
-@click.option('--backupdir', default=DEFAULT_BACKUP_DIR, help='Filesystem path to the mounted SD card root')
-@click.option('--verbose/--no-verbose', default=False, help='Print messages of what is happening')
-@click.option('--dry-run/--no-dry-run', default=False, help='Do not perform actions, only report what would happen')
+@click.option(
+    '--sdcardpath', default=DEFAULT_SD_CARD_PATH,
+    help='Filesystem path to the mounted SD card root')
+@click.option(
+    '--backupdir', default=DEFAULT_BACKUP_DIR,
+    help='Filesystem path to the mounted SD card root')
+@click.option(
+    '--verbose/--no-verbose', default=False,
+    help='Print messages of what is happening')
+@click.option(
+    '--dry-run/--no-dry-run', default=False,
+    help='Do not perform actions, only report what would happen')
 @click.argument('releasepath')
 def main(sdcardpath, backupdir, verbose, dry_run, releasepath):
     if not os.path.exists(sdcardpath):
-        raise click.ClickException(message=f'SD card path does not exist. (Is the card inserted?) : {sdcardpath}', error_code=1)
+        raise click.ClickException(
+            message=f'SD card path does not exist. (Is the '
+            f'card inserted?) : {sdcardpath}', error_code=1)
     if not os.path.isdir(sdcardpath):
-        raise click.ClickException(message=f'SD card path is not a directory: {sdcardpath}', error_code=1)
+        raise click.ClickException(
+            message=f'SD card path is not a directory: '
+            f'{sdcardpath}', error_code=1)
     if not os.path.exists(os.path.join(sdcardpath, 'FREEZER.M65')):
-        raise click.ClickException(message=f'SD card does not contain an expected file. (Was this card formatted by the MEGA65?)')
+        raise click.ClickException(
+            message='SD card does not contain an expected file. '
+            '(Was this card formatted by the MEGA65?)')
 
     if not os.path.exists(backupdir):
-        raise click.ClickException(message=f'Backup directory does not exist: {backupdir}', error_code=1)
+        raise click.ClickException(
+            message=f'Backup directory does not exist: {backupdir}',
+            error_code=1)
 
     if not os.path.exists(releasepath):
-        raise click.ClickException(message=f'Release path does not exist: {releasepath}', error_code=1)
+        raise click.ClickException(
+            message=f'Release path does not exist: {releasepath}',
+            error_code=1)
     if not os.path.isdir(releasepath):
-        raise click.ClickException(message=f'Release path is not a directory: {releasepath}', error_code=1)
-    if not os.path.exists(os.path.join(releasepath, 'mega65r3.cor')):
-        raise click.ClickException(message=f'Release directory does not contain an expected file. (Is this an unpacked bluewaysw file host .zip?)')
+        raise click.ClickException(
+            message=f'Release path is not a directory: {releasepath}',
+            error_code=1)
+
+    cor_files = glob.glob('mega65r3*.cor', root_dir=releasepath)
+    if len(cor_files) == 0:
+        raise click.ClickException(
+            message='Release directory does not contain a mega65r3 '
+            'COR file. (Is this an unpacked bluewaysw file host .zip?)')
+    if len(cor_files) > 1:
+        raise click.ClickException(
+            message='Found more than one mega65r3 COR file in '
+            'release directory. Please remove the unwanted COR files and '
+            'try again.')
+    cor_fname = cor_files[0]
 
     backup_sdcard(sdcardpath, backupdir, verbose, dry_run)
-    replace_sd_card_files(os.path.join(releasepath, 'sdcard-files'), sdcardpath, verbose, dry_run)
-    replace_file(os.path.join(releasepath, 'mega65r3.cor'), os.path.join(sdcardpath, 'mega65r3.cor'), verbose, dry_run)
+    replace_sd_card_files(
+        os.path.join(releasepath, 'sdcard-files'),
+        sdcardpath, verbose, dry_run)
+    replace_file(
+        os.path.join(releasepath, cor_fname),
+        os.path.join(sdcardpath, 'mega65r3.cor'), verbose, dry_run)
     clean_dotfiles(sdcardpath, verbose, dry_run)
 
 
