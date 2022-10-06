@@ -24,7 +24,16 @@ For another version of these instructions with more photos, see [JTAG adapter, h
 
 ## Acquiring a JTAG adapter
 
-The [XMOD FTDI JTAG Adapter TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible) (Trenz Electronic) is compatible with the MEGA65. You might also be able to [order the TE0790-03 from DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026). As of this writing, this item is difficult to get due to supply chain issues. Trenz is accepting backorders (even though "in stock" says zero) and will be fulfilling them as parts become available.
+The [XMOD FTDI JTAG Adapter
+TE0790-03L](https://shop.trenz-electronic.de/en/TE0790-03L-XMOD-FTDI-JTAG-Adapter-not-compatible-with-Xilinx-Tools)
+(Trenz Electronic) is compatible with the MEGA65. (The
+[TE0790-03](https://shop.trenz-electronic.de/en/TE0790-03-XMOD-FTDI-JTAG-Adapter-Xilinx-compatible)
+is the same part with a Xilinx license, which you do not need to use MEGA65 tools.) You might also be able to
+[order the TE0790-03 from
+DigiKey](https://www.digikey.com/en/products/detail/TE0790-03/1686-1180-ND/10071026).
+As of this writing, this item is difficult to get due to supply chain issues.
+Trenz is accepting backorders (even though "in stock" says zero) and will be
+fulfilling them as parts become available.
 
 ![XMOD FTDI JTAG Adapter TE0790-03 in its box](photos/jtag_box.jpeg)
 ![XMOD FTDI JTAG Adapter TE0790-03 out of its box](photos/jtag_unit.jpeg)
