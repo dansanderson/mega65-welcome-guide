@@ -56,7 +56,7 @@ You may also see MEGA65 ROMs with a version number that begins with `99`. These 
 
 ## Bundled releases
 
-To make it easy to know which versions of these components are known to work well together, the MEGA65 team provides release bundles that have been tested all together. These releases have version numbers.
+To make it easy to know which versions of these components are known to work well together, the MEGA65 team provides release bundles that have been tested as a set. These releases have version numbers.
 
 -   **Release bundle 0.9**, factory-installed for MEGA65s delivered early 2022 (batch #1)
 

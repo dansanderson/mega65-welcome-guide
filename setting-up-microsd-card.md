@@ -54,13 +54,26 @@ If you haven't already, open the MEGA65 case (see {ref}`opening-the-case:opening
 
 Copy the `.D81` and `.MOD` files from your PC to the microSD card.
 
+If you have the 0.9 release on your internal SD card and you are installing 0.95 on the microSD card, you may want to get the updated demo disk, which has minor bug fixes for the newer ROM. You can [download the latest demo disk](https://files.mega65.org/html/main.php?id=f588fd55-f2b8-4ca0-b5f4-9ae5b1c2e914) from Filehost.
+
 ### Using the SD card image file
 
-If you erased your factory-installed SD card without backing up its contents, you can find the [MEGA65 Release SD Card - Intro Disk](https://files.mega65.org?id=f588fd55-f2b8-4ca0-b5f4-9ae5b1c2e914) on Filehost. You must be a registered owner to see this file, because it contains licensed software including the ROM and GEOS.
+If you erased your factory-installed SD card without backing up its contents, you can find the [MEGA65 Release SD Card - Intro Disk](https://files.mega65.org?id=f588fd55-f2b8-4ca0-b5f4-9ae5b1c2e914) on Filehost. You must be a registered owner to see this file, because it contains licensed software including the ROM and GEOS. This disk image contains the release 0.95 / batch #2 version of the system software and ROM, as well as the updated demo disk.
 
 This is a `.IMG` file. On macOS, you can double-click this file to open it and access the files inside. Alternatively, you can use a program like [Balena Etcher](https://www.balena.io/etcher/) to restore your full-sized SD card from inside the MEGA65. (This overwrites the SD card contents.) Proceed to copy the `.D81` and `.MOD` files from the disk image (or rewritten SD card) to the microSD card.
 
-As of this writing, this image contains the release 0.9 / batch #1 version of the system software and ROM, so I don't recommend using the complete image unless you're recreating that configuration. The demo disk (`MEGA65.D81`) is also an older version. If you have a batch #2 MEGA65 and your internal SD card is intact, I recommend copying the bundled software from there, as described above.
+```{tip}
+If this IMG file contains all of the SD card files for the 0.95 release, then why did we go through all of those steps to format the microSD card and copy those files from different locations? Can't I just write the IMG file to the microSD card?
+
+If you're starting a new microSD card, *and* it is 16 GB in size, *and* you have or are upgrading to the 0.95 core specifically, you can write the IMG to the microSD card with Balena Etcher, and you're done. I recommended the longer procedure because:
+
+- If your microSD card is smaller than 16 GB in size, you can't write the image, even though the files take up much less than 16 GB of space.
+- If your microSD card is larger than 16 GB in size, writing the image would create a 16 GB partition, preventing the remaining space from being used.
+- If you are upgrading an existing microSD card, you'll need to copy the files individually. Writing an IMG overwrites the complete contents of the card.
+- If you are setting up a core other than 0.95, you will need the system software for that core, not what's on the IMG.
+
+If you do decide to write the IMG directly to the microSD card, you will still want to copy the `r3r095.cor` file to the card afterward. You'll need this file on the card to install the release 0.95 core in the next section.
+```
 
 ## Installing the microSD card and re-running configuration
 

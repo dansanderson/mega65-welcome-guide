@@ -3,7 +3,7 @@
 Congratulations! You are the owner of [the MEGA65 personal computer](https://mega65.org/), a modern recreation of the [Commodore 65](https://en.wikipedia.org/wiki/Commodore_65). The Commodore 65 was the unreleased successor to the highest selling computer of all time, the [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64).
 
 ```{tip}
-I have a MEGA65 newsletter! Subscribe by email or RSS for news, features, and activities you can do with your MEGA65.
+I have a MEGA65 newsletter! [Subscribe by email or RSS](https://m65digest.substack.com/) for news, features, and activities you can do with your MEGA65.
 
 <iframe src="https://m65digest.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
