@@ -46,10 +46,6 @@ While the core recreates the hardware of the Commodore 65, the _ROM_ recreates t
 
 The original Commodore 65 kept its software on a physical Read-Only Memory (ROM) chip. With MEGA65, this software lives in a file on the SD card named `MEGA65.ROM`. MEGA65 loads this into memory when you turn it on. This file contains the original software from the C65 ROM chip licensed from the copyright holder, with many fixes and improvements. You can upgrade the operating system by replacing this file on the SD card.
 
-```{note}
-Newer versions of the MEGA65 ROM require a newer version of the MEGA65 core. Following this Guide, you will update both the ROM and the core together.
-```
-
 ```{hint}
 The User Guide describes ROM files starting on page 26.
 ```

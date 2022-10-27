@@ -1,12 +1,10 @@
 # Recently added features
 
-The MEGA65 batch #1 shipped from the factory with ROM version 920287, and a User's Guide printed in late 2021. The MEGA65 team has been enhancing the ROM with new features and improvements. As of 2022, the ROM is still considered a work in progress, and MEGA65 owners are encouraged to update to the latest ROM.
+The MEGA65 batch #1 shipped from the factory with ROM version 920287 (release 0.9) and a User's Guide printed in late 2021. Batch #2 will ship in late 2022 with ROM version 920377 (release 0.95). MEGA65s will continue to ship with the first printing of the User's Guide until stock is exhausted. Meanwhile, the ROM is considered a work in progress, and the MEGA65 team and contributors continue to enhance it with bug fixes and other improvements.
 
-Below is an _incomplete_ list of new features that have been added since the factory ROM, or may exist in the factory ROM but were not included in the User's Guide. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes that have also been included in new ROMs.
+Below is an _incomplete_ list of new features that have been added since the ROM 920287. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes, which are valuable in their own right.
 
-```{tip}
-MEGA65 documentation writers are keeping the [downloadable PDF version of the User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) up to date with new features. Be sure to download this periodically along with ROM updates.
-```
+MEGA65 documentation writers are keeping the [downloadable PDF version of the User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) up to date with new features. Be sure to download this along with ROM updates.
 
 ## New features
 
@@ -21,13 +19,13 @@ Some of the new features that have been added since the factory-installed ROM wa
 -   Some disk commands can access files on the SD card directly (and not via a mounted D81 disk image) using the virtual device `U12`. `DIR U12` lists the files on the SD card. `DLOAD "FILE.PRG",U12` loads a `PRG` file.
 -   BASIC programs can access screen and color memory via special byte arrays `T@&(COLUMN, ROW)` and `C@&(COLUMN, ROW)`. Screen coordinates are intuitive in both 40-column and 80-column modes.
 -   If you accidentally hit the <kbd>HOME</kbd> key, you can press <kbd>ESC</kbd> then <kbd>HOME</kbd> to return the cursor to its original position.
--   You can load a program from disk by using `DIR` to view the directory listing, moving the cursor to the program name, pressing `/` (forward slash), then pressing <kbd>Return</kbd>. You can load and run a program in a single step using the up-arrow character (next to the <kbd>Restore</kbd> key) in the same way.
+-   You can load a program from disk by using `DIR` to view the directory listing, moving the cursor to the program name, pressing `/` (forward slash), then pressing <kbd>Return</kbd>. You can load and run a program in a single step using the <kbd>&uarr;</kbd> (up-arrow) character (next to the <kbd>Restore</kbd> key) in the same way.
 
 ## New BASIC commands
 
 Many new BASIC commands have been added to the factory-installed ROM, or have been added to the User's Guide since it was printed. See [the latest User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) for specifics. New commands include:
 
-### Newer disk commands
+### Disk commands
 
 `MOUNT` controls the mounting of disk images and drives to the unit numbers from BASIC, without having to enter the Freezer.
 
@@ -59,7 +57,7 @@ Many new BASIC commands have been added to the factory-installed ROM, or have be
 -   To export the current BASIC program as a text file that can be imported: `DOPEN#1,"LISTING",W:CMD 1:LIST:DCLOSE#1`
     -   Every command that outputs text between `CMD 1` and `DCLOSE#1` writes to the file. For example, you can add arguments to `LIST` to only export a portion of a program: `LIST 2000-2999`
 
-### Newer graphics commands
+### Graphics commands
 
 `CUT`, `GCOPY`, `PASTE` act on a rectangle of a graphics screen as a clipboard. `GCOPY` copies a rectangle of pixels to a buffer; `CUT` copies the rectangle then fills with the color of the pen. `PASTE` paints the previously copied rectangle onto the screen at a given location. An example from the manual:
 
@@ -98,7 +96,7 @@ CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
 10 BORDER 0: VSYNC 150: BORDER 1: VSYNC 180: GOTO 10
 ```
 
-### Newer memory commands
+### Memory commands
 
 `MEM` reserves 8K segments of memory in banks 4 and 5 for use by the program, such that the graphics library does not use them.
 
@@ -113,7 +111,7 @@ CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
 -   To store the word `$FABC` across byte addresses `$0C000` (the least significant byte `$BC`) and `$0C001` (the most significant byte `$FA`): `BANK 0 : WPOKE $C000,$FABC`
 -   To read the 16-bit value stored at `$0C000-$0C001`: `V = WPEEK($C000)`
 
-### Other newer BASIC features
+### Other BASIC features
 
 The `FREEZER` command opens the Freeze menu, as if you pressed Restore for a second.
 

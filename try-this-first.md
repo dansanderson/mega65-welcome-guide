@@ -4,24 +4,20 @@ You don't want to read stuff, you want to play with your new MEGA65! Well good n
 
 The fun is in the digging, so if you're ready to go, stop reading now and dive in. Come back to this section for some things to try before going further. Have fun!
 
-## Connecting peripherals
-
-Your MEGA65 only needs to be connected to its power supply (included) and a monitor (not included) to operate. The MEGA65 has two connectors for monitors: a VGA connector, and an HDMI connector. Both connections work simultaneously, showing the same display.
-
-```{note}
-See {ref}`video-display-compatibility:video display compatibility` later in this Guide for some notes on monitors.
+```{tip}
+If you received your MEGA65 in late 2022 or early 2023, your computer has newer firmware and system software than was used to produce the screenshots in this section. The differences are minor.
 ```
 
-The MEGA65 has two methods of producing sound: over the HDMI connection, or through the dedicated audio jack. You can connect headphones or speakers to the audio jack.
+## Connecting peripherals
 
-If you own a classic joystick, gamepad, or mouse with a [DE-9 nine-pin connector](http://wiki.icomp.de/wiki/DB9-Joystick), you can connect it to one of two nine-pin ports on the lefthand side of the machine. The MEGA65 supports both the [Commodore 1351](https://en.wikipedia.org/wiki/Commodore_1351) mouse and the Amiga mouse. The Amiga mouse requires setting a configuration option. Modern mouse replacements such as [the mouSTer adapter](https://retrohax.net/shop/amiga/mouster/) or the upcoming [wireless Amiga tank mouse](https://www.kickstarter.com/projects/lukas-remis/tank-mouse-your-new-amiga-mouse) are expected to work. Personally, I use a 1351 mouse in port 1 and a [modern Commodore-compatible gamepad](https://www.etsy.com/listing/681983120/commodore-64-atari-2600-controller) in port 2.
+Your MEGA65 only needs to be connected to its power supply (included) and a monitor (not included) to operate. The MEGA65 has two connectors for monitors: a VGA connector, and an HDMI connector. Both connections work simultaneously, showing the same display. See {ref}`video-display-compatibility:video display compatibility` later in this Guide for some notes on monitors.
+
+The MEGA65 has two methods of producing sound: over the HDMI connection, or through the dedicated audio jack. You can connect headphones or speakers to the audio jack. To use a display that takes audio over HDMI, you must change a setting, which you'll do in the next step.
+
+If you own an Atari- or Commodore-compatible joystick, gamepad, or mouse with a [DE-9 nine-pin connector](http://wiki.icomp.de/wiki/DB9-Joystick), you can connect it to one of two nine-pin ports on the lefthand side of the machine. The MEGA65 supports both the [Commodore 1351](https://en.wikipedia.org/wiki/Commodore_1351) mouse and the Amiga mouse. The Amiga mouse requires setting a configuration option. Modern mouse replacements such as [the mouSTer adapter](https://retrohax.net/shop/amiga/mouster/) or the upcoming [wireless Amiga tank mouse](https://www.kickstarter.com/projects/lukas-remis/tank-mouse-your-new-amiga-mouse) are expected to work. Personally, I use a 1351 mouse in port 1 and a [modern Commodore-compatible gamepad](https://www.etsy.com/listing/681983120/commodore-64-atari-2600-controller) in port 2.
 
 ```{note}
 Before connecting a mouse, be sure to set the mouse mode in the configuration step, described later. If an Amiga mouse is connected while the port is in the wrong mode, it may interfere with the behavior of the keyboard.
-```
-
-```{note}
-Do not connect a Sega Genesis game controller directly to the MEGA65 or Commodore computers. Sega Genesis controllers are not compatible and may damage the computer, even though they have the same connector. If you wish to use the Genesis controller, you can use an adapter such as [the BackBit GenAssister](https://store.backbit.io/product/genassister/).
 ```
 
 ```{hint}
@@ -94,23 +90,11 @@ The MEGA65 spends most of its time behaving as a Commodore 65 computer would, ei
 
 To open the Freeze menu, hold the <kbd>Restore</kbd> key for a second or more, then release it. The MEGA65 will pause whatever it is doing, flicker the border color, then open the Freeze menu. Whatever program was running remains in memory and can be resumed by pressing the <kbd>F3</kbd> key from the Freeze menu. You can also abandon the running program and reset the MEGA65 by pressing <kbd>F5</kbd>.
 
-![Freeze menu (fixed version)](screenshots/freeze_working.jpg)
-
-```{note}
-Does your Freeze menu appear too low on the screen? This is a bug in the version of the software that shipped with the first batch of MEGA65 computers. It is fixed in a newer version of the software. You will upgrade the software later in this Guide.
-
-If you are experiencing this issue, you can complete this section of the Guide with the broken display, or you can skip this and return after you have installed the update in a later section.
-
-![Freeze menu (broken version)](screenshots/freeze_broken.jpg)
-```
+![Freeze menu](screenshots/freeze_working.jpg)
 
 There are many useful features in the Freeze menu. Try them out!
 
 One feature to remember when playing games is the "(J)OY SWAP." This causes the two joystick ports to trade numbers. If you have a joystick in port 2 and you start a game that expects a joystick in port 1, instead of disconnecting and reconnecting the joystick, open the Freeze menu, press <kbd>J</kbd> to swap the port numbers, then resume your game.
-
-```{note}
-In the factory-installed version of the Freeze menu, it is possible—and undesireable—to freeze the Freeze menu by pressing <kbd>Restore</kbd> again while the Freeze menu is open. If you do this accidentally, reset and try again.
-```
 
 ## Disk images
 
@@ -124,16 +108,10 @@ Try browsing one of the disk images included with your MEGA65:
 2. Press <kbd>0</kbd> (zero) to see the options for setting up the first drive.
 3. Use the cursor keys to navigate to `DEMOCOMP.D81`. Press <kbd>Return</kbd> to select it.
 4. Notice that the disk image name appears under the "Internal drive" in the Freeze menu.
-5. Press <kbd>F5</kbd> to reset with this disk image in the virtual drive.
+5. Press <kbd>F3</kbd> to resume the MEGA65 with this disk image in the virtual drive.
 
 ![Freeze menu disk selection](screenshots/freeze_selectingdisk.jpg)
 ![Freeze menu with DEMOCOMP.D81 disk selected](screenshots/freeze_democomp.jpg)
-
-```{tip}
-If you are mounting a disk to start a new program, use the <kbd>F5</kbd> key to exit the Freeze menu with a reset. Your disk will continue to be mounted after the reset.
-
-While it is tempting to use the <kbd>F3</kbd> key to "resume," exiting with reset is more likely to load new programs correctly. You only need to resume if you are swapping disks while a program is running.
-```
 
 ```{hint}
 The User's Guide describes disk images and the Freeze menu in chapter 7, starting page 59.
@@ -141,7 +119,7 @@ The User's Guide describes disk images and the Freeze menu in chapter 7, startin
 
 ## Loading and running a program from disk
 
-You now have the `DEMOCOMP.D81` disk image mounted to device 8 (drive 0). Let's see what's on the disk! Enter the following command at the BASIC `READY.` prompt:
+You now have the `DEMOCOMP.D81` disk image mounted to device 8 (drive 0). Let's see what's on the disk! Enter the following command at the BASIC `READY.` prompt (type the command then press <kbd>Return</kbd>):
 
 ```
 DIR
@@ -151,15 +129,15 @@ This lists all of the files on the disk, also known as the _disk directory_.
 
 ![The directory of the DEMOCOMP disk](screenshots/democomp_dir.jpg)
 
-You can use the `LOAD` command to load a program off of the disk by name:
+You can use the `DLOAD` command to load a program off of the disk by name:
 
 ```
-LOAD "NOVDEMO"
+DLOAD "NOVDEMO"
 ```
 
 If you've used a Commodore 64, you may remember having to type `,8` or `,8,1` after a `LOAD` command when loading from a disk drive. With MEGA65, unit 8 is the default, so this can be omitted.
 
-Move the cursor to a blank line (or press <kbd>Shift</kbd> + <kbd>Clr Home</kbd> to clear the screen), then type `RUN` to start the `NOVDEMO` program.
+Enter the `RUN` command to start the `NOVDEMO` program.
 
 ```
 RUN
@@ -174,6 +152,8 @@ This works on the MEGA65 too, but MEGA65 has a faster way: just type `/` (forwar
 
 ![Loading a file using the slash shortcut](screenshots/dirslash_trick.jpg)
 ![Loading a file using the slash shortcut](screenshots/dirslash_loaded.jpg)
+
+To load and run the program automatically, type the <kbd>&uarr;</kbd> (up arrow) symbol at the beginning of the line, then press <kbd>Return</kbd>. This is the up-arrow key next to the <kbd>Restore</kbd> key, not the cursor-up key. (If you received your MEGA65 in early 2022, you may need to update your system software to get this feature.)
 ```
 
 When you're done enjoying the demo, you can press the reset button, or use the Freeze menu and press <kbd>F5</kbd> to reset.
@@ -206,6 +186,8 @@ Some of the programs on the `C64.D81` disk only work with the PAL video setting.
 MEGA65 currently only supports D81 disk images. Support for the more common `D64` format that represents a Commodore 64 5-1/4" floppy disk may be added in a future update.
 
 C64 mode is not to be confused with the C64 _core_, an alternate way to run C64 software on the MEGA65 which we will discuss later in this guide. The C64 core supports D64 disk images, in a different way.
+
+Do not expect C64 mode to be compatible with all Commodore 64 software. Due to how the Commodore 65 was originally designed, `GO 64` can never be fully compatible. In contrast, the C64 core reproduces the Commodore 64 hardware in the MEGA65 firmware and is expected to run nearly all Commodore 64 software.
 ```
 
 ```{hint}
@@ -241,9 +223,13 @@ You can use the cursor keys or a mouse to navigate the configuration options. Th
 -   Video: All of the video options from the on-boarding screen.
 
 ```{note}
-The clock setting in the configuration utility uses the following time and date format: `HH:MM:SS YY/MM/DD` (That's hours, minutes, seconds, the year, the month, and the day of the month.) It doesn't prevent you from entering invalid numbers. Take care to use the correct date format.
+The time and date setting in the configuration utility has been improved between the early 2022 and late 2022 versions of the MEGA65.
+
+If you received your MEGA65 in early 2022, it uses the following time and date format: `HH:MM:SS YY/MM/DD` (That's hours, minutes, seconds, the year, the month, and the day of the month.) It doesn't prevent you from entering invalid numbers. Take care to use the correct date format.
 
 ![Configuration utility, Chipset screen](screenshots/config_chipset.jpg)
+
+If you received your MEGA65 after late 2022, the time and date are separate settings. _You must press <kbd>Return</kbd> in these fields for each setting to take effect._
 ```
 
 Under "Done," you can save these settings as defaults. These settings are stored on the SD card, except for the Real-Time Clock which sets the clock hardware.

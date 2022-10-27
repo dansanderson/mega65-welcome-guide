@@ -6,13 +6,9 @@ We discussed using D81 disk images back in {ref}`try-this-first:disk images`, in
 -   How to mount a D81 disk image on drive 0 device 8 using the Freeze menu
 -   How to get a directory listing with the `DIR` command
 -   How to load and run a program on the disk using the `LOAD` and `RUN` commands
--   How to use the `/` shortcut to load a file within a directory listing
+-   How to use the `/` and <kbd>&uarr;</kbd> shortcuts to load or run a file within a directory listing
 
 Disk-related improvements have been advancing quickly, and the latest ROM includes bug fixes and useful features not mentioned in the printed manual.
-
-```{tip}
-Be sure that you have the latest ROM version before trying some of these features.
-```
 
 ## Listing a disk directory
 
@@ -39,15 +35,11 @@ DLOAD "$$"
 LIST
 ```
 
-This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer features to scroll up to previous lines. Use the <kbd>F9</kbd> and <kbd>F11</kbd> keys to traverse the listing, then cursor up to a program you want to load and use the `/` shortcut.
+This still scrolls a long listing off the screen, but now you can use MEGA65 BASIC's listing viewer features to scroll up to previous lines. Use the <kbd>F9</kbd> and <kbd>F11</kbd> keys to traverse the listing, then cursor up to a program you want to load and use the `/` or <kbd>&uarr;</kbd> shortcuts.
 
 ```{caution}
 Loading the directory listing with `DLOAD` overwrites any BASIC program that resides in memory. The `DIR` command does not overwrite BASIC memory.
 ```
-
-## Loading and running with a single shortcut
-
-It is handy to cursor up a directory listing and type `/` to load a program without fussing with the contents of the line. Now that you have a recent version of the ROM installed, you can use a newer feature that both loads and runs a program in a single step: instead of `/`, type the up-arrow key (the key to the right of the <kbd>Restore</kbd> key) as the first character on a line of a directory listing, then press <kbd>Return</kbd>.
 
 ## Using the SD card from BASIC
 
@@ -97,6 +89,12 @@ Until this is fixed in a future software update, an HD disk with the hole expose
 
 Using the physical floppy drive is similar to using a disk image. Open the Freeze menu (hold <kbd>Restore</kbd>, then release), then select drive number `0`. (The internal drive can only be mounted to drive 0.) In the list of options that includes the D81 disk images, select `- INTERNAL 3.5" -`. Exit the Freeze menu (resume or reset).
 
+Alternatively, you can mount the internal physical drive on device `0` with the `MOUNT` command, no arguments:
+
+```
+MOUNT
+```
+
 Insert a floppy disk in the drive. If you have not used this disk with the MEGA65 before, it needs to be formatted. This erases all data on the disk! Use the `HEADER` command, providing a disk name in quotes, and a two digit disk ID number preceded by the letter `I`:
 
 ```
@@ -124,6 +122,19 @@ LOAD "HARDLYWORKING"
 LIST
 RUN
 ```
+
+## Booting from a disk
+
+A disk (or disk image) that contains a program named `AUTOBOOT.C65` is considered bootable. With such a disk mounted on unit `0`, the MEGA65 will load and run this program automatically when it boots or resets. As we saw in {ref}`try-this-first:demonstration menu`, this is how the demo disk starts automatically when you turn on your MEGA65.
+
+Running the `BOOT` command with such a disk mounted also runs this program:
+
+```
+MOUNT "MYGAME.D81"
+BOOT
+```
+
+By default, the `MEGA65.D81` disk image is mounted on unit `0` when the MEGA65 is turned on for the first time. You can change which disk image is mounted in the MEGA65 Configuration menu. You cannot set this to be the physical drive by default; it has to be a D81 disk image on the SD card. If there is no setting in Configuration, it uses `MEGA65.D81`; to start with nothing mounted, remove or rename the `MEGA65.D81` file on the SD card.
 
 ## Using an external disk drive
 

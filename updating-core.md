@@ -1,24 +1,10 @@
 # Updating the core firmware
 
-In the previous step, {ref}`setting-up-microsd-card:updating the sd card files`, you chose between the stable release and the latest experimental release. If you opted to upgrade to the latest experimental release, you will need to update the MEGA65 firmware. When the batch #2 release candidate is declared stable, all batch #1 owners will be encouraged to update both the firmware and the system software.
+In the previous step, {ref}`setting-up-microsd-card:installing the sd card files`, you copied the release 0.95 core file to the SD card (which we renamed `r3r095.cor`). If you received your MEGA65 in early 2022, you should upgrade to this new version.
 
-## Locating the .COR file
-
-The firmware data file is known as a "core." Its filename ends in `.cor`.
-
-In the [stable release package](https://files.mega65.org?id=a0276005-e71c-4b2d-8d17-2aa92e492c50), the core file is in the `SD` folder with the rest of the system software, with a name such as `R3_R_0_9.COR`. You probably already copied it to the microSD card. Great!
-
-In the [experimental release package](https://files.mega65.org?id=f461df65-4957-4d5b-9f6e-890dc63ee501), the core file is in the main folder with a name like `mega65r3-20220717.12-develo-3253c5d.cor`. There are other files with similar names; be sure to locate the one that ends with `.cor`. Rename this file to something short like `v3253c5d.cor`, then copy it to the microSD card.
-
-```{tip}
-There are other firmware-related downloads on Filehost. You probably don't need them. "MEGA65 R2" is a previous version of the mainboard. "Nexys 4" and "Nexys 4 DDR" are FPGA development boards that can be configured to run like a MEGA65. The "MCS" and "BIT" files are different ways to update the core; you use COR files with the recommended update procedure.
-
-You can use the [MEGA65 R3 Core - COR file](https://files.mega65.org?id=13e1ce8a-ed5b-4046-aea6-491323697ead) Filehost node to access previous versions of the "experimental" core. Click "All versions," and notice the sequential build versions (such as `198.0`) and Git commit IDs (`f555316`).
-```
+If you received your MEGA65 in late 2022 or early 2023, you already have the release 0.95 core as the factory-installed core (slot 0), and you do not need to upgrade. Skim this section for advice on how to manage cores, for future reference.
 
 ## Installing the MEGA65 core
-
-Copy the `.cor` file to the microSD card. Eject the microSD card from your PC and insert it into the MEGA65 external slot.
 
 Make sure the MEGA65 is off, then hold the <kbd>No Scroll</kbd> key (in the top row) and turn it on. This opens the core selection and installation menu.
 
@@ -28,7 +14,7 @@ Core 0 is always the factory-installed core and cannot be overwritten. This can 
 
 When you turn on your MEGA65 normally, it checks to see if slot 1 contains a core, and uses it if present. Otherwise it falls back to core 0. You will put the new core you just downloaded in slot 1 for regular use.
 
-Hold the <kbd>Ctrl</kbd> key and press <kbd>1</kbd>. Use the cursor keys to find the `mega65-1.cor` filename (a shortened version of the full filename). If there is a second one with a stripey thing next to it, select the one _without_ the stripey thing. Press <kbd>Return</kbd>, then press any key when prompted to install the core.
+Hold the <kbd>Ctrl</kbd> key and press <kbd>1</kbd>. Use the cursor keys to find `r3r095.cor`. (If you didn't rename it to use a shorter name, it may appear as something like "`mega65-1.cor`".) If there is a second one with a stripey thing next to it, select the one _without_ the stripey thing. Press <kbd>Return</kbd>, then press any key when prompted to install the core.
 
 ![The core file selection screen](screenshots/cor_selection.jpg)
 
