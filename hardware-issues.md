@@ -8,35 +8,21 @@ Some minor fit and finish issues were inevitable. Here are a few issues that wer
 
 A significant percentage of MEGA65 units shipped with Real-Time Clock (RTC) hardware that stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
 
-The best way to test this is a new feature of release 0.95. Open the Freeze menu (hold <kbd>Restore</kbd> then release), then press <kbd>Help</kbd> to run the MegaInfo utility. Give the diagnostic utility a few seconds, and it'll report the "RTC status" of your machine.
+If your MEGA65 has this issue, you can request a replacement RTC unit that attaches to the Grove connector on the main board. The MEGA65 team is making these available **free of charge.** To learn more about this program and to request a Grove RTC:
 
-You can also examine the RTC value in several ways:
+-   **[Request a Real-Time Clock replacement (Grove RTC)](https://files.mega65.org?ar=ff484da0-d942-4e9b-adf1-3b5a77acaa25)**
 
--   From the demo disk, find the Vector Clock utility and run it. Check that it advances the time correctly. With a working clock, it should stay up to the correct time indefinitely.
--   From BASIC, use this command to print the contents of the clock: `?TI$` (That's a question mark—a synonym for `PRINT`—followed by the `TI$` string variable.) Do this multiple times, or write a program to print it repeatedly. With a working clock, the value should advance correctly.
--   After setting the time in the configuration utility, turn off the computer, wait a bit, then turn it back on. With a working clock, the time displayed on the BASIC home screen should be accurate.
+![The replacement "Grove RTC" unit installed](photos/rtc_grove.jpeg)
 
-There is a solution for the RTC issue that involves installing a new part and a connector. If your MEGA65 is affected by this issue, you can purchase the [DS3231 Real-Time Clock](https://www.aliexpress.com/item/3256803522608024.html) and a [Grove 4-pin male jumper cable](https://core-electronics.com.au/grove-4-pin-male-jumper-to-grove-4-pin-conversion-cable-5-pcs-per-pack.html). The cable's four (4) loose pins connect to the RTC unit's five (5) connections as shown in the photo below. With the RTC on top and facing you, from left to right: red, white, yellow, no connection, then black. The Grove connector end only installs one way on the Grove connector on the main board.
+To test whether your MEGA65 is affected, use the MegaInfo utility (available in release v0.95 or higher). Open the Freeze menu (hold <kbd>Restore</kbd> then release), then press <kbd>Help</kbd> to run the MegaInfo utility. Give the diagnostic utility a few seconds, and it'll report the "RTC status" of your machine.
 
-![The DS3231 RTC and recommended Grove connector cable](photos/rtc_parts.jpeg)
-![The wiring of the Grove cable to the external RTC](photos/rtc_wiring.jpeg)
-![The external RTC fully installed on the mainboard, affixed to the case with tape](photos/rtc_installed.jpeg)
+My MEGA65 had this issue. Prior to installing the Grove RTC, MegaInfo reported that my built-in ("internal") RTC was ticking slowly:
 
-You must upgrade the core to release 0.95 to use the replacement RTC. Remember that when you use the <kbd>Alt</kbd> menu to access the Configuration utility to set the time then save and exit, the MEGA65 will boot into the factory-installed core in slot 0. If you have a batch #1 machine, turn the computer off then on again to boot into the core in slot 1 and see the replacement RTC working.
+![The MegaInfo utility showing a broken "internal" RTC](screenshots/megainfo_slowrtc.jpeg)
 
-If the new replacement RTC does not remember the time that you set when powered off, its battery may be dead. The DS3231 is an old part with a factory-installed non-replaceable battery that starts draining as soon as it is assembled. The battery is the yellow disc with metal pads soldered to the board. With some modest electronics knowhow, you can test the battery with a volt meter, and use a soldering iron to replace the factory-installed battery with a 3 volt battery source, as shown here.
+After installing the Grove ("external") RTC, MegaInfo reported a working clock:
 
-![The DS3231 RTC with the built-in battery removed and a AA battery holder added](photos/rtc_aa_batteries.jpeg)
-
-Two AA batteries provide 3 volts. It feels like overkill, but when I tried a CR2032 battery, it didn't provide the full 3 volts required by the RTC unit.
-
-![The DS3231 RTC with the built-in battery removed and a CR2032 battery holder added](photos/rtc_new_battery.jpeg)
-
-The replacement RTC does not use the battery you installed on the main board. You can remove the main board battery when using the replacement RTC.
-
-```{tip}
-I'm working on assembling some ready-made RTC replacements that I'll be selling at cost. [Subscribe to my newsletter](https://m65digest.substack.com/), or watch the `#announcements` channel on the Discord for information. I'll update this guide when they're available.
-```
+![The MegaInfo utility showing a working Grove ("external") RTC](screenshots/megainfo.jpeg)
 
 ## Case fit issues
 

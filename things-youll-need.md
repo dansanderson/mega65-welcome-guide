@@ -36,5 +36,5 @@ Alternatively, you can use a more common USB UART adapter, with important caveat
 ```
 
 ```{tip}
-Some MEGA65 units have an issue with the built-in Real-Time Clock (RTC). There is an official solution to install a replacement. See {ref}`hardware-issues:the real-time clock doesn't advance the time` for how to get the appropriate parts.
+Some MEGA65 units have an issue with the built-in Real-Time Clock (RTC). There is an official solution to install a replacement. See {ref}`hardware-issues:the real-time clock doesn't advance the time` for how to test for this issue and request a replacement part if needed.
 ```
