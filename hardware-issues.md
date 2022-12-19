@@ -24,6 +24,25 @@ After installing the Grove ("external") RTC, MegaInfo reported a working clock:
 
 ![The MegaInfo utility showing a working Grove ("external") RTC](screenshots/megainfo.jpeg)
 
+## Failure to boot, and keyboard lights glow when off
+
+Some owners have noticed that the MEGA65 fails to boot when connected to
+certain HDMI displays. If this happens, turn off the MEGA65, then see if the
+LED lights in the keyboard (power, Shift Lock, Caps Lock) glow faintly. This
+represents an issue known as _HDMI backpower_: the HDMI display is feeding
+power along the HDMI connection that is confusing the keyboard controller and
+inhibiting the boot sequence.
+
+To confirm that this is the issue, disconnect the HDMI cable from
+the back of the MEGA65, turn on the MEGA65, then reconnect the HDMI cable while
+the MEGA65 is on. The MEGA65 should now be running correctly.
+
+One workaround is to add an inexpensive HDMI switch between the MEGA65 and the
+display, such as the [this one](https://www.amazon.de/Blukar-Aluminium-Bi-Direction-Unterst%C3%BCtzt-Umschalter-Schwarz/dp/B08V8XD945/)
+(Amazon.de link) or possibly [this
+one](https://www.amazon.com/JSAUX-Switcher-Aluminum-Bi-Directional-Compatible/dp/B08GG4914P/)
+(Amazon.com link). Cheap switches will block HDMI backpower and allow the video signal.
+
 ## Case fit issues
 
 In some cases, the top and bottom pieces of the plastic case do not fit snugly. A common symptom is a noticeable slip when applying downward pressure to the back of the top case. One possible explanation is a mild manufacturing error from when the limited run cases were commissioned years ago.

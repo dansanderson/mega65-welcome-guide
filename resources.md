@@ -22,7 +22,7 @@ Here are some useful next places to visit:
 -   [MEGA65 Wiki](https://mega65.atlassian.net/wiki/spaces/MEGA65/overview?homepageId=262231)
 
 -   [AmigaLove: Mega65 Quick Start Guide](https://www.amigalove.com/viewtopic.php?f=13&p=14805)
--   [retroCombs website](https://www.stevencombs.com/) and [YouTube channel](https://www.youtube.com/playlist?list=PLRVBh2hjFTomsrJnQdqFmoZUdT6qHocpo)
+-   [retroCombs MEGA65 Resource Page](https://retrocombs.com/mega65) and [YouTube channel](https://www.youtube.com/playlist?list=PLRVBh2hjFTomsrJnQdqFmoZUdT6qHocpo)
 -   [Shallan YouTube channel](https://www.youtube.com/c/Shallan64?app=desktop) and [Github](https://github.com/smnjameson?tab=repositories)
 
 -   [My MEGA65 resources page](https://dansanderson.com/mega65/)
