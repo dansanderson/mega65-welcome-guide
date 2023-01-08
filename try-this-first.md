@@ -8,6 +8,10 @@ The fun is in the digging, so if you're ready to go, stop reading now and dive i
 If you received your MEGA65 in late 2022 or early 2023, your computer has newer firmware and system software than was used to produce the screenshots in this section. The differences are minor.
 ```
 
+```{tip}
+Does your MEGA65 not boot when you turn it on? A small percentage of HDMI displays have a known issue, and there's a workaround. See {ref}`hardware-issues:failure to boot, and keyboard lights glow when off`.
+```
+
 ## Connecting peripherals
 
 Your MEGA65 only needs to be connected to its power supply (included) and a monitor (not included) to operate. The MEGA65 has two connectors for monitors: a VGA connector, and an HDMI connector. Both connections work simultaneously, showing the same display. See {ref}`video-display-compatibility:video display compatibility` later in this Guide for some notes on monitors.

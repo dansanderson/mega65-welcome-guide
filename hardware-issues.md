@@ -28,7 +28,7 @@ After installing the Grove ("external") RTC, MegaInfo reported a working clock:
 
 Some owners have noticed that the MEGA65 fails to boot when connected to
 certain HDMI displays. If this happens, turn off the MEGA65, then see if the
-LED lights in the keyboard (power, Shift Lock, Caps Lock) glow faintly. This
+LED lights in the keyboard (power, Shift Lock, Caps Lock, or drive activity) glow or flicker faintly. This
 represents an issue known as _HDMI backpower_: the HDMI display is feeding
 power along the HDMI connection that is confusing the keyboard controller and
 inhibiting the boot sequence.
