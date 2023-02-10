@@ -38,10 +38,11 @@ the back of the MEGA65, turn on the MEGA65, then reconnect the HDMI cable while
 the MEGA65 is on. The MEGA65 should now be running correctly.
 
 One workaround is to add an inexpensive HDMI switch between the MEGA65 and the
-display, such as the [this one](https://www.amazon.de/Blukar-Aluminium-Bi-Direction-Unterst%C3%BCtzt-Umschalter-Schwarz/dp/B08V8XD945/)
-(Amazon.de link) or possibly [this
-one](https://www.amazon.com/JSAUX-Switcher-Aluminum-Bi-Directional-Compatible/dp/B08GG4914P/)
-(Amazon.com link). Cheap switches will block HDMI backpower and allow the video signal.
+display. Cheap switches will block HDMI backpower and allow the video signal. Owners have reported success with these (Amazon.de links):
+
+-   [JSAUX HDMI Switch 4K](https://www.amazon.de/dp/B08JTZB2YC); [another from JSAUX](https://www.amazon.com/JSAUX-Switcher-Aluminum-Bi-Directional-Compatible/dp/B08GG4914P/?th=1)
+-   [BENFEI 4K HDMI Switch](https://www.amazon.de/dp/B0895J89FB)
+-   [Blukar HDMI Switch](https://www.amazon.de/Blukar-Aluminium-Bi-Direction-Unterst%C3%BCtzt-Umschalter-Schwarz/dp/B08V8XD945/)
 
 ## Case fit issues
 

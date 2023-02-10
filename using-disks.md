@@ -176,8 +176,10 @@ The `cbmconvert` tool is now present in the directory. You can put this director
 To use `cbmconvert` to convert a D64 file to a D81 file:
 
 ```
-cbmconvert -v2 -d filename.d64 -D8 filename.d81
+cbmconvert -v2 -D8 filename.d81 -d filename.d64
 ```
+
+(The order of arguments matters: `-D8 filename.d81` is the D81 disk image to create, and `-d filename.d64` is the D64 disk image that is the source of the files.)
 
 Copy the new D81 file to your microSD card, then return the card to your MEGA65. Open the Freeze menu, then select the D81 image for drive 8. At the MEGA65 BASIC prompt, enter `GO 64` and type `YES` to confirm. The disk is now available on drive 8 from C64 mode.
 
