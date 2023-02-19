@@ -13,7 +13,7 @@ With a JTAG USB adapter and software available on Filehost, you can connect your
 The MEGA65 does not have a user-accessible port for the JTAG connection. You will have to acquire a JTAG USB adapter and a mini-USB cable, install it, and run the cable out the back of the MEGA65 case.
 
 ```{tip}
-You can also use a more common USB UART adapter for most of the purposes described below (sending files and commands). The adapter _must_ output 3.3 volts, _not_ 5 volts. Test your adapter with a volt meter before using. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba) for instructions on how to wire a UART to the JTAG connector pins. See also [this article by RetroCombs](https://www.stevencombs.com/mega65-usb-ttl).
+You can also use a more common USB UART adapter for most of the purposes described below (sending files and commands). The adapter _must_ output 3.3 volts, _not_ 5 volts. Test your adapter with a volt meter before using. See [Use of an USB UART adapter as alternative to a JTAG adapter](https://files.mega65.org/html/main.php?ar=f9e8436a-169d-42cb-8274-70d49b6096ba) for instructions on how to wire a UART to the JTAG connector pins. See also [this article by RetroCombs](https://www.retrocombs.com/mega65-usb-ttl).
 
 Photos below show how to connect the TE0790-03 JTAG adapter.
 ```

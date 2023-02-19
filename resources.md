@@ -7,7 +7,7 @@ Want the latest and most fun updates? Subscribe to my newsletter!
 There are substantial documentation, software, and community resources for the MEGA65, in various states of completion and freshness. While browsing available resources, keep in mind that there have been multiple iterations of the MEGA65 project leading up to the 2022 launch:
 
 -   Some resources may refer to [the DevKit model](https://c65gs.blogspot.com/2020/06/pre-ordering-for-mega65-developers-kits.html), a pre-production version of the MEGA65 that sold 100 units (no longer available).
--   Others may refer to [the Nexys A7 FPGA board](https://www.stevencombs.com/mega65-nexys4-livestream), an alternate way to run the MEGA65 core and ROM.
+-   Others may refer to [the Nexys A7 FPGA board](https://www.retrocombs.com/mega65-nexys4-livestream), an alternate way to run the MEGA65 core and ROM.
 -   Still others may refer to the [Xemu](https://github.lgb.hu/xemu/) emulator platform, which can [emulate a MEGA65](https://github.com/lgblgblgb/xemu/wiki/MEGA65-help) on a PC.
 -   The MEGA65 with the injection molded case and mechanical keyboard uses revision 3A of the board and is sometimes referred to as "R3" or "R3A."
 
