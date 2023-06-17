@@ -170,44 +170,42 @@ For more information, see [the M65Connect README](https://github.com/MEGA65/m65c
 
 The `m65` command line tool can do many of the things M65Connect can do, and more. It's a much more technical tool, used by the MEGA65 team and Trenz Electronic to test, troubleshoot, and verify MEGA65 units before shipment. It could also be useful for software developers that want to automate cross-development tasks.
 
-You can download pre-made binaries of the `m65` command line tool from [the mega65-tools Github repository](https://github.com/MEGA65/mega65-tools/releases/tag/CI-latest). You can also download source code, with build instructions for your platform.
+You can download pre-made binaries of the `m65` command line tool from [Filehost](https://files.mega65.org/). Search for "MEGA65 Tools Release Package" and select the file for your operating system. You can also [get the source code](https://github.com/MEGA65/mega65-tools/), with build instructions for your platform.
 
 ### macOS: prepare the tool for use
 
 Getting the downloadable binary to work on a Mac requires a few steps:
 
-1. [Download `m65.osx`](https://github.com/MEGA65/mega65-tools/releases/download/CI-latest/m65.osx).
-2. Give the file execute permissions: `chmod 755 m65.osx`
-3. Rename the file to remove the `.osx` extension: `mv m65.osx m65`
-4. Locate the file in Finder. (`open .` will open the current working directory as a folder.)
-5. Right-click on `m65`, then select Open. macOS will warn that the binary is not signed. Click the Open button. This will attempt to run the command in a Terminal window, fail, then exit. (This is fine.)
+1. [Download the MEGA65 Tools package for Mac](https://files.mega65.org?id=57f855b9-a758-49df-ba7c-d120c4d1241d). Double-click the archive file in Finder to expand it.
+2. Open a Terminal, then navigate to the folder. For example: `cd ~/Downloads/m65tools-master-...-macos`
+3. Remove the `*.osx` files from quarantine: `xattr -d com.apple.quarantine *.osx`
+4. Optional: Rename each file to remove the `.osx` extension, to match the examples: `mv m65.osx m65`
+5. Optional: Move the files to a location on your command path.
 
-You can now run the `m65` command at a command prompt or in a script. (You can also rename it back to `m65.osx` if you like.)
+You can now run the `m65` command at a command prompt or in a script.
 
 ### Determining the serial port
 
-You need to tell `m65` which device to use as the serial port that connects to the MEGA65. Unlike M65Connect, the tool has no built-in way to scan for working ports.
+The latest version of `m65` has the ability to determine the serial port automatically.
 
-The easiest way to do this is to run M65Connect and get it working, then open the Settings menu, Connection, and note the configured value. (On a Mac, this is something like `/dev/cu.usbserial...`)
+To ask `m65` to determine the serial port and print its location for use in other tools, use the `-j` argument: `./m65 -j`
 
-Be sure to close M65Connect afterward, so it frees the serial port for use by `m65`.
+As of this writing, other tools such as `mega65_ftp` need the serial port location provided manually. To specify this, use the `-l` argument: `./mega65_ftp -l /dev/cu.usbserial...`
 
 ### Running m65
 
-The `m65` command accepts a wide variety of options for each of its functions. Run `m65` without arguments to see a list.
+The `m65` command can perform a variety of functions determined by command line arguments. Run `m65` without arguments to see a list of functions and options.
 
-To specify the serial port, use the `-l` option: `-l /dev/cu.usbserial...`
-
-The remaining arguments tell `m65` what to do. For example, to get it to type `?TI$` followed by Return (this prints the current Real-Time Clock value in BASIC):
+For example, to get it to type `?TI$` followed by Return (this prints the current Real-Time Clock value in BASIC):
 
 ```
-./m65 -l /dev/cu.usbserial... -T "?ti$"
+./m65 -T "?ti$"
 ```
 
 For uploading programs, `m65` just takes the filename, and figures out what to do based on the filename extension. To load a `PRG` file into memory:
 
 ```
-./m65 -l /dev/cu.usbserial... myprogram.prg
+./m65 myprogram.prg
 ```
 
 ```{tip}
@@ -228,12 +226,12 @@ For example, say you have a BASIC program listing named `myprogram.bas`:
 To convert this BASIC program listing to a PRG file with `petcat`, upload it to the MEGA65, then run it (using your actual serial port device name for `/dev/cu.usbserial...`):
 
     petcat -w65 -o myprogram.prg -- myprogram.bas
-    m65 -l /dev/cu.usbserial... mylisting.prg
-    m65 -l /dev/cu.usbserial... -T "run"
+    m65 mylisting.prg
+    m65 -T "run"
 ```
 
 ## Finding other JTAG tools
 
 If you're interested in the debugging programs remotely, download the M65 Debugger app from Filehost ([Windows](https://files.mega65.org?id=042e934f-c6e7-480f-8caa-4176be5ee784), [Mac](https://files.mega65.org?id=8d499f0a-062f-48e1-8cd0-a4aa035730b3), or [Linux](https://files.mega65.org?id=e466d859-9aef-48b0-a4dd-720b0a846532)). See [the m65dbg README](https://github.com/MEGA65/m65dbg) for more information on how to use the debugger, including video tutorials.
 
-You can use the `mega65_ftp` command line tool to perform the SD Card file transfer functions of the M65Connect app. This is available from [the mega65-tools Github repository](https://github.com/MEGA65/mega65-tools/releases/tag/CI-latest). Mac users: this will require a similar approval process used to prepare the `m65` command line tool, described above.
+You can use the `mega65_ftp` command line tool to perform the SD Card file transfer functions of the M65Connect app.
