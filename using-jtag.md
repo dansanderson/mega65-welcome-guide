@@ -44,9 +44,11 @@ You will have to open the MEGA65 case to connect the adapter to the 12-pin JTAG 
 
 ![Installing the JTAG adapter](photos/jtag_installing.jpeg)
 
-Use a pin or a small screwdriver to set the DIP switches on the connector to left, right, right, left, as shown. This configures the adapter to draw power from the USB connection. (Other documentation suggests left, right, left, right, which draws power from the MEGA65. The USB setting worked fine for me.)
+Use a pin or a small screwdriver to set the DIP switches on the connector to 1=on, 2=off, 3=off, 4=on (when read back to front: left, right, right, left), as shown. This configures the adapter to draw power from your PC over the USB cable, which ensures a steady connection.
 
 ![Setting the JTAG adapter DIP switches](photos/jtag_switches.jpeg)
+
+Other documentation suggests 1=on, 2=off, 3=on, 4=off (when read back to front: right, left, right, left), which tells the JTAG to draw power from the MEGA65. With this setting, turning off the MEGA65 disconnects the JTAG from the PC, which is inconvenient for debugging tools.
 
 Connect a mini-USB cable to the JTAG connector, and run the cable out the back of the MEGA65 case. You can feed it out the cartridge port (potentially blocking access to the port), or punch out one of the unused port covers in the back case. Connect the other end to your PC.
 

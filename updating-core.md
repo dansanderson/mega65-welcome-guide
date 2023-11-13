@@ -60,7 +60,7 @@ The C64 core is _not the same_ as the C65's Commodore 64 mode, the one you start
 
 If you'd like to try the C64 core, go to Filehost, then locate and download "[C64 for MEGA65](https://files.mega65.org?id=896a012f-59e4-456c-b91f-7e989b958241)". Install it like you did the MEGA65 core update, using slot 2.
 
-The C64 core has its own display configuration, separate from the MEGA65 core. It only supports PAL mode, and defaults to HDMI with audio. If your DVI display does not support audio, you may need to temporarily connect to a VGA monitor to change the setting. While the C64 core is running, press the <kbd>Help</kbd> key to open the menu, then cursor down to the video options and press <kbd>Return</kbd> to enable them, as needed.
+The C64 core has its own display configuration, separate from the MEGA65 core. It only supports PAL mode, and defaults to HDMI with audio. If your DVI display does not support audio, you may need to temporarily connect to a VGA monitor to change the setting. You can also follow [this recipe](https://github.com/MJoergen/C64MEGA65#hdmi-compatibility) to adjust these settings while not being able to see the screen. While the C64 core is running, press the <kbd>Help</kbd> key to open the menu, then cursor down to the video options and press <kbd>Return</kbd> to enable them, as needed.
 
 The C64 core can read D64 image files off of the SD card. From the <kbd>Help</kbd> menu, press <kbd>Return</kbd> on the first line to browse the SD card, then select a disk image to mount to device 8. Press <kbd>Help</kbd> again to close the menu. The disk image you selected is now mounted, and you can execute C64 disk commands as usual (such as `LOAD "*",8,1`).
 
@@ -70,7 +70,7 @@ The C64 core can read D64 image files off of the SD card. From the <kbd>Help</kb
 To avoid cluttering your SD card with D64 images, you can use your PC to create a folder named `c64` and put the D64 files in there. The C64 core will notice the folder and limit its browser to just these files.
 ```
 
-See the [Commodore 64 for MEGA65 manual](https://github.com/MJoergen/C64MEGA65/blob/V1/README.md) for more information.
+See the [Commodore 64 for MEGA65 manual](https://github.com/MJoergen/C64MEGA65/blob/master/README.md) for more information.
 
 To return to the MEGA65 core in slot 1, turn off the machine, then turn it on again.
 
