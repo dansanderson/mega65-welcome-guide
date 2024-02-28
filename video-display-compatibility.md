@@ -25,7 +25,7 @@ Just for fun, here is what 80-column BASIC looks like stretched on a Dell 34" cu
 If your HDMI display supports audio, enable "Enhanced (with audio)" mode in the MEGA65 configuration. Otherwise set it to "DVI only (no audio)."
 
 ```{note}
-As of this writing, the Hypervisor utility menu, Configuration, SD card utility, and core selection screens use "Enhanced (with audio)" mode by default. This fails on older DVI displays that don't know how to handle this signal. You may need to use a modern HDMI display or a VGA display to access these screens. See [core issue 552](https://github.com/MEGA65/mega65-core/issues/552).
+With the older cores, the Hypervisor utility menu, Configuration, SD card utility, and core selection screens use "Enhanced (with audio)" mode by default. This fails on older DVI displays that don't know how to handle this signal. You may need to use a modern HDMI display or a VGA display to access these screens. This has been fixed in release v0.96.
 ```
 
 ```{tip}
@@ -46,7 +46,15 @@ Be sure to _disable_ CRT emulation in the MEGA65 configuration when using an act
 
 If you're looking for the 4:3 aspect ratio of a vintage monitor that won't distort the MEGA65 image but also want the convenience of a flat panel screen, there are options, with caveats that depend on the model of monitor you find. Flat panel displays of the early 2000's ushered out bulky CRTs before widescreen aspect ratios came into fashion. Many have both VGA and DVI (HDMI-compatible) inputs.
 
-I can't list every caveat for every monitor, but I can describe my experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input, with the MEGA65 video configuration set to "DVI only (no audio)." I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
+### Dell P1917S
+
+The Dell P1917S is a 19-inch 5:4 aspect ratio flat panel display, with HDMI and VGA inputs. It is my current daily driver with my MEGA65. It works with both PAL and NTSC display modes, and has high quality VGA pixel alignment. Best of all, Dell still manufactures this model, so you can get a new one for $169 USD or [a refurbished one for $110](https://www.amazon.com/gp/product/B08NCX4MN9).
+
+The only caveat with the P1917S: do *not* buy the AC511 SoundBar that goes with it. It *looks* like it will take audio input via the 3.5mm jack, but it requires a USB connection to a Windows computer to operate the volume knob. It's utterly stupid. I'm currently using [a dirt-cheap sound bar from Jeecoo](https://www.amazon.com/Jeecoo-USB-Powered-Computer-Soundbar-Speakers/dp/B0CBMCNC4B) that is USB-powered and has a 3.5mm cable that connects directly to the MEGA65. It sits clumsily under the monitor, but it works.
+
+### Dell 2001FP
+
+I have also had great experiences with the Dell 2001FP, a popular choice among vintage computer collectors. The 2001FP is a 20" flat panel display with S-Video, VGA, and DVI inputs. I use an HDMI-to-DVI cable to connect the MEGA65's HDMI output to the DVI input, with the MEGA65 video configuration set to "DVI only (no audio)." I also use a VGA cable to connect the MEGA65's VGA output to the VGA input.
 
 ![MEGA65 connected to a Dell 2001FP 4:3 monitor](photos/display_2001fp_m65.jpeg)
 

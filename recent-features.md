@@ -1,14 +1,14 @@
 # Recently added features
 
-The MEGA65 batch #1 shipped from the factory with ROM version 920287 (release 0.9) and a User's Guide printed in late 2021. Batch #2 will ship in late 2022 with ROM version 920377 (release 0.95). MEGA65s will continue to ship with the first printing of the User's Guide until stock is exhausted. Meanwhile, the ROM is considered a work in progress, and the MEGA65 team and contributors continue to enhance it with bug fixes and other improvements.
+The MEGA65 batch #1 shipped from the factory with ROM version 920287 (release 0.9) and a User's Guide printed in late 2021. Batch #2 shipped in late 2022 with ROM version 920377 (release 0.95). MEGA65s will continue to ship with the first printing of the User's Guide until stock is exhausted. Meanwhile, the ROM is considered a work in progress, and the MEGA65 team and contributors continue to enhance it with bug fixes and other improvements.
 
-Below is an _incomplete_ list of new features that have been added since the ROM 920287. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes, which are valuable in their own right.
+Below is an _incomplete_ list of features that have been added since the first release. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes, which are valuable in their own right. See [the ROM change log](https://github.com/MEGA65/mega65-rom-public/blob/main/CHANGELOG.md) and [the core change log](https://github.com/MEGA65/mega65-core/blob/release-0.96/release-build/Changelog.md) for a complete list of changes across the versions. 
 
 MEGA65 documentation writers are keeping the [downloadable PDF version of the User's Guide](https://files.mega65.org/manuals-upload/mega65-userguide.pdf) up to date with new features. Be sure to download this along with ROM updates.
 
 ## New features
 
-Some of the new features that have been added since the factory-installed ROM was delivered in batch #1 include:
+Some of the new features that have been added in the last couple of years:
 
 -   Holding RUN/STOP during boot immediately enters the machine language `MONITOR`.
 -   Filename pattern matching supports `#` to match a single number character, and `$` to match a single letter character: `DIR "ME$$*"`
@@ -20,6 +20,23 @@ Some of the new features that have been added since the factory-installed ROM wa
 -   BASIC programs can access screen and color memory via special byte arrays `T@&(COLUMN, ROW)` and `C@&(COLUMN, ROW)`. Screen coordinates are intuitive in both 40-column and 80-column modes.
 -   If you accidentally hit the <kbd>HOME</kbd> key, you can press <kbd>ESC</kbd> then <kbd>HOME</kbd> to return the cursor to its original position.
 -   You can load a program from disk by using `DIR` to view the directory listing, moving the cursor to the program name, pressing `/` (forward slash), then pressing <kbd>Return</kbd>. You can load and run a program in a single step using the <kbd>&uarr;</kbd> (up-arrow) character (next to the <kbd>Restore</kbd> key) in the same way.
+
+- Ethernet file transfer support; use the new M65Connect app (or command line tools), and see the User’s Guide, 2nd edition, for instructions
+- New core selection and flashing menu, capable of flashing slot 0 without a JTAG adapter
+  - Can configure core slots to be selected automatically when different types of cartridges are connected, so a C64 cart can auto-boot into the C64 core instead of the MEGA65 core
+  - Core file selector supports long filenames
+- New hardware typing event queue, enables faster and more accurate typing
+- Improvements to the chipset, Freezer, SD card utility, and Configuration utility
+  - Fixed mouse handling in port 2
+  - Configuration utility now prompts to power cycle on exit, to avoid confusion
+
+- Screen editor and KERNAL use the new hardware typing event queue, for faster and more accurate typing
+- 80 x 50 text mode: press ESC then 5 (press ESC then 8 or 4 to select 80x25 and 40x25)
+- Default sprite images, including a mouse pointer in sprite slot 0
+- GO64 mode now displays a custom banner instead of the C64 banner, so it’s easier to distinguish between GO64 mode and the C64 core
+- Support for booting MEGA65 cartridges, based on the MEGA65 cartridge protocol
+- Run/Stop-Restore now restores the character set
+- Improvements to the Monitor, Renumber, BASIC commands, DOS
 
 ## New BASIC commands
 
@@ -116,7 +133,3 @@ CHARDEF 1,$3C,$7E,$DB,$FF,$BD,$C3,$7E,$3C
 The `FREEZER` command opens the Freeze menu, as if you pressed Restore for a second.
 
 The `INFO` command prints useful information about the system and available BASIC memory.
-
-```{tip}
-For bleeding edge information about new BASIC features as they stabilize and get added to the documentation, see [the mega65-user-guide Github repo commit list](https://github.com/MEGA65/mega65-user-guide/commits/master). We also discuss new features in [the community Discord](https://discord.com/invite/5DNvESf).
-```

@@ -63,13 +63,9 @@ I used a [Mini USB panel mount cable](https://www.amazon.com/gp/product/B08RSBCN
 [This Ribu mini USB panel socket](https://www.ribu.at/mini-usb-2-0-einbaubuchse-mit-verlaengerungskabel-m14) has a nice metal mount and is more flush with the case than the plastic mount I used. It needs an additional washer to avoid falling into the case.
 ```
 
-## Using M65Connect
+## Using M65Connect over serial
 
-The M65Connect app is a useful multitool that takes advantage of the JTAG connection.
-
-### Setting up
-
-Download the M65Connect app for [Windows](https://files.mega65.org?id=d612d745-360e-4e86-8e15-14af525b6220), [Mac](https://files.mega65.org?id=5919a8b8-c23c-4616-9a52-37e077076638), or [Linux](https://files.mega65.org?id=c1dbc7fe-89ad-4f1d-9e72-ad3f55cf02a1), available from the Filehost.
+In addition to Ethernet file transfer, M65Connect can also perform certain functions (including file transfer) over a serial or JTAG connection.
 
 If you're on a Mac, you will need to install a library called `libusb`. Install the [Homebrew package manager](https://brew.sh/) if you don't already have it installed, then run this command:
 
@@ -79,7 +75,7 @@ brew install libusb-compat
 
 If you're using Linux, open the Help menu and select Manual to view the M65Connect user manual, then follow the instructions in the Requirements section.
 
-To set up M65Connect for the first time:
+To set up M65Connect for a serial connection for the first time:
 
 1. Turn off your MEGA65.
 2. Connect the MEGA65 to your PC via the JTAG connection and USB cable that you installed.
@@ -146,12 +142,8 @@ If you're developing a BASIC program on your PC to send to the MEGA65 over the J
 ```
 
 ```{caution}
-Many of these upload actions reset the MEGA65 in the process, and will not warn you. Make sure you don't have any unsaved data.
+As with Ethernet file transfer, many of these upload actions reset the MEGA65 in the process, and will not warn you. Make sure you don't have any unsaved data.
 ```
-
-### Transferring files to and from the SD card
-
-You can upload files directly to the SD card. Click `SD CARD` to open the file transfer utility on both your PC and the MEGA65.
 
 ### Other cool things M65Connect can do
 

@@ -1,20 +1,42 @@
 # Updating the core firmware
 
-In the previous step, {ref}`setting-up-microsd-card:installing the sd card files`, you copied the release 0.95 core file to the SD card (which we renamed `r3r095.cor`). If you received your MEGA65 in early 2022, you should upgrade to this new version.
+Your MEGA65 was shipped from the factory with the latest firmware (core) and system software available at that time. The MEGA65 project continues to make improvements to the platform, and a newer release may be available. It is recommended that you upgrade your MEGA65 to the latest stable version.
 
-If you received your MEGA65 in late 2022 or early 2023, you already have the release 0.95 core as the factory-installed core (slot 0), and you do not need to upgrade. Skim this section for advice on how to manage cores, for future reference.
+## Downloading the latest release package
 
-## Installing the MEGA65 core
+As of February 2024, the latest stable release is v0.96.
+
+Identify the hardware version of your MEGA65, either "R3" ("R3A" is the same in this case) or "R6". (See {ref}`determining-versions:determining the versions of things`.)
+
+Visit [Filehost](https://files.mega65.org/) in a web browser, and make sure you are signed in with your owner account. You must be a registered owner to access the version of the release package containing the MEGA65 ROM.
+
+Search or browse for "MEGA65 Core Release Package." You will see multiple options. Select the option for your hardware version ("mega65r3" or "mega65r6") that also says "with ROM." (If only options that say "no ROM" show up, make sure you are signed in.)
+
+Click "Download." Your browser downloads a file in the `.z` archive format. Expand the archive. In the expanded folder, locate the `mega65....cor` file, and the `sdcard-files` sub-folder.
+
+![Release package files, with MEGA65.ROM](screenshots/release_files.png)
+
+Copy the `.cor` file and the contents of the `sdcard-files` sub-folder to your MEGA65's SD card. Replace the `.M65` and `.ROM` files on the SD card with the files in `sdcard-files`. Eject the card, then re-install it in the MEGA65.
+
+```{note}
+The note about file fragmentation mentioned in {ref}`setting-up-microsd-card:a note about file fragmentation...` applies here. The safest way to replace the `.M65` and `.ROM` files on the SD card is to rename the old files (to any name), copy the new files onto the card, then delete the old ones. It's a pain, but it's just this once.
+
+Once you have v0.96 installed, you'll be able to use Ethernet file transfer for this instead of moving the SD card, avoiding the fragmentation issue. Look forward to a brighter future!
+```
+
+## Upgrading to the v0.96 release
+
+```{tip}
+This Guide assumes you are upgrading to the v0.96 release. The core installation process has been improved in v0.96—but you have to upgrade to get the new experience. This Guide describes what you'll see when upgrading to v0.96 from either v0.9 or v0.95.
+```
 
 Make sure the MEGA65 is off, then hold the <kbd>No Scroll</kbd> key (in the top row) and turn it on. This opens the core selection and installation menu.
 
 ![The core menu, factory configuration](screenshots/cor_menu_empty.jpg)
 
-Core 0 is always the factory-installed core and cannot be overwritten. This can help you restore your MEGA65 to a working state if something goes wrong with updating a core. If this is your first time seeing the core selection menu, slots 1 through 7 should be empty.
+Core 0 is the factory-installed core. If this is your first time seeing the core selection menu, slots 1 through 7 should be empty. When you turn on your MEGA65 normally, it checks to see if slot 1 contains a core, and uses it if present. Otherwise it falls back to core 0. For now, you will put the new core you just downloaded in slot 1 for regular use.
 
-When you turn on your MEGA65 normally, it checks to see if slot 1 contains a core, and uses it if present. Otherwise it falls back to core 0. You will put the new core you just downloaded in slot 1 for regular use.
-
-Hold the <kbd>Ctrl</kbd> key and press <kbd>1</kbd>. Use the cursor keys to find `r3r095.cor`. (If you didn't rename it to use a shorter name, it may appear as something like "`mega65-1.cor`".) If there is a second one with a stripey thing next to it, select the one _without_ the stripey thing. Press <kbd>Return</kbd>, then press any key when prompted to install the core.
+Hold the <kbd>Ctrl</kbd> key and press <kbd>1</kbd>. Use the cursor keys to find the `.cor` file. When upgrading from an early version of the system software, this might appear as `mega65-1.cor` instead of its full filename. (Long filename support is new to v0.96.) Press <kbd>Return</kbd>, then press any key when prompted to install the core.
 
 ![The core file selection screen](screenshots/cor_selection.jpg)
 
@@ -31,30 +53,27 @@ If you use a Mac computer to copy a file to a MEGA65 SD card, it creates another
 If you select the wrong one, MEGA65 will warn that the incorrect file does not have a matching device ID (because it isn't a real core file). Press <kbd>RUN/STOP</kbd> to abort and try again with the correct file.
 ```
 
-```{hint}
-For more on installing cores, see the User's Guide, chapter 6, starting page 47.
-```
+## Upgrading slot 0
 
-## Symptoms that you're using the wrong MEGA65 core
+Normally, I'd recommend leaving core slot 0 alone so that it contains the factory installed core, and just use slot 1 for everything. In fact, the core selection menu makes it extra difficult to upgrade slot 0 for this purpose.
 
-If you've been following along with this Guide, you should now have a MEGA65 that uses the latest core and ROM when you turn it on. You can confirm the core and ROM versions as described in {ref}`determining-versions:determining the versions of things`.
+With the v0.96 release, there is a reason to upgrade slot 0: slot 0 is what powers the boot process, the Configuration and SD card utilities, and the core selection menu itself. Release v0.96 includes a new logic that's worth having. So let's upgrade slot 0.
 
-Some actions, such as accessing the Configuration or SD card utility from the <kbd>Alt</kbd> menu, cause the MEGA65 to boot into its factory core (slot 0) instead of the updated core in slot 1. This can cause issues with the older core to reappear, or for the newer ROM to interact poorly with the older core.
+With the v0.96 release in slot 1, switch off the computer, hold <kbd>No Scroll</kbd>, then switch it back on. This opens the slot 0 core selection menu, with your freshly installed v0.96 core in slot 1.
 
-I noticed a few common symptoms caused by older versions of the ROM, the core, or a version mismatch:
+Prepare to hold <kbd>No Scroll</kbd> again, then quickly press <kbd>1</kbd> then hold <kbd>No Scroll</kbd>. If you're successful, the core selection menu opens again, but this time it's the *new version*. You can identify the new version by the distinctive angle-y things next to the "1".
 
--   _The Freeze menu appears too low on the screen, obscuring the bottom._
-    -   You have an older ROM, or an older version of `FREEZER.M65`.
--   _The Freeze menu does not display the name of the selected D81 file next to the drive, and the disk does not mount properly._
-    -   You are using the newer ROM with the older core.
--   _Disk directory misbehavior, such as an extra file, or missing files._
-    -   You are using the newer ROM with the older core.
+![The new core file selection screen](screenshots/new_cor_selection.jpg)
 
-Use "Matrix mode" (hold <kbd>Mega</kbd>, hit <kbd>Tab</kbd>) to double check that MEGA65 is using the latest core. If it is using the factory core (`1586ad4`) and you have a newer core installed in slot 1, turn off your MEGA65, then turn it back on.
+Now, press the secret keyboard command <kbd>Mega</kbd> + <kbd>,</kbd> (comma). Read the warning screen, then type `CONFIRM` using all capital letters, then press <kbd>Return</kbd>.
+
+You are now looking at the new flashing procedure, with slot 0 selected. It looks different from the one you just used for slot 1, but it's just as easy. Press <kbd>F3</kbd>, then select the `.cor` file. With the file in the "Replace" box, press <kbd>F8</kbd> to flash. Watch the new animation!
+
+When it says it's done, you can safely switch your computer off then on again. From now on, whenever you need the core selection menu or Configuration utility, it will use the new versions.
 
 ## The C64 core
 
-We mentioned that the MEGA65 can run other cores besides the one that causes your MEGA to act like a Commodore 65. One such core is a Commodore 64.
+I mentioned that the MEGA65 can run other cores besides the one that causes your MEGA to act like a Commodore 65. One such core is a Commodore 64.
 
 The C64 core is _not the same_ as the C65's Commodore 64 mode, the one you start by typing `GO 64` (see {ref}`try-this-first:commodore 64 mode`). The C64 core completely transforms your MEGA into a Commodore 64, with no C65 or MEGA65 features. It strives to be as compatible as possible with C64 software. The current version supports PAL displays and timings, a simulated C1541 drive that supports D64 image files, and joysticks.
 

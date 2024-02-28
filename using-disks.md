@@ -8,7 +8,11 @@ We discussed using D81 disk images back in {ref}`try-this-first:disk images`, in
 -   How to load and run a program on the disk using the `LOAD` and `RUN` commands
 -   How to use the `/` and <kbd>&uarr;</kbd> shortcuts to load or run a file within a directory listing
 
-Disk-related improvements have been advancing quickly, and the latest ROM includes bug fixes and useful features not mentioned in the printed manual.
+Disk-related improvements have been advancing quickly, and the latest ROM includes bug fixes and useful features.
+
+```{tip}
+Make sure you have the PDF or printed copy of _The MEGA65 User's Guide, 2nd edition_, which describes features that were added more recently than the 1st edition.
+```
 
 ## Listing a disk directory
 

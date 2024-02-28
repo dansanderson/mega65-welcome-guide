@@ -22,10 +22,6 @@ Some features such as loading SD card files from BASIC (`DLOAD "MYPROGRA.PRG",U1
 (This does not apply to files on CBM disk images, which have their own unrelated limitations on names.)
 ```
 
-```{hint}
-The User Guide's explanation of SD cards begins on page 23.
-```
-
 ## Cores
 
 The MEGA65 is powered by a Field Programmable Gate Array (FPGA). An FPGA is a special kind of chip that can be programmed to perform the functions of most any integrated circuit (IC). Like an IC, it is fast, and interacts electronically with the rest of the hardware. Unlike an IC, it can be reprogrammed with new logic at any time. FPGA code is sometimes referred to as _firmware_, a term you may recognize from modern computers and other devices. MEGA65's FPGA is programmed to behave like the complete collection of ICs you would find in a Commodore 65: the CPU, video and sound chips, and so on.
@@ -36,19 +32,11 @@ To make managing multiple sets of firmware easy, MEGA65 describes each set as a 
 
 The MEGA65 always retains a copy of its original factory core (in "slot 0"). If something goes wrong while updating another core, you can always go back to the original version.
 
-```{hint}
-This Welcome Guide will describe how to upgrade the MEGA65 core to the latest version. For more general information about cores, see the User's Guide, chapter 6, starting page 47.
-```
-
 ## ROMs
 
 While the core recreates the hardware of the Commodore 65, the _ROM_ recreates the built-in software of the Commodore 65. This software interfaces with the hardware and provides built-in functionality like BASIC programming.
 
 The original Commodore 65 kept its software on a physical Read-Only Memory (ROM) chip. With MEGA65, this software lives in a file on the SD card named `MEGA65.ROM`. MEGA65 loads this into memory when you turn it on. This file contains the original software from the C65 ROM chip licensed from the copyright holder, with many fixes and improvements. You can upgrade the operating system by replacing this file on the SD card.
-
-```{hint}
-The User Guide describes ROM files starting on page 26.
-```
 
 ## The Hypervisor
 

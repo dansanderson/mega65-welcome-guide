@@ -4,12 +4,14 @@ Want the latest and most fun updates? Subscribe to my newsletter!
 
 <iframe src="https://m65digest.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
+[**Dan's MEGA65 Digest**](https://m65digest.substack.com/) reports on project status and new software releases, and every issue includes a feature article with a MEGA65 activity or technical topic. There is even a podcast read-aloud version, wherever you find your podcasts!
+
 There are substantial documentation, software, and community resources for the MEGA65, in various states of completion and freshness. While browsing available resources, keep in mind that there have been multiple iterations of the MEGA65 project leading up to the 2022 launch:
 
 -   Some resources may refer to [the DevKit model](https://c65gs.blogspot.com/2020/06/pre-ordering-for-mega65-developers-kits.html), a pre-production version of the MEGA65 that sold 100 units (no longer available).
 -   Others may refer to [the Nexys A7 FPGA board](https://www.retrocombs.com/mega65-nexys4-livestream), an alternate way to run the MEGA65 core and ROM.
 -   Still others may refer to the [Xemu](https://github.lgb.hu/xemu/) emulator platform, which can [emulate a MEGA65](https://github.com/lgblgblgb/xemu/wiki/MEGA65-help) on a PC.
--   The MEGA65 with the injection molded case and mechanical keyboard uses revision 3A of the board and is sometimes referred to as "R3" or "R3A."
+-   The MEGA65 with the injection molded case and mechanical keyboard uses revision 3A of the board and is sometimes referred to as "R3" or "R3A." The 2024 model is known as "R6."
 
 Here are some useful next places to visit:
 
@@ -25,7 +27,7 @@ Here are some useful next places to visit:
 -   [retroCombs MEGA65 Resource Page](https://retrocombs.com/mega65) and [YouTube channel](https://www.youtube.com/playlist?list=PLRVBh2hjFTomsrJnQdqFmoZUdT6qHocpo)
 -   [Shallan YouTube channel](https://www.youtube.com/c/Shallan64?app=desktop) and [Github](https://github.com/smnjameson?tab=repositories)
 
--   [My MEGA65 resources page](https://dansanderson.com/mega65/)
+-   [My MEGA65 resources page](https://dansanderson.com/mega65/), including past issues of the monthly newsletter.
 
 ---
 

@@ -4,6 +4,10 @@ Thanks to the tireless efforts of a team of volunteers and patrons over many yea
 
 Some minor fit and finish issues were inevitable. Here are a few issues that were reported in the community Discord, and some suggested remedies.
 
+```{note}
+Most of these issues have been fixed in the 2024 MEGA65, including the RTC, HDMI back-power, and RF noise.
+```
+
 ## The Real-Time Clock doesn't advance the time
 
 A significant percentage of MEGA65 units shipped with Real-Time Clock (RTC) hardware that stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
@@ -63,12 +67,6 @@ I was able to repair mine with a Phillips head screwdriver. I opened the case an
 Some owners reported that a floppy disk inserted into the disk drive gets stuck when ejected with the eject button. I did not personally encounter this issue, but others reported success repairing this issue by tightening or loosening screws, similar to the other case fit fixes.
 
 See [Issue: Floppy drive eject button and/or inserting floppy disk stuck](https://files.mega65.org?ar=760a45f3-6c72-46c1-8534-59baad2661a0) for more advice.
-
-## C64 cartridge and peripheral compatibility
-
-It is a known issue that not all Commodore 64 cartridges and peripherals work with the current MEGA65 hardware and ROM. The development team is working continuously to improve compatibility over time, well beyond the known-limited C64 compatibility of the original C65 prototype.
-
-Join the `#compatibility` channel on the Discord to discuss any compatibility issues you have found!
 
 ## Boot failures with blinking blue LED lights
 
