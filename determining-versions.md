@@ -1,6 +1,6 @@
 # Determining the versions of things
 
-The MEGA65 internal hardware has minor differences between the models shipped in the year 2022 and the models that will ship in 2024 and later. It is important to know which model you have.
+The MEGA65 internal hardware has minor differences between the models shipped in the year 2022 and the models that are currently shipping (2024 and later). It is important to know which model you have.
 
 The MEGA65 core (which includes the Hypervisor), ROM, and Freeze menu are all upgradable components. It is often useful to know which versions of these components are currently operating your machine.
 
@@ -23,7 +23,7 @@ Some important information on this screen:
 * **Artix Version**: the MEGA65 core version and date, such as `3C104883 2024-02-24`
 * **ROM Version**: the version of the MEGA65 operating system (known as the "ROM" or "KERNAL"), such as `M65 V920395`
 
-This Guide was originally written for the first MEGA65 model. I have left the instructions for finding this information in other ways below.
+This Welcome Guide was originally written for the first MEGA65 model, before we had this useful screen. I have left the instructions for finding this information in other ways below.
 
 ## The MEGA65 core version
 
@@ -74,7 +74,7 @@ To make it easy to know which versions of these components are known to work wel
     -   Core `master,20221012.18,93d55f0`
     -   ROM `920377`
 
--   **Release bundle 0.96**, factory-installed for MEGA65s to be delivered mid 2024 (batch #3)
+-   **Release bundle 0.96**, factory-installed for MEGA65s delivered starting mid 2024 (batch #3)
     -   Core `master,20240224.00,3c10488`
     -   ROM `920395`
 

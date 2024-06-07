@@ -10,7 +10,7 @@ Most of these issues have been fixed in the 2024 MEGA65, including the RTC, HDMI
 
 ## The Real-Time Clock doesn't advance the time
 
-A significant percentage of MEGA65 units shipped with Real-Time Clock (RTC) hardware that stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
+Some early (R3, 2022) MEGA65 units shipped with Real-Time Clock (RTC) hardware that stays stuck at the time you set in the configuration and does not advance, or advances slowly or erratically.
 
 If your MEGA65 has this issue, you can request a replacement RTC unit that attaches to the Grove connector on the main board. The MEGA65 team is making these available **free of charge.** To learn more about this program and to request a Grove RTC:
 
@@ -64,7 +64,7 @@ I was able to repair mine with a Phillips head screwdriver. I opened the case an
 
 ## Jammed floppy disk pathway
 
-Some owners reported that a floppy disk inserted into the disk drive gets stuck when ejected with the eject button. I did not personally encounter this issue, but others reported success repairing this issue by tightening or loosening screws, similar to the other case fit fixes.
+Some owners reported that a floppy disk inserted into the disk drive gets stuck when ejected with the eject button. This issue can be repaired by tightening or loosening screws, similar to the other case fit fixes.
 
 See [Issue: Floppy drive eject button and/or inserting floppy disk stuck](https://files.mega65.org?ar=760a45f3-6c72-46c1-8534-59baad2661a0) for more advice.
 

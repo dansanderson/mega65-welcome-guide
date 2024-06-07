@@ -15,9 +15,9 @@ I recommend installing a microSD card in the external slot, and leaving the inte
 ```{note}
 Many features of the MEGA65 expect short MS-DOS-style filenames for files on the SD card: a maximum of 8 characters, a dot, then a maximum of 3 characters (`myprogra.prg`).
 
-Some features will handle files with longer names, but just not display the full name in menus. The Freeze menu and core selection menu (discussed later) do this.
+Some features will handle files with longer names, but just not display the full name in menus.
 
-Some features such as loading SD card files from BASIC (`DLOAD "MYPROGRA.PRG",U12`) will fail for files with longer names. The only solution is to rename the file to use a short name using your PC.
+Some features such as loading SD card files from BASIC (`DLOAD "MYPROGRA.PRG",U12`) will fail for files with longer names. In this case, the only solution is to rename the file to use a short name using your PC.
 
 (This does not apply to files on CBM disk images, which have their own unrelated limitations on names.)
 ```
@@ -28,7 +28,7 @@ The MEGA65 is powered by a Field Programmable Gate Array (FPGA). An FPGA is a sp
 
 The MEGA65 team continues to make improvements to this firmware, and you will want to update your machine with new firmware as updates become available. Other contributors are developing alternate FPGA programming to simulate other computers, such as a Commodore 64.
 
-To make managing multiple sets of firmware easy, MEGA65 describes each set as a _core_. You will download a core data file (described in the manual as a _bitstream_), copy the file to the microSD card, and follow a procedure to install the core in one of seven user-accessible slots. You can access a menu to tell MEGA65 which core to use.
+To make managing multiple sets of firmware easy, MEGA65 describes each set as a _core_. You will download a core data file (sometimes referred to as a _bitstream_), copy the file to the microSD card, and follow a procedure to install the core in one of seven user-accessible slots. You can access a menu to tell MEGA65 which core to use.
 
 The MEGA65 always retains a copy of its original factory core (in "slot 0"). If something goes wrong while updating another core, you can always go back to the original version.
 

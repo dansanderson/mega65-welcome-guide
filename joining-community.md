@@ -8,7 +8,7 @@ For real-time chat, the action is in [the official MEGA65 Discord server](https:
 
 Once you are on the Discord server, you can register yourself as a proud MEGA65 owner. This changes your username color to blue, and may potentially have other benefits in the future, such as owner-specific rooms.
 
-To register your ownership role on Discord, go to the `#general` channel and say `!register`. (Yes, they want us to say this publicly in front of everybody. Be proud.) The `@RegBot` automated account ("BOT") will see your request and send you a direct message asking for your registration code. Reply with your nine-character registration code from that piece of paper. RegBot will assign you the ownership role and change your username color.
+To register your ownership role on Discord, go to the `#mega65` channel and say `!register`. (Yes, they want us to say this publicly in front of everybody. Be proud.) The `@RegBot` automated account ("BOT") will see your request and send you a direct message asking for your registration code. Reply with your nine-character registration code from that piece of paper. RegBot will assign you the ownership role and change your username color.
 
 ![Interacting with RegBot on Discord](screenshots/discord_regbot.png)
 

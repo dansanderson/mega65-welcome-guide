@@ -1,6 +1,8 @@
 # Recently added features
 
-The MEGA65 batch #1 shipped from the factory with ROM version 920287 (release 0.9) and a User's Guide printed in late 2021. Batch #2 shipped in late 2022 with ROM version 920377 (release 0.95). MEGA65s will continue to ship with the first printing of the User's Guide until stock is exhausted. Meanwhile, the ROM is considered a work in progress, and the MEGA65 team and contributors continue to enhance it with bug fixes and other improvements.
+The MEGA65 batch #1 shipped from the factory with ROM version 920287 (release 0.9) and a User's Guide printed in late 2021. Batch #2 shipped in late 2022 with ROM version 920377 (release 0.95). Batch #3 shipped in June 2024 with ROM version 920395 (release 0.96).
+
+MEGA65s will continue to ship with the first printing of the User's Guide until stock is exhausted. Meanwhile, the ROM is considered a work in progress, and the MEGA65 team and contributors continue to enhance it with bug fixes and other improvements.
 
 Below is an _incomplete_ list of features that have been added since the first release. I can't possibly keep this list up to date, but I wanted to describe a few so you know what you're getting with the updates. I'm leaving out the many bug fixes, which are valuable in their own right. See [the ROM change log](https://github.com/MEGA65/mega65-rom-public/blob/main/CHANGELOG.md) and [the core change log](https://github.com/MEGA65/mega65-core/blob/release-0.96/release-build/Changelog.md) for a complete list of changes across the versions. 
 

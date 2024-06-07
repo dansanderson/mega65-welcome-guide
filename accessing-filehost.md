@@ -4,7 +4,7 @@
 
 ![Filehost website, not signed in](screenshots/filehost_notsignedin.png)
 
-Most files are publicly available, but a few important files require an account and verification of ownership to access. Specifically, the ROMs based on the original C65 contain material that is only licensed to owners of the MEGA65. Creating an account also lets you post ratings and leave comments.
+Most files are publicly available, but a few important files require an account and verification of ownership to access. Specifically, the ROMs based on the original C65 contain material are only licensed to owners of the MEGA65. Creating an account also lets you post ratings and leave comments.
 
 To create and account and register your MEGA65:
 
