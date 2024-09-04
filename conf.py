@@ -52,6 +52,7 @@ html_theme = 'alabaster'
 
 html_sidebars = { '**': [
     'about.html',
+    'last_updated.html',
     'navigation.html',
     'relations.html',
     'searchbox.html',
