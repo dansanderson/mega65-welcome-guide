@@ -57,11 +57,13 @@ If you select the wrong one, MEGA65 will warn that the incorrect file does not h
 
 Normally, I'd recommend leaving core slot 0 alone so that it contains the factory installed core, and just use slot 1 for everything. In fact, the core selection menu makes it extra difficult to upgrade slot 0 for this purpose.
 
-With the v0.96 release, there is a reason to upgrade slot 0: slot 0 is what powers the boot process, the Configuration and SD card utilities, and the core selection menu itself. Release v0.96 includes a new logic that's worth having. So let's upgrade slot 0.
+With the v0.96 release, there is a reason to upgrade slot 0: slot 0 is what powers the boot process, the Configuration and SD card utilities, and the core selection menu itself. Release v0.96 makes the core flashing process more robust, including making updating slot 0 safer. In fact, the recommended way to upgrade v0.96 to slot 0 is to install it in slot 1, then re-launch the core flashing process from slot 1 to install it in slot 0.
+
+Release v0.96 also adds a feature that can automatically select the C64 core when a C64 cartridge is installed, and implements a new protocol for MEGA65 cartridges for future use. You need release v0.96 in slot 0 to get these features.
 
 With the v0.96 release in slot 1, switch off the computer, hold <kbd>No Scroll</kbd>, then switch it back on. This opens the slot 0 core selection menu, with your freshly installed v0.96 core in slot 1.
 
-Prepare to hold <kbd>No Scroll</kbd> again, then quickly press <kbd>1</kbd> then hold <kbd>No Scroll</kbd>. If you're successful, the core selection menu opens again, but this time it's the *new version*. You can identify the new version by the distinctive angle-y things next to the "1".
+Prepare to hold <kbd>No Scroll</kbd> again, then quickly press <kbd>1</kbd> then hold <kbd>No Scroll</kbd>. If you're successful, the core selection menu opens again, but this time it's the *new version*. You can identify the new version by the distinctive angle-y things next to the "1": `>1<`
 
 ![The new core file selection screen](screenshots/new_cor_selection.jpg)
 
