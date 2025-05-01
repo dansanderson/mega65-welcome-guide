@@ -1,6 +1,6 @@
 # Determining the versions of things
 
-The MEGA65 internal hardware has minor differences between the models shipped in the year 2022 and the models that are currently shipping (2024 and later). It is important to know which model you have.
+The MEGA65 internal hardware has minor differences between the models shipped in the year 2022 and the models that are currently shipping (2024 and later). It is important to know which model you have, especially when upgrading the MEGA65 core or installing alternate cores.
 
 The MEGA65 core (which includes the Hypervisor), ROM, and Freeze menu are all upgradable components. It is often useful to know which versions of these components are currently operating your machine.
 
@@ -20,10 +20,34 @@ If pressing the <kbd>Help</kbd> key from the Freezer does nothing, you probably 
 Some important information on this screen:
 
 * **MEGA65 Model**: the hardware model, such as `MEGA65 R6`
-* **Artix Version**: the MEGA65 core version and date, such as `3C104883 2024-02-24`
-* **ROM Version**: the version of the MEGA65 operating system (known as the "ROM" or "KERNAL"), such as `M65 V920395`
+* **Artix Version**: the MEGA65 core version and date, such as `AAF4542 2025-04-22`
+* **ROM Version**: the version of the MEGA65 operating system (known as the "ROM" or "KERNAL"), such as `M65 V920413`
 
 This Welcome Guide was originally written for the first MEGA65 model, before we had this useful screen. I have left the instructions for finding this information in other ways below.
+
+## Bundled releases
+
+To make it easy to know which versions of these components are known to work well together, the MEGA65 team provides release bundles that have been tested as a set. These releases have version numbers.
+
+-   **Release bundle 0.9**, factory-installed for MEGA65s delivered early 2022 (batch #1)
+    -   Core `master,20220109.11,1586ad4`
+    -   ROM `920287`
+
+-   **Release bundle 0.95**, factory-installed for MEGA65s delivered late 2022 and early 2023 (batch #2)
+    -   Core `master,20221012.18,93d55f0`
+    -   ROM `920377`
+
+-   **Release bundle 0.96**, factory-installed for MEGA65s delivered starting mid 2024 (batch #3 and later)
+    -   Core `master,20240224.00,3c10488`
+    -   ROM `920395`
+
+-   **Release bundle 0.97**, available as an update starting April 2025
+    -   Core `master,20250422.09,aaf4542`
+    -   ROM `920413`
+
+The latest system software (`.M65` files on the SD card) is always bundled with the core.
+
+In general, the core, ROM, and system software tend to serve independent functions, and most versions of one are compatible with most versions of the others. This is not always the case! I recommend upgrading release bundle components all at once. If you wish to try a newer beta test version of a component, be sure to follow beta test instructions to assure you are using compatible versions of other components.
 
 ## The MEGA65 core version
 
@@ -33,11 +57,12 @@ Another way to determine which version of the MEGA65 core is installed is to tur
 
 The core version is represented by the "GIT commit" string. For example:
 
-| MEGA65 shipment | Core version |
-|-|-|
-| Batch #1: early 2022 | `GIT commit: master,20220109.11,1586ad4` |
-| Batch #2: late 2022 | `GIT commit: master,20221012.18,93d55f0` |
-| Batch #3: mid 2024 | `GIT commit: master,20240224.00,3c10488` |
+| Release | MEGA65 shipment | Core version |
+|-|-|-|
+| v0.9 | Batch #1: early 2022 | `GIT commit: master,20220109.11,1586ad4` |
+| v0.95 | Batch #2: late 2022 | `GIT commit: master,20221012.18,93d55f0` |
+| v0.96 | Batch #3: mid 2024 | `GIT commit: master,20240224.00,3c10488` |
+| v0.97 | n/a | `GIT commit: master,20250422.09,aaf4542` |
 
 These `master` releases have been tested and declared stable for widespread use by the MEGA65 team. You can also download `development` releases (sometimes called "experimental" releases) to help test newer changes made to the core. Experimental releases have a version string that begins with the word `development`.
 
@@ -53,31 +78,11 @@ You can determine the version of the MEGA65 ROM that is running from the BASIC t
 
 ![ROM version from the BASIC screen, 920287](screenshots/basic_920287_number.jpg)
 
-| MEGA65 shipment | ROM version |
-|-|-|
-| Batch #1: early 2022 | MEGA65 ROM v920287 |
-| Batch #2: late 2022 | MEGA65 ROM v920377 |
-| Batch #3: mid 2024 | MEGA65 ROM v920395 |
+| Release | MEGA65 shipment | ROM version |
+|-|-|-|
+| v0.9 | Batch #1: early 2022 | MEGA65 ROM v920287 |
+| v0.95 | Batch #2: late 2022 | MEGA65 ROM v920377 |
+| v0.96 | Batch #3: mid 2024 | MEGA65 ROM v920395 |
+| v0.97 | n/a | MEGA65 ROM v920413 |
 
 The original Commodore 65 ROM data used a number resembling a date to represent the software version, such as `910828` or `911001`. The MEGA65 enhanced versions of the original ROMs continues the numbering sequentially from `92xxxx`. A higher number implies a newer ROM.
-
-## Bundled releases
-
-To make it easy to know which versions of these components are known to work well together, the MEGA65 team provides release bundles that have been tested as a set. These releases have version numbers.
-
--   **Release bundle 0.9**, factory-installed for MEGA65s delivered early 2022 (batch #1)
-
-    -   Core `master,20220109.11,1586ad4`
-    -   ROM `920287`
-
--   **Release bundle 0.95**, factory-installed for MEGA65s delivered late 2022 and early 2023 (batch #2)
-    -   Core `master,20221012.18,93d55f0`
-    -   ROM `920377`
-
--   **Release bundle 0.96**, factory-installed for MEGA65s delivered starting mid 2024 (batch #3)
-    -   Core `master,20240224.00,3c10488`
-    -   ROM `920395`
-
-The latest system software (`.M65` files on the SD card) is always bundled with the core.
-
-In general, the core, ROM, and system software tend to serve independent functions, and most versions of one are compatible with most versions of the others. This is not always the case! I recommend upgrading release bundle components all at once. If you wish to try a newer beta test version of a component, be sure to follow beta test instructions to assure you are using compatible versions of other components.
